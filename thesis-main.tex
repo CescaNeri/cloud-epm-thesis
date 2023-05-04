@@ -271,7 +271,7 @@ This involves providing technical support, troubleshooting issues, and applying 
 
 \section{The evolution of EPM in modern businesses}
 
-\section{Oracle Cloud and its EPM solutions}
+\section{Oracle Cloud and its EPM solutions - TO DROP}
 
  % Oracle Cloud EPM customers have experienced 61% improved forecast accuracy and are more likely to connect their financial plans with supply chain, sales, project, and workforce planning (Oracle, Value of EPM Survey, 2022). 
 
@@ -617,13 +617,140 @@ For the Holding Group in our case study, Oracle Cloud EPM was the right choice d
 %
 Choosing the right EPM solution can make all the difference in the Group's ability to effectively manage their financial data and drive growth and profitability.
 
-\section{Implementation process details}
+\section{Elements of the implementation process}
+
+To successfully implement a new system, it is essential to have a comprehensive understanding of the various elements that are involved in the process. 
+%
+In this section, we will provide a detailed overview of the key elements that must be considered during the implementation process.
+
+\paragraph{Environments}
 
 Oracle Cloud EPM applications are typically deployed in two environments: production and test.
 %
-The production environment is the live environment where users interact with the EPM application to perform their day-to-day financial management tasks, while the test environment is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment.
+The production environment is the live environment where users interact with the EPM application to perform their day-to-day financial management tasks.
+%
+The test environment, on the other hand, is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment.
 %
 Both the environments can be accessed via unique launch URLs composed by the service name (EPM), the type of environment (test or production), the identity domain name and the data center in which the environment is located.
+
+\paragraph{Modules and applications}
+
+The suite of Oracle Cloud EPM includes various modules that are designed to address specific business needs:
+%
+Planning and Budgeting enables organizations to streamline their budgeting and forecasting processes, allowing for collaboration across teams, flexible modeling, and real-time updates to data.
+%
+Financial Consolidation and Close automates the financial consolidation and close process, helping organizations to reduce errors and improve accuracy, providing a standardized approach to the close process and supporting compliance with regulatory requirements.
+%
+Account Reconciliation streamlines the account reconciliation process, helping organizations to reduce risk and improve accuracy. 
+%
+Profitability and Cost Management enables organizations to gain insights into their profitability and cost structures,supporting activity-based costing, providing allocation and modeling capabilities and what-if analysis.
+%
+Enterprise Data Management provides a centralized platform for managing master data across the organization, supporting data governance and compliance, data quality management capabilities, and enabling seamless integration with other EPM modules.
+%
+Narrative Reporting enables organizations to create, manage, and distribute financial and management reports.
+%
+Tax Reporting supports compliance with tax regulations and provides a comprehensive solution for tax reporting, including a tax data warehouse, data validation and mapping capabilities, and supporting data visualization.
+
+In this case study, we will see more in details the Planning and Budgeting application together with Oracle's Financial Consolidation and Close Solution (FCCS) and Enterprise Data Management.
+
+\paragraph{Data structure}
+
+One of the core components of Oracle Cloud EPM is Essbase, which is multidimensional database management system (MDBMS) that enables businesses to store, manage, and analyze large volumes of data from different sources.
+%
+Multidimensional databases are specialized databases designed for online analytical processing (OLAP). 
+%
+They store data in a cube-like structure where each cell represents a specific data point.
+%
+Unlike relational databases, which store data in tables, multidimensional databases use a multidimensional model that allows users to analyze data across multiple dimensions, such as time, geography, and product. 
+
+One of the key features of MDBs is their ability to perform OLAP, enabling users to drill down or roll up data along different dimensions, providing a more comprehensive view of the data. 
+%
+Compared to Relational Databases, multidimensional Databases are faster and more efficient when dealing with large volumes of data, even though they are less flexible than RDBs when it comes to data modeling, and require specialized tools and expertise to manage and maintain.
+
+\paragraph{Dimensions}
+
+In Oracle Cloud EPM, dimensions are a fundamental component of multidimensional data modeling. 
+%
+Dimensions provide a way to organize and analyze data in a multidimensional structure, allowing users to perform complex analysis along them. 
+%
+They are typically structured as hierarchies, with each level in the hierarchy representing a different level of detail. 
+%
+Members represent the values within each level of the hierarchy and can be associated with attributes such as descriptions or tags to provide additional context. 
+
+Hierarchies provide the ability to roll up or drill down data to gain insights into different levels of detail. 
+%
+Through dimensions, it is possible to execute dynamic calculations to generate on-the-fly calculations at runtime, without requiring the user to manually enter the data. 
+%
+This enables users to create dynamic models that are more flexible and responsive to changing business needs.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/hierarchy.pdf}
+	\caption{Hierarchical structure of the time dimension}
+	\label{fig:hierarchy}
+\end{figure}
+
+As we can see in figure \ref{fig:hierarchy}, the time dimension follows a tree-like structure where each level in the hierarchy represents a different level of detail. 
+%
+Hierarchies allow users to organize data into a structure that is easy to understand and navigate, by grouping related data points together and providing a way to analyze data at different levels of detail, from high-level summaries to more detailed views of individual data points.
+%
+In this dimension, data can be dynamically aggregated along the levels in order to see the results with different levels of granularity, i.e. monthly, quarterly or yearly.
+
+\paragraph{Business rules}
+
+Business rules are a set of instructions that define how data should be calculated or transformed in a multidimensional database. 
+%
+These rules are used to automate complex calculations, validations, and transformations in a data model, reducing the need for manual data entry and increasing the accuracy of data analysis.
+%
+Business rules can be created using the Calculation Manager, which is the tool used to create, validate, deploy, and launch calculations in Oracle Cloud EPM. 
+%
+These rules can be based on various input data sources, including data entered manually, data loaded from external sources, or data calculated dynamically using other rules.
+
+One of the key advantages of business rules is their flexibility: users can define rules that incorporate complex logic and are specific to their organization's unique business requirements. 
+%
+Rules can also be modified or updated easily as business needs change, making them a dynamic tool for data analysis.
+
+\paragraph{Forms and reports}
+
+Forms and reports are key components of Oracle Cloud EPM that enable users to interact with and analyze data in a multidimensional database. 
+%
+Forms are used to input or edit data, while reports are used to analyze data in a structured format.
+
+Forms provide users with a familiar interface for entering or editing data in a multidimensional database. 
+%
+They can be designed to incorporate a variety of data entry methods, including text boxes, drop-down lists, and radio buttons. 
+%
+Users can also navigate between different cells and dimensions in a form to enter or edit data in a specific location.
+
+Reports, on the other hand, provide a way to analyze data in a structured format. 
+%
+These reports can be customized to include specific data points and dimensions, and can be designed to incorporate a variety of formatting options, including charts, graphs, and tables.
+
+One of the key advantages of forms and reports is their flexibility. 
+%
+Users can design and customize forms and reports to meet their organization's unique business requirements, incorporating specific data points and dimensions as needed. 
+%
+This makes forms and reports a powerful tool for data analysis and decision-making.
+
+\paragraph{Smart View}
+
+Smart View is an Excel add-in that allows users to connect to and interact with data in Oracle Cloud EPM. 
+%
+With Smart View, users can access dimensions, forms and reports directly from within Excel, enabling them to analyze and manipulate data in a familiar interface.
+%
+One of the key advantages of Smart View is its ability to integrate seamlessly with Excel. 
+%
+Users can work with data in Excel as they normally would, but with the added ability to access and manipulate data in a multidimensional database. 
+%
+This enables users to perform complex calculations and data analysis tasks using Excel's built-in functionality.
+%
+Smart View also provides a wide range of functionality beyond basic data access and manipulation. 
+%
+For example, users can use Smart View to create and manage ad-hoc reports, design custom templates for data entry and analysis, and build complex financial models using Excel's built-in functionality.
+%
+Another key advantage of Smart View is its ability to work with multiple data sources. 
+%
+Users can connect to and analyze data from a variety of sources, including Planning and Budgeting, Financial Close and Consolidation and more. 
 
 \section{Key features and functionalities of the implemented EPM solution}
 
