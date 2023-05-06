@@ -623,6 +623,26 @@ To successfully implement a new system, it is essential to have a comprehensive 
 %
 In this section, we will provide a detailed overview of the key elements that must be considered during the implementation process.
 
+\paragraph{License}
+
+Oracle Cloud Enterprise Performance Management is a complete and connected EPM solution which, with one licensing subscription, gives access to planning, close and consolidation, account reconciliation, narrative reporting, and more.
+%
+Users can access all these models with their license, they do not need a license for each model.
+%
+There are two types of licenses according to which specific functionalities and features for users are enabled within the application:
+%
+The user-based licenses are assigned to individual users who require access to the application.
+%
+User-based licenses provide access to specific functionalities within the application, and the features available to each user may vary based on the license type and configuration.
+%
+On the other hand, instance-based licenses are allocated to the overall EPM environment, rather than individual users. 
+%
+Instance-based licenses are typically purchased in bundles and may be allocated based on factors such as the number of users or the level of usage.
+
+Oracle will provision by default two environments, one environment dedicated to production use and a second environment dedicated as a staging environment for non-production use.
+%
+Additional environments or business processes can be ordered and provisioned separately.
+
 \paragraph{Environments}
 
 Oracle Cloud EPM applications are typically deployed in two environments: production and test.
@@ -633,7 +653,7 @@ The test environment, on the other hand, is a sandbox environment in which we ca
 %
 Both the environments can be accessed via unique launch URLs composed by the service name (EPM), the type of environment (test or production), the identity domain name and the data center in which the environment is located.
 
-\paragraph{Modules and applications}
+\paragraph{Modules and Applications}
 
 The suite of Oracle Cloud EPM includes various modules that are designed to address specific business needs:
 %
@@ -653,7 +673,7 @@ Tax Reporting supports compliance with tax regulations and provides a comprehens
 
 In this case study, we will see more in details the Planning and Budgeting application together with Oracle's Financial Consolidation and Close Solution (FCCS) and Enterprise Data Management.
 
-\paragraph{Data structure}
+\paragraph{Data Structure}
 
 One of the core components of Oracle Cloud EPM is Essbase, which is multidimensional database management system (MDBMS) that enables businesses to store, manage, and analyze large volumes of data from different sources.
 %
@@ -666,6 +686,22 @@ Unlike relational databases, which store data in tables, multidimensional databa
 One of the key features of MDBs is their ability to perform OLAP, enabling users to drill down or roll up data along different dimensions, providing a more comprehensive view of the data. 
 %
 Compared to Relational Databases, multidimensional Databases are faster and more efficient when dealing with large volumes of data, even though they are less flexible than RDBs when it comes to data modeling, and require specialized tools and expertise to manage and maintain.
+
+\paragraph{Data Management}
+
+Data management refers to the process of integrating and managing data from various sources within the EPM environment. 
+%
+The process begins with integrating data from various sources, such as ERP systems, spreadsheets, or other databases. 
+%
+Oracle Cloud EPM provides tools to help users extract and integrate data from these sources and map it to the appropriate EPM application or service.
+%
+Once the data has been integrated into the EPM environment, it needs to be validated to ensure that it is accurate, complete, and consistent. 
+%
+After the data has been validated, it may need to be transformed to match the specific requirements of the EPM application or service using predefined mappings, calculations or custom scripts.
+%
+Finally, the data can be loaded into the EPM application into the appropriate data structures within the application, such as dimensions or cubes. 
+%
+Oracle Cloud EPM provides tools to automate the steps of data management,  helping organizations streamline their data management processes, reduce errors, and improve data quality.
 
 \paragraph{Dimensions}
 
@@ -683,20 +719,20 @@ Through dimensions, it is possible to execute dynamic calculations to generate o
 %
 This enables users to create dynamic models that are more flexible and responsive to changing business needs.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{figures/hierarchy.pdf}
-	\caption{Hierarchical structure of the time dimension}
-	\label{fig:hierarchy}
-\end{figure}
-
 As we can see in figure \ref{fig:hierarchy}, the time dimension follows a tree-like structure where each level in the hierarchy represents a different level of detail. 
 %
 Hierarchies allow users to organize data into a structure that is easy to understand and navigate, by grouping related data points together and providing a way to analyze data at different levels of detail, from high-level summaries to more detailed views of individual data points.
 %
 In this dimension, data can be dynamically aggregated along the levels in order to see the results with different levels of granularity, i.e. monthly, quarterly or yearly.
 
-\paragraph{Business rules}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/hierarchy.pdf}
+	\caption{Hierarchical structure of the time dimension}
+	\label{fig:hierarchy}
+\end{figure}
+
+\paragraph{Business Rules}
 
 Business rules are a set of instructions that define how data should be calculated or transformed in a multidimensional database. 
 %
@@ -705,12 +741,12 @@ These rules are used to automate complex calculations, validations, and transfor
 Business rules can be created using the Calculation Manager, which is the tool used to create, validate, deploy, and launch calculations in Oracle Cloud EPM. 
 %
 These rules can be based on various input data sources, including data entered manually, data loaded from external sources, or data calculated dynamically using other rules.
-
+%
 One of the key advantages of business rules is their flexibility: users can define rules that incorporate complex logic and are specific to their organization's unique business requirements. 
 %
 Rules can also be modified or updated easily as business needs change, making them a dynamic tool for data analysis.
 
-\paragraph{Forms and reports}
+\paragraph{Forms and Reports}
 
 Forms and reports are key components of Oracle Cloud EPM that enable users to interact with and analyze data in a multidimensional database. 
 %
