@@ -284,22 +284,15 @@ This involves providing technical support, troubleshooting issues, and applying 
 \label{chap:design}
 %----------------------------------------------------------------------------------------
 
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.5\linewidth]
-% 	\caption{A class diagram created with PlantUML}
-% 	\label{fig:classes}
-% \end{figure}
-
 The successful implementation of an Enterprise Performance Management (EPM) system can have a significant impact on the performance and competitiveness of modern businesses. 
 %
 However, the implementation of such a system requires careful planning, preparation, and execution to ensure success. 
-
+%
 In the case of Oracle Cloud EPM, a comprehensive methodology is needed to guide the implementation process from planning and scoping to go-live and ongoing support.
 
-In this section, we will examine the methodology used in the implementation of a Oracle Cloud EPM solution for a company.
+In this chapter, we will examine the methodology used in the implementation of a Oracle Cloud EPM solution for a company.
 %
-We will discuss the key steps involved in the implementation process, including planning and scoping, system design and configuration, data integration and migration, testing and validation, training and change management, go-live and ongoing support. 
+We will discuss the key steps involved in the implementation process, the needs and requirements of the company, what they want to achieve and how they plan to achieve it.
 
 We will also explore specific approaches, methodologies, and tools used in each phase of the project, and discuss the challenges and lessons learned throughout the implementation. 
 %
@@ -307,8 +300,49 @@ By examining the methodology used in this project, we can gain insights into bes
 
 \section{Scope and objectives of the project}
 
-This project is addressed to an Italian Corporate Group which has more than 7,000 points of sale around the world. 
+This project has been implemented for a global leader in high-end design with pro-forma revenues of \$ 960 million in 2022.
 %
+The company is characterised by an unparalleled portfolio of iconic Brands and a multi-channel distribution approach across the globe.
+%
+The Group’s mission is to provide long-lasting value for clients through an innovative manufacturing process carried out by the ten Brands which compose the Group with ten factory locations in Italy, Spain, Denmark and US.
+
+The Group has a presence in more than 130 countries with more than 7,000 points of sale worldwide. 
+%
+They created an exclusive network of highly professional dealers and mono-Brand stores, consolidating its international presence with the opening of wholly owned flag-ship stores in leading capital cities around the world.
+
+Their goal is to foster an ecosystem which enables their companies to grow into a strong worldwide presence with both reach and scale, by curating powerful and iconic Brands that inspire and are beloved by interior designers, architects and consumers alike. 
+%
+This ecosystem has been geared towards the success of each individual Brand, so that the Group invests its resources at Brand level, boosting the creative process and the customer experience.
+
+By bringing together multiple Brands and helping each achieve their best, the Group is a global leader in an otherwise traditionally highly fragmented market of high-end design. 
+%
+With a strong cultural heritage, characterised by multi-channel distribution and diversified product categories, the Group has created a unique design hub, offering a platform with which carefully selected luxury design Brands can be accelerated to grow at scale through a well-defined strategic approach.
+%
+Their strategic pillars are:
+
+\begin{enumerate}
+    \item Brand desirability, making Brands more attractive, better known and sought after.
+    \item Direct to consumers, enhance and personalize the customers’ experience, getting closer to end customers and the design community.
+    \item International expansion, expand the geographical reach, boosting their presence in markets with high growth potential and building a strong position into mature ones.
+    \item Contract business, strengthen the leadership in high-end Contract business, providing considerable added value to the overall quality of a project in the eyes of architects, designers, and developers.
+\end{enumerate}
+
+The management control department of the holding Group is responsible for assessing the financial situation and evaluating the overall performance of the entities.
+%
+Their tasks and activities range from monitoring financial performance, tracking key performance indicators (KPIs), and identifying areas for improvement.
+%
+Prior to the implementation of an Oracle Cloud EPM solution, the management control department faced significant challenges in accessing and consolidating financial data from across the Group's entities.
+%
+This made it difficult to accurately evaluate performance and to make informed decisions.
+%
+With the EPM solution, the management control department plans to improve data accuracy, streamline reporting processes, and gain real-time visibility into financial data across all entities. 
+%
+The final goal is to drive better decision-making and improve overall financial performance for the Group.
+%
+With better data, streamlined processes, and more accurate reporting, the management control department can make informed decisions that lead to growth and profitability for the Group. 
+%
+Additionally, the increased efficiency and productivity that comes with a cloud EPM solution can help to reduce costs and improve compliance and risk management.
+
 The goal of the project is to implement a planning environment in Oracle Cloud EPM in which the data belonging to the different Brands of the Group are all integrated in a single view.
 
 Therefore, the implementation project involves the deployment of a software solution that will enable the company to effectively manage its financial data, analyze it, and make informed business decisions.
@@ -319,6 +353,13 @@ The Corporate Group was born in 2018 and is the result of the aggregation of dif
 %
 The entities which compose the Group have a different story, a different culture, different business models and, as a consequence, different Group Control Models.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/structure.pdf}
+	\caption{Structure of the Holding Group}
+	\label{fig:structure}
+\end{figure}
+
 Since its creation, the new Group has planned several initiatives to facilitate the integration between the different realities.
 %
 The lack of organizational structure due to the different Group Control Models was considered as a key issue in sustaining the new planning and reporting needs of the Group.
@@ -326,9 +367,9 @@ The lack of organizational structure due to the different Group Control Models w
 To solve this issue, the Group started an activity of  homogenization of Enterprise Performance Management model of the entities, by:
 
 \begin{enumerate}
-    \item Defining a consolidated financial reporting:
+    \item Defining a consolidated financial reporting;
     \item Defining a performance reporting system based on KPI’s;
-    \item Defining a treasury reporting and rolling cash flow forecast process;
+    \item Defining a treasury reporting and rolling cash flow forecast process.
 \end{enumerate}
 
 The objective of the client company is that of gaining visibility and control over the Group performance with an homogeneous and consolidated reporting activity.
@@ -351,7 +392,7 @@ Financial reports include:
     \item Balance Sheet;
     \item Accounts Payable;
     \item Accounts Receivable;
-    \item Statement of Cash Flows;
+    \item Statement of Cash Flows.
 \end{enumerate}
 
 These reports are important for stakeholders like banks, investors and regulators, to ensure that the company is following accounting standards correctly.
@@ -368,7 +409,7 @@ These reports include:
     \item Profit and loss by category (team, job, department);
     \item Inventory reports;
     \item Sales reports;
-    \item Utilisation reports;
+    \item Utilisation reports.
 \end{enumerate}
 
 Management reporting focuses on individual areas of the business, allowing companies to identify areas that are strong and any area of potential improvement. 
@@ -513,7 +554,7 @@ The implementation of the EPM solution should be in line with the company's stra
 \label{chap:implementation}
 %----------------------------------------------------------------------------------------
 
-In this section we will explore the case study of an Oracle Cloud EPM implementation project for an international Group with multiple entities.
+In this chapter we will explore the case study of an Oracle Cloud EPM implementation project for an international Group with multiple entities.
 %
 Such implementation was necessary for the Group to streamline financial reporting, improve decision-making based on financial data, and, most importantly, provide a centralized system for financial management across all entities.
 
@@ -529,50 +570,7 @@ Throughout this case study, we will examine the challenges faced during the impl
 %
 We will start by briefly describing the company, in order to provide appropriate context to the case study.
 %
-Then, we will define the challenge, explore the solution selection process and examine in depth the implementation phase. \\
-
-This project has been implemented for a global leader in high-end design with pro-forma revenues of \$ 960 million in 2022.
-%
-The company is characterised by an unparalleled portfolio of iconic Brands and a multi-channel distribution approach across the globe.
-%
-The Group’s mission is to provide long-lasting value for clients through an innovative manufacturing process carried out by the ten Brands which compose the Group with ten factory locations in Italy, Spain, Denmark and US. \\
-
-The Group has a presence in more than 130 countries with more than 7,000 points of sale worldwide. 
-%
-They created an exclusive network of highly professional dealers and mono-Brand stores, consolidating its international presence with the opening of wholly owned flag-ship stores in leading capital cities around the world.
-
-Their goal is to foster an ecosystem which enables their companies to grow into a strong worldwide presence with both reach and scale, by curating powerful and iconic Brands that inspire and are beloved by interior designers, architects and consumers alike. 
-%
-This ecosystem has been geared towards the success of each individual Brand, so that the Group invests its resources at Brand level, boosting the creative process and the customer experience.
-
-By bringing together multiple Brands and helping each achieve their best, the Group is a global leader in an otherwise traditionally highly fragmented market of high-end design. 
-%
-With a strong cultural heritage, characterised by multi-channel distribution and diversified product categories, the Group has created a unique design hub, offering a platform with which carefully selected luxury design Brands can be accelerated to grow at scale through a well-defined strategic approach.
-%
-Their strategic pillars are:
-
-\begin{enumerate}
-    \item Brand desirability, making Brands more attractive, better known and sought after.
-    \item Direct to consumers, enhance and personalize the customers’ experience, getting closer to end customers and the design community.
-    \item International expansion, expand the geographical reach, boosting their presence in markets with high growth potential and building a strong position into mature ones.
-    \item Contract business, strengthen the leadership in high-end Contract business, providing considerable added value to the overall quality of a project in the eyes of architects, designers, and developers.
-\end{enumerate}
-
-The management control department of the holding Group is responsible for assessing the financial situation and evaluating the overall performance of the entities.
-%
-Their tasks and activities range from monitoring financial performance, tracking key performance indicators (KPIs), and identifying areas for improvement.
-%
-Prior to the implementation of an Oracle Cloud EPM solution, the management control department faced significant challenges in accessing and consolidating financial data from across the Group's entities.
-%
-This made it difficult to accurately evaluate performance and to make informed decisions.
-%
-With the EPM solution, the management control department plans to improve data accuracy, streamline reporting processes, and gain real-time visibility into financial data across all entities. 
-%
-The final goal is to drive better decision-making and improve overall financial performance for the Group.
-%
-With better data, streamlined processes, and more accurate reporting, the management control department can make informed decisions that lead to growth and profitability for the Group. 
-%
-Additionally, the increased efficiency and productivity that comes with a cloud EPM solution can help to reduce costs and improve compliance and risk management.
+Then, we will define the challenge, explore the solution selection process and examine in depth the implementation phase.
 
 \section{EPM solution selection}
 
@@ -627,19 +625,19 @@ In this section, we will provide a detailed overview of the key elements that mu
 
 Oracle Cloud Enterprise Performance Management is a complete and connected EPM solution which, with one licensing subscription, gives access to planning, close and consolidation, account reconciliation, narrative reporting, and more.
 %
-Users can access all these models with their license, they do not need a license for each model.
+Users can access all these models with their license; they do not need a license for each model.
 %
 There are two types of licenses according to which specific functionalities and features for users are enabled within the application:
 %
 The user-based licenses are assigned to individual users who require access to the application.
 %
-User-based licenses provide access to specific functionalities within the application, and the features available to each user may vary based on the license type and configuration.
+These licenses provide access to specific functionalities within the application, and the features available to each user may vary based on the license type and configuration.
 %
 On the other hand, instance-based licenses are allocated to the overall EPM environment, rather than individual users. 
 %
-Instance-based licenses are typically purchased in bundles and may be allocated based on factors such as the number of users or the level of usage.
+These licenses are typically purchased in bundles and may be allocated based on factors such as the number of users or the level of usage.
 
-Oracle will provision by default two environments, one environment dedicated to production use and a second environment dedicated as a staging environment for non-production use.
+Oracle will provision by default two environments to users: one environment dedicated to production use and a second environment dedicated as a staging environment for non-production use.
 %
 Additional environments or business processes can be ordered and provisioned separately.
 
