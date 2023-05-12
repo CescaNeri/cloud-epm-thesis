@@ -372,6 +372,16 @@ To solve this issue, the Group started an activity of  homogenization of Enterpr
     \item Defining a treasury reporting and rolling cash flow forecast process.
 \end{enumerate}
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[]{figures/cycle.pdf}
+	\caption{Enterprise Performance Management Framework}
+    \floatfoot{Source: PricewaterhouseCoopers HK}
+	\label{fig:cycle}
+\end{figure}
+
+TO ADD: DESCRIPTION OF THE EPM CYCLE\\
+
 The objective of the client company is that of gaining visibility and control over the Group performance with an homogeneous and consolidated reporting activity.
 %
 They plan to achieve a deep visibility on the companies performances, in order to extract insights and KPIs from entities independently.
@@ -440,7 +450,7 @@ At an operational level, designing a precise project plan allow for the effectiv
 %
 At the same time, it ensure effective communication and collaboration between team members while facilitating the tracking and monitoring of progress towards project goals.
 %
-It gives a good reality check and enables to change course if needed, bringing the project back on track. \\
+It gives a good reality check and enables to change course if needed, bringing the project back on track. 
 
 The needs assessment is a systematic process for determining and addressing needs and requirements to fill the gap between the current conditions and the desired conditions.
 %
@@ -489,6 +499,7 @@ By all means, the system should be scalable to accommodate future growth and exp
 	\centering
 	\includegraphics[width=\linewidth]{figures/requirements.pdf}
 	\caption{Technical, Business and Strategic Requirements}
+    \floatfoot{*Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS}
 	\label{fig:requirements}
 \end{figure}
 
@@ -568,9 +579,7 @@ Also, they lacked visibility into financial data across all entities, making it 
 
 Throughout this case study, we will examine the challenges faced during the implementation process, the solutions that were implemented, and the outcomes of the project.
 %
-We will start by briefly describing the company, in order to provide appropriate context to the case study.
-%
-Then, we will define the challenge, explore the solution selection process and examine in depth the implementation phase.
+We will start by defining the challenge, then we will explore the solution selection process and examine in depth the implementation phase.
 
 \section{EPM solution selection}
 
@@ -578,11 +587,19 @@ Selecting the right EPM solution is crucial to effectively manage the financial 
 %
 In order to design a solution architecture for consolidation, planning and reporting that is able to provide system integration, automatic and standard processes, we need to identify the most suitable EPM tool among the ones available in the market.
 
-Figure \ref{fig:gartner} displays the Gartner Magic Quadrant for financial planning software published on 14th December, 2022 \cite{gartner2022magic}.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/gartner.pdf}
+	\caption{Magic Quadrant for Financial Planning Software}
+    \floatfoot{Source: Gartner (December 2022)}
+	\label{fig:gartner}
+\end{figure}
+
+Figure \ref{fig:gartner} displays the Gartner Magic Quadrant for financial planning software published on the 14th December, 2022 \cite{gartner2022magic}.
 %
 Gartner defines Financial Planning Software as ``the key tool that enables organizations to manage their enterprise-wide financial planning, forecasting, and budgeting processes.'' \footnote{Gartner is a registered trademark and service mark and Magic Quadrant is a registered trademark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and are used herein with permission. All rights reserved.}
 
-Financial Planning Software allows finance organizations to plan and analyze business financial strategy for the organization across all three financial statements (profit and loss, balance sheet, and cash flows). 
+Financial Planning Software solutions allow organizations to plan and analyze the business financial strategy across all three financial statements (profit and loss, balance sheet, and cash flows). 
 %
 It supports modeling, collaboration, analytics, and performance-reporting capabilities, all of which enhance a user’s ability to effectively manage financial performance.
 
@@ -594,20 +611,13 @@ This recognition highlights Oracle's continued commitment to innovation and cust
 %
 As a Leader in the Magic Quadrant, Oracle Cloud is recognized for its ability to provide a comprehensive and customizable EPM solution for holding Groups and other organizations.
 
-According to Oracle Corporation, the current global uncertainties have proven the value of Oracle Fusion Cloud EPM as businesses of every size have experienced extreme volatility in demand and supply environments, making agility in financial planning processes a must-have competency \cite{toomey2022oracle}. \\
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{figures/gartner.pdf}
-	\caption{Magic Quadrant for Financial Planning Software}
-	\label{fig:gartner}
-\end{figure}
+According to Oracle Corporation, the current global uncertainties have proven the value of Oracle Fusion Cloud EPM as businesses of every size have experienced extreme volatility in demand and supply environments, making agility in financial planning processes a must-have competency \cite{toomey2022oracle}.
 
 The ability to support and connect planning across the organization is a competitive differentiator. 
 %
 Oracle delivers purpose-built solutions to streamline and manage planning processes in sales, marketing, human resources, IT and supply chain functions.
 
-Oracle Cloud EPM brings together multiple EPM capabilities into a single suite: financial and operational planning, profitability and cost management, account reconciliation, consolidation and close, tax reporting, narrative reporting, and enterprise master data management. 
+Oracle Cloud EPM brings together multiple Enterprise Performance Management capabilities into a single suite: financial and operational planning, profitability and cost management, account reconciliation, consolidation and close, tax reporting, narrative reporting, and enterprise master data management. 
 %
 These capabilities, along with built-in best practices, help customers to gain value quickly.
 
@@ -661,7 +671,7 @@ Financial Consolidation and Close automates the financial consolidation and clos
 %
 Account Reconciliation streamlines the account reconciliation process, helping organizations to reduce risk and improve accuracy. 
 %
-Profitability and Cost Management enables organizations to gain insights into their profitability and cost structures,supporting activity-based costing, providing allocation and modeling capabilities and what-if analysis.
+Profitability and Cost Management enables organizations to gain insights into their profitability and cost structures, supporting activity-based costing, providing allocation and modeling capabilities and what-if analysis.
 %
 Enterprise Data Management provides a centralized platform for managing master data across the organization, supporting data governance and compliance, data quality management capabilities, and enabling seamless integration with other EPM modules.
 %
@@ -691,7 +701,7 @@ Data management refers to the process of integrating and managing data from vari
 %
 The process begins with integrating data from various sources, such as ERP systems, spreadsheets, or other databases. 
 %
-Oracle Cloud EPM provides tools to help users extract and integrate data from these sources and map it to the appropriate EPM application or service.
+Oracle Cloud EPM provides tools to help users extract and integrate data from these sources and map them to the appropriate EPM application or service.
 %
 Once the data has been integrated into the EPM environment, it needs to be validated to ensure that it is accurate, complete, and consistent. 
 %
@@ -719,14 +729,15 @@ This enables users to create dynamic models that are more flexible and responsiv
 
 As we can see in figure \ref{fig:hierarchy}, the time dimension follows a tree-like structure where each level in the hierarchy represents a different level of detail. 
 %
-Hierarchies allow users to organize data into a structure that is easy to understand and navigate, by grouping related data points together and providing a way to analyze data at different levels of detail, from high-level summaries to more detailed views of individual data points.
+Hierarchies allow users to organize data into a structure that is easy to understand and navigate it, by grouping related data points together and providing a way to analyze data at different levels of detail, from high-level summaries to more detailed views of individual data points.
 %
 In this dimension, data can be dynamically aggregated along the levels in order to see the results with different levels of granularity, i.e. monthly, quarterly or yearly.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{figures/hierarchy.pdf}
-	\caption{Hierarchical structure of the time dimension}
+	\caption{Hierarchical Structure of the Time Dimension}
+    \floatfoot{Source: Oracle User's Guide}
 	\label{fig:hierarchy}
 \end{figure}
 
@@ -786,21 +797,29 @@ Another key advantage of Smart View is its ability to work with multiple data so
 %
 Users can connect to and analyze data from a variety of sources, including Planning and Budgeting, Financial Close and Consolidation and more. 
 
-\section{Key features and functionalities of the implemented EPM solution}
+\section{Building a comprehensive EPM solution}
 
-The process begins with the collection of financial data from all the entities of the Group.
+The process begins with the collection of financial data from all the entities of the Group as illustrated in figure \ref{fig:dataload}.
 %
 Of course, different entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets or BI tools.
 %
 Each Brand is responsible for collecting the financial data of entities that belong to it, which will be transformed and adapted in order to meet the standards for loading.  
 %
-FCCS allows users to integrate financial data from various sources, such as ERP systems, spreadsheets, and other data sources by means of pre-built connectors that allow users to easily integrate data from various sources.
+FCCS allows users to integrate financial data from various sources, such as ERP systems, spreadsheets, and other data sources by means of pre-built connectors that allow users to easily integrate data.
 
 Connectors are software components that enable different applications or systems to communicate and exchange data with each other. 
 %
 They act as intermediaries, allowing data to flow between two different systems that may use different data formats or data protocols.
 %
 In FCCS, connectors provide a standardized interface for connecting different systems for integrating data, allowing them to communicate using a specific data format and protocol.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/data-load.pdf}
+	\caption{Data Collection Process Across the EPM System}
+    \floatfoot{Source: Oracle User's Guide} 
+	\label{fig:dataload}
+\end{figure}
 
 At the same time, FCCS allows users to map data from different sources to the appropriate dimensions and members, thus ensuring that data is correctly integrated and consolidated even if it comes from different systems with different structures.
 %
@@ -812,11 +831,56 @@ This process requires an understanding of the data structures and formats used i
 %
 Effective data mapping is critical for ensuring the accuracy and completeness of data integration and migration processes; if data is not mapped correctly, it may be lost, duplicated, or incorrectly integrated, resulting in errors and inconsistencies in the target system. 
 
-Once data have been mapped into the correct dimensions and members, the next step is to transform them  to match the requirements of FCCS. 
+Figure \ref{fig:mapping} illustrates the relationship and the flow among various modeling elements:
+%
+as we can see, users can model data either creating a model using the data designer integrated in the system or importing a model using XML meatadata definition files.
+%
+The data coming from different sources is loaded into data-sources, which are relational tables in the integrated planning database where copies of external modeling data are stored. 
+%
+According to the data-source definitions, the columns to use are set, while stage maps map data-sources to row sources or dimensions in the planning database. 
+%
+One data-source can be mapped to more than one row source.
+%
+When data-sources are mapped to dimensions, the system maps the names from the tabular data-source to the elements of the dimension’s hierarchical structure. 
+%
+In addition to mapping columns to dimension members at all levels, the system maps the attributes of the dimension members and specifies the relationship (for example, parent-child).
+%
+The mapping among cubes allows data values in one cube to flow to data values in another cube. 
+%
+Since the cubes have different structures, the mapping defines how the data should flow; the mapping is like a table join in a relational database: it defines the common dimensions and how to map or join them.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/data-mapping.pdf}
+	\caption{Mapping and Modeling Data from Diverse Sources}
+	\label{fig:mapping}
+\end{figure}
+
+To identify how source dimensionality translates to target dimensionality, member mappings based on source values are used. 
+%
+Member mappings are referenced during the data load, enabling the Data Management to determine how to dimensionalize the data that is loaded to the target application. 
+%
+They define relationships between source members and target dimension members within a single dimension. 
+%
+This is done by creating a member mapping for each target dimension which, based on the business logic, can have different levels of granularity:
+
+\begin{enumerate}
+    \item Explicit: the source value is matched exactly and replaced with the target value. For example, source value ``ABC'' is replaced with target value ``123''.
+    \item Between: the range of source values is replaced with a single target value. For example, a range from ``001'' to ``010'' is replaced as one value: ``999''. 
+    \item In: it enables a list of non-sequential source values to be mapped to one target value. For example, you could have source accounts 1503, 1510, and 1515 map to the target account 15000010.
+    \item Multi-Dimension: it enables users to define member mapping based on multiple source column values. For example, if the source value combination is Entity-001,002 Department-ABC, XYZ Account-1222, 1333, then the target value assigned for Account Dimension is 1200.
+    \item Like: the string in the source value is matched and replaced with the target value.  For example, the source value ``Department'' is replaced with the target value ``Cost CenterA''.
+\end{enumerate}
+
+When processing the source values for transformations, multiple mappings may apply to a specific source value. 
+%
+The order of precedence is Explicit, Between, In, Multi-Dimension, and Like. 
+
+Once data have been mapped into the correct dimensions and members, the next step is to transform them to match the requirements of FCCS. 
 %
 Data transformation is a critical aspect of data integration and management as it enables organizations to convert data from various source systems into a consistent format that can be used for financial consolidation and reporting.
 %
-This process involves applying various rules and calculations to ensure the data is accurate, complete, and consistent, by means of data validation, aggregation, translation, and consolidation, including adjustments for currency, intercompany eliminations, and other accounting practices.
+This process involves applying various rules and calculations to ensure that data is accurate, complete, and consistent, by means of data validation, aggregation, translation, and consolidation, including adjustments for currency, intercompany eliminations, and other accounting practices.
 %
 More in details, some specific data transformation techniques used in FCCS include:
 
@@ -829,7 +893,9 @@ More in details, some specific data transformation techniques used in FCCS inclu
 
 FCCS provides a range of tools and features to support data transformation, including pre-built mapping templates, data validation rules, and built-in calculations and consolidation methods. 
 %
-At the same time, this application provides a range of features to help users manage data governance, which for a Holding Group is particularly important as it helps ensure that data is managed and protected consistently across all entities, while guaranteeing that data usage are compliant with regulations and best practices.
+At the same time, this application provides a range of features to help users manage data governance.
+%
+This aspect is particularly important for a Holding Group as it helps ensuring that data is managed and protected consistently across all entities, while guaranteeing that data usage is compliant with regulations and best practices.
 %
 Effective data governance ensures that data is managed and protected, while being compliant with regulations such as GDPR, the Italian Data Protection Law, and CCPA \footnote{The GDPR (General Data Protection Regulation) applies to any company that processes the personal data of individuals located in the European Union, regardless of where the company is located. The Holding Group must also comply with the Italian Data Protection Law, which regulates the processing of personal data in Italy, as well as other data protection regulations in the countries where its brands are located, including U.S with the CCPA (California Consumer Privacy Act).}, reducing the risk of penalties, fines, or legal actions.
 %
