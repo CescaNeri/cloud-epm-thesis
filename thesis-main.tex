@@ -380,7 +380,33 @@ To solve this issue, the Group started an activity of  homogenization of Enterpr
 	\label{fig:cycle}
 \end{figure}
 
-TO ADD: DESCRIPTION OF THE EPM CYCLE\\
+Figure \ref{fig:cycle} represents the three main stages of Enterprise Performance Management, each pf which plays a critical role in managing and improving the performance of a business. 
+%
+The strategy phase is the foundation of the EPM cycle, where the business establishes its objectives and formulates its strategic plans. 
+%
+This phase involves the following key activities: objective setting, planning and budgeting.
+%
+Firstly, the business defines its short-term and long-term objectives, which could include revenue targets, market share goals, cost reduction objectives or customer satisfaction metrics.
+%
+Then, based on the objectives, the business develops a comprehensive plan to achieve its goals by identifying key initiatives, allocating resources, and setting timelines.
+%
+Finally, the business drafts a budget with the aim of allocating financial resources to different departments, projects or activities, ensuring that the financial plans align with the strategic objectives.
+%
+The outcome of the strategy phase is a well-defined roadmap that guides the organization's actions in the subsequent stages of the EPM cycle.
+
+Then, the execution phase focuses on implementing the plans and strategies developed in the strategy phase and involves activities related to reporting, control, and performance tracking.
+%
+The business collects and analyzes data from various sources, such as financial and operational systems and then transform the data collected into meaningful reports and dashboards that provide insights into the organization's performance.
+%
+At the same time, through an attentive control process, the business makes sure that the defined plans and objectives are followed by monitoring key metrics, comparing actual results against targets, and taking corrective actions when necessary.
+%
+The execution phase is crucial for ensuring that day-to-day activities are aligned with the overall goals of the business.
+
+Finally, the performance phase involves evaluating the organization's performance, calculating key performance indicators (KPIs), and deriving insights to drive continuous improvement. 
+%
+This is done by assessing the business performance against the objectives set in the strategy phase and by calculating KPIs to measure the organization's progress on an operational and strategical level.
+%
+The insights gained from performance evaluation and KPI analysis guide decision-making processes, helping identifying areas of strength, areas for improvement, and potential opportunities for growth.
 
 The objective of the client company is that of gaining visibility and control over the Group performance with an homogeneous and consolidated reporting activity.
 %
@@ -499,7 +525,7 @@ By all means, the system should be scalable to accommodate future growth and exp
 	\centering
 	\includegraphics[width=\linewidth]{figures/requirements.pdf}
 	\caption{Technical, Business and Strategic Requirements}
-    \floatfoot{*Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS}
+    \floatfoot{*Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)}
 	\label{fig:requirements}
 \end{figure}
 
@@ -799,7 +825,58 @@ Users can connect to and analyze data from a variety of sources, including Plann
 
 \section{Building a comprehensive EPM solution}
 
-The process begins with the collection of financial data from all the entities of the Group as illustrated in figure \ref{fig:dataload}.
+The implementation of this EPM solution involves a systematic and comprehensive process which is aimed at ensuring accurate and comprehensive reporting to the user.
+%
+One crucial aspect of this process regards the creation of the dimensions that will be used to build reports from various perspectives which are used to categorize and structure information in order to obtain a complete view on the performance of the Group.
+%
+Dimensions are the building blocks of an EPM system; they serve as the axes along which data is organized and analyzed, providing a multidimensional view of financial and operational information. 
+%
+Each dimension consists of a hierarchical structure which allows users to drill down information from high-level summaries to more granular details and vice versa.
+
+Dimensions serve several purposes, including analysis and reporting, data integration and restructuring.
+%
+First of all, dimensions allow for the segmentation and grouping of data which facilitate analysis and reporting by enabling users to generate reports based on specific dimensions, providing insights from different angles.
+%
+At the same time, they act as a common framework for integrating data from various sources within the Holding Group. 
+%
+Specifically, by aligning different systems and processes with a consistent set of dimensions, data can be harmonized and consolidated for accurate analysis and reporting.
+%
+Finally, dimensions provide flexibility to adapt to changing business requirements as they can be modified, expanded, or restructured to accommodate new entities, geographies, products, or brands as the Group evolves.
+
+Building dimensions require a systematic process during which different aspects are taken into account.
+%
+The first step is to analyze the specific needs of the Group to identify the dimensions that will provide meaningful insights for analysis and reporting.
+%
+Then, it is essential to determine the levels of the hierarchy for each dimension and assign member properties to capture additional information about each dimension member. 
+%
+These properties provide contextual information and can include attributes such as currency, time zone, brand category, or legal entity type.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/dimensions.pdf}
+	\caption{Dimensions of Analysis}
+	\label{fig:dimensions}
+\end{figure}
+
+As we can see in figure \ref{fig:dimensions}, the activities of the group will be evaluated under five different dimensions of analysis: geography, product, brand and entity.
+%
+The geography dimension helps analyze financial and operational data based on different geographic regions, thus enabling the Holding Group to understand the performance of its entities across different countries, states, or regions. 
+%
+The first step to implement such dimension is to determine the levels of geography that are relevant for the analysis, such as country, state, city, or region.
+%
+Here, the geography dimension include three main geographical groups - EMEA (Europe, Middle East, Africa), Americas and APAC (Asia-Pacific) - which are further subdivided in smaller areas like Middle East, Nordics, Greater China and others.
+%
+The product dimension allows for a detailed analysis of revenue, costs, and profitability across various product lines, enabling users to analyze data and get insights based on different products.
+%
+The brand dimension enables analysis and reporting based on different brands owned or managed by the Holding Group. It helps assess brand performance, market share, and customer preferences.
+%
+The entity dimension allows for analysis and reporting based on individual entities within the Holding Group, allowing the assessment of the performance of each entity separately and in comparison within each others.
+%
+Finally, the channel dimension allows for analysis based on different distribution channels used by the companies to deliver the products and helps assess sales performance and customer preferences across the various channels. 
+
+Once the dimensions have been defined, the next crucial step is to load and map the data within the EPM solution.
+%
+To populate the dimensions with data, the Holding Group needs to collect financial data from all the entities of the Group as illustrated in figure \ref{fig:dataload}.
 %
 Of course, different entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets or BI tools.
 %
