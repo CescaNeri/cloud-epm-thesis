@@ -287,8 +287,6 @@ This involves providing technical support, troubleshooting issues, and applying 
 The successful implementation of an Enterprise Performance Management (EPM) system can have a significant impact on the performance and competitiveness of modern businesses. 
 %
 However, the implementation of such a system requires careful planning, preparation, and execution to ensure success. 
-%
-In the case of Oracle Cloud EPM, a comprehensive methodology is needed to guide the implementation process from planning and scoping to go-live and ongoing support.
 
 In this chapter, we will examine the methodology used in the implementation of a Oracle Cloud EPM solution for a company.
 %
@@ -304,19 +302,21 @@ This project has been implemented for a global leader in high-end design with pr
 %
 The company is characterised by an unparalleled portfolio of iconic Brands and a multi-channel distribution approach across the globe.
 %
-The Group’s mission is to provide long-lasting value for clients through an innovative manufacturing process carried out by the ten Brands which compose the Group with ten factory locations in Italy, Spain, Denmark and US.
-
+The Group’s mission is to provide long-lasting value for clients through an innovative manufacturing process carried out by the Brands which compose the Group.
+%
+It is composed of ten brands which own a total amount of ten factory locations in Italy, Spain, Denmark and US.
+%
 The Group has a presence in more than 130 countries with more than 7,000 points of sale worldwide. 
 %
-They created an exclusive network of highly professional dealers and mono-Brand stores, consolidating its international presence with the opening of wholly owned flag-ship stores in leading capital cities around the world.
+They created an exclusive network of highly professional dealers and mono-brand stores, consolidating its international presence with the opening of wholly owned flag-ship stores in leading capital cities around the world.
 
-Their goal is to foster an ecosystem which enables their companies to grow into a strong worldwide presence with both reach and scale, by curating powerful and iconic Brands that inspire and are beloved by interior designers, architects and consumers alike. 
+Their goal is to foster an ecosystem which enables their companies to grow into a strong worldwide presence with both reach and scale by curating a powerful and iconic culture across the Brands.
 %
 This ecosystem has been geared towards the success of each individual Brand, so that the Group invests its resources at Brand level, boosting the creative process and the customer experience.
 
-By bringing together multiple Brands and helping each achieve their best, the Group is a global leader in an otherwise traditionally highly fragmented market of high-end design. 
+By bringing together multiple Brands and helping them achieving their best, the Group is a global leader in an otherwise traditionally highly fragmented market of high-end design. 
 %
-With a strong cultural heritage, characterised by multi-channel distribution and diversified product categories, the Group has created a unique design hub, offering a platform with which carefully selected luxury design Brands can be accelerated to grow at scale through a well-defined strategic approach.
+With a strong cultural heritage, characterised by multi-channel distribution and diversified product categories, the Group has created a unique design hub, offering a platform with which carefully selected Brands can be accelerated to grow at scale through a well-defined strategic approach.
 %
 Their strategic pillars are:
 
@@ -327,11 +327,11 @@ Their strategic pillars are:
     \item Contract business, strengthen the leadership in high-end Contract business, providing considerable added value to the overall quality of a project in the eyes of architects, designers, and developers.
 \end{enumerate}
 
-The management control department of the holding Group is responsible for assessing the financial situation and evaluating the overall performance of the entities.
+The management control department\footnote{Management control in a business refers to the processes and activities undertaken by a dedicated department to plan, monitor, and control organizational activities. The aim of management control is to align the actions of individuals and departments with the company's strategic goals and objectives, enabling effective decision-making, performance evaluation, and the optimization of resources.} of the holding Group is responsible for assessing the financial situation and evaluating the overall performance of the entities.
 %
 Their tasks and activities range from monitoring financial performance, tracking key performance indicators (KPIs), and identifying areas for improvement.
 %
-Prior to the implementation of an Oracle Cloud EPM solution, the management control department faced significant challenges in accessing and consolidating financial data from across the Group's entities.
+Prior to the implementation of the Enterprise Performance Management solution, the management control department faced significant challenges in accessing and consolidating financial data from across the Group's entities.
 %
 This made it difficult to accurately evaluate performance and to make informed decisions.
 %
@@ -655,7 +655,11 @@ Choosing the right EPM solution can make all the difference in the Group's abili
 
 To successfully implement a new system, it is essential to have a comprehensive understanding of the various elements that are involved in the process. 
 %
-In this section, we will provide a detailed overview of the key elements that must be considered during the implementation process.
+This section explores the essential elements necessary for a successful EPM implementation process, providing a roadmap for organizations seeking to deploy EPM solutions effectively.
+%
+Throughout this section, we will delve into key components that form the foundation of an EPM implementation solution. 
+%
+At the same time, we will provide practical insights, best practices, and real-world examples specific to the case study, to better explain the steps to undertake and the variables to consider when implementing and EPM solution.
 
 \paragraph{License}
 
@@ -683,8 +687,12 @@ Oracle Cloud EPM applications are typically deployed in two environments: produc
 %
 The production environment is the live environment where users interact with the EPM application to perform their day-to-day financial management tasks.
 %
-The test environment, on the other hand, is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment.
-%
+The test environment, on the other hand, is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment. \\
+
+\begin{lstlisting}
+https://epm-[test]-idDomain.epm.dataCenterRegion.oraclecloud.com/epmcloud
+\end{lstlisting}
+
 Both the environments can be accessed via unique launch URLs composed by the service name (EPM), the type of environment (test or production), the identity domain name and the data center in which the environment is located.
 
 \paragraph{Modules and Applications}
@@ -704,7 +712,7 @@ Enterprise Data Management provides a centralized platform for managing master d
 Narrative Reporting enables organizations to create, manage, and distribute financial and management reports.
 %
 Tax Reporting supports compliance with tax regulations and provides a comprehensive solution for tax reporting, including a tax data warehouse, data validation and mapping capabilities, and supporting data visualization.
-
+%
 In this case study, we will see more in details the Planning and Budgeting application together with Oracle's Financial Consolidation and Close Solution (FCCS) and Enterprise Data Management.
 
 \paragraph{Data Structure}
@@ -716,7 +724,7 @@ Multidimensional databases are specialized databases designed for online analyti
 They store data in a cube-like structure where each cell represents a specific data point.
 %
 Unlike relational databases, which store data in tables, multidimensional databases use a multidimensional model that allows users to analyze data across multiple dimensions, such as time, geography, and product. 
-
+%
 One of the key features of MDBs is their ability to perform OLAP, enabling users to drill down or roll up data along different dimensions, providing a more comprehensive view of the data. 
 %
 Compared to Relational Databases, multidimensional Databases are faster and more efficient when dealing with large volumes of data, even though they are less flexible than RDBs when it comes to data modeling, and require specialized tools and expertise to manage and maintain.
@@ -759,27 +767,13 @@ Hierarchies allow users to organize data into a structure that is easy to unders
 %
 In this dimension, data can be dynamically aggregated along the levels in order to see the results with different levels of granularity, i.e. monthly, quarterly or yearly.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{figures/hierarchy.pdf}
 	\caption{Hierarchical Structure of the Time Dimension}
     \floatfoot{Source: Oracle User's Guide}
 	\label{fig:hierarchy}
 \end{figure}
-
-\paragraph{Business Rules}
-
-Business rules are a set of instructions that define how data should be calculated or transformed in a multidimensional database. 
-%
-These rules are used to automate complex calculations, validations, and transformations in a data model, reducing the need for manual data entry and increasing the accuracy of data analysis.
-%
-Business rules can be created using the Calculation Manager, which is the tool used to create, validate, deploy, and launch calculations in Oracle Cloud EPM. 
-%
-These rules can be based on various input data sources, including data entered manually, data loaded from external sources, or data calculated dynamically using other rules.
-%
-One of the key advantages of business rules is their flexibility: users can define rules that incorporate complex logic and are specific to their organization's unique business requirements. 
-%
-Rules can also be modified or updated easily as business needs change, making them a dynamic tool for data analysis.
 
 \paragraph{Forms and Reports}
 
@@ -802,6 +796,23 @@ One of the key advantages of forms and reports is their flexibility.
 Users can design and customize forms and reports to meet their organization's unique business requirements, incorporating specific data points and dimensions as needed. 
 %
 This makes forms and reports a powerful tool for data analysis and decision-making.
+
+\paragraph{Business Rules}
+
+Business rules are a set of instructions that define how data should be calculated or transformed in a multidimensional database. 
+%
+These rules are used to automate complex calculations, validations, and transformations in a data model, reducing the need for manual data entry and increasing the accuracy of data analysis.
+%
+Business rules can be created using the Calculation Manager, which is the tool used to create, validate, deploy, and launch calculations in Oracle Cloud EPM. 
+%
+These rules can be based on various input data sources, including data entered manually, data loaded from external sources, or data calculated dynamically using other rules.
+%
+One of the key advantages of business rules is their flexibility: users can define rules that incorporate complex logic and are specific to their organization's unique business requirements. 
+%
+Rules can also be modified or updated easily as business needs change, making them a dynamic tool for data analysis.
+%
+%Oracle Planning offers powerful calculation features, including support for complex formulas, allocation rules, drivers, and multidimensional calculations. This enables organizations to perform sophisticated calculations while maintaining flexibility in their planning processes.
+
 
 \paragraph{Smart View}
 
@@ -827,9 +838,11 @@ Users can connect to and analyze data from a variety of sources, including Plann
 
 The implementation of this EPM solution involves a systematic and comprehensive process which is aimed at ensuring accurate and comprehensive reporting to the user.
 %
-One crucial aspect of this process regards the creation of the dimensions that will be used to build reports from various perspectives which are used to categorize and structure information in order to obtain a complete view on the performance of the Group.
+One crucial aspect of this process regards the creation of the dimensions that will be used to build reports from various perspectives. 
 %
-Dimensions are the building blocks of an EPM system; they serve as the axes along which data is organized and analyzed, providing a multidimensional view of financial and operational information. 
+They are used to categorize and structure information in order to obtain a complete view on the performance of the Group.
+
+Dimensions are the building blocks of an EPM system; they serve as the axes along which data is organized and analyzed, providing a multidimensional view on financial and operational information. 
 %
 Each dimension consists of a hierarchical structure which allows users to drill down information from high-level summaries to more granular details and vice versa.
 
@@ -849,7 +862,7 @@ The first step is to analyze the specific needs of the Group to identify the dim
 %
 Then, it is essential to determine the levels of the hierarchy for each dimension and assign member properties to capture additional information about each dimension member. 
 %
-These properties provide contextual information and can include attributes such as currency, time zone, brand category, or legal entity type.
+These properties provide contextual information and can include attributes such as currency, time zone, brand category, or legal entity type. \\
 
 \begin{figure}[htbp]
 	\centering
@@ -858,7 +871,7 @@ These properties provide contextual information and can include attributes such 
 	\label{fig:dimensions}
 \end{figure}
 
-As we can see in figure \ref{fig:dimensions}, the activities of the group will be evaluated under five different dimensions of analysis: geography, product, brand and entity.
+As we can see in figure \ref{fig:dimensions}, the activities of the group will be evaluated under five different dimensions of analysis: geography, channel, product, brand and entity.
 %
 The geography dimension helps analyze financial and operational data based on different geographic regions, thus enabling the Holding Group to understand the performance of its entities across different countries, states, or regions. 
 %
@@ -874,11 +887,11 @@ The entity dimension allows for analysis and reporting based on individual entit
 %
 Finally, the channel dimension allows for analysis based on different distribution channels used by the companies to deliver the products and helps assess sales performance and customer preferences across the various channels. 
 
-Once the dimensions have been defined, the next crucial step is to load and map the data within the EPM solution.
+Once dimensions have been defined, the next crucial step is to load and map the data within the EPM solution and, more in details, to the Financial Consolidation and Close Solution (FCCS). 
 %
 To populate the dimensions with data, the Holding Group needs to collect financial data from all the entities of the Group as illustrated in figure \ref{fig:dataload}.
 %
-Of course, different entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets or BI tools.
+Of course, different entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets, BI tools or cloud solutions.
 %
 Each Brand is responsible for collecting the financial data of entities that belong to it, which will be transformed and adapted in order to meet the standards for loading.  
 %
@@ -908,7 +921,15 @@ This process requires an understanding of the data structures and formats used i
 %
 Effective data mapping is critical for ensuring the accuracy and completeness of data integration and migration processes; if data is not mapped correctly, it may be lost, duplicated, or incorrectly integrated, resulting in errors and inconsistencies in the target system. 
 
-Figure \ref{fig:mapping} illustrates the relationship and the flow among various modeling elements:
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/data-mapping.pdf}
+	\caption{Mapping and Modeling Data from Diverse Sources}
+    \floatfoot{Source: Oracle User's Guide}
+	\label{fig:mapping}
+\end{figure}
+
+Figure \ref{fig:mapping} illustrates the relationship and the flow of data among various modeling elements:
 %
 as we can see, users can model data either creating a model using the data designer integrated in the system or importing a model using XML meatadata definition files.
 %
@@ -925,13 +946,6 @@ In addition to mapping columns to dimension members at all levels, the system ma
 The mapping among cubes allows data values in one cube to flow to data values in another cube. 
 %
 Since the cubes have different structures, the mapping defines how the data should flow; the mapping is like a table join in a relational database: it defines the common dimensions and how to map or join them.
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{figures/data-mapping.pdf}
-	\caption{Mapping and Modeling Data from Diverse Sources}
-	\label{fig:mapping}
-\end{figure}
 
 To identify how source dimensionality translates to target dimensionality, member mappings based on source values are used. 
 %
@@ -957,7 +971,7 @@ Once data have been mapped into the correct dimensions and members, the next ste
 %
 Data transformation is a critical aspect of data integration and management as it enables organizations to convert data from various source systems into a consistent format that can be used for financial consolidation and reporting.
 %
-This process involves applying various rules and calculations to ensure that data is accurate, complete, and consistent, by means of data validation, aggregation, translation, and consolidation, including adjustments for currency, intercompany eliminations, and other accounting practices.
+This process involves applying various rules and calculations to ensure that data is accurate, complete and consistent.
 %
 More in details, some specific data transformation techniques used in FCCS include:
 
@@ -980,9 +994,134 @@ At the same time, it ensures that sensitive data is protected from unauthorized 
 %
 On a more technical level, data governance ensures that data is shared in a controlled and secure manner, while ensuring that data is managed and used consistently across all entities, improving standardization and efficiency.
 
-\section{Impact of the EPM solution}
+The process of data load runs continuously to keep the EPM system up-to-date with respect to the financial situation of the Group in real-time.
+%
+It is therefore important to update the process systematically to meet changes in business operations and allow the system to run smoothly, providing an accurate representation of reality.
+%
+Oracle FCCS serves as a powerful tool within the EPM framework as it empowers organizations to streamline financial consolidation, close processes, and reporting. 
 
-\section{Best practices for EPM implementation}
+The process of consolidating financial data from multiple entities, business units and subsidiaries is automated, ensuring accurate and consistent consolidation by applying predefined rules, intercompany eliminations, currency translations, and other necessary adjustments.
+%
+At the same time, FCCS facilitates the entire close management process\footnote{The close management process refers to a series of activities undertaken by businesses to finalize their financial records for a specific period, typically at month-end, quarter-end, or year-end. It involves tasks such as reconciliations, adjusting entries, financial reporting, review and approval, and documentation.} by providing a centralized system to track, manage, and review the progress of close tasks. 
+%
+It allows organizations to define close calendars, assign responsibilities, and monitor the completion of close activities.
+%
+The integration capabilities of FCCS enable a smooth flow of data to other Oracle EPM solutions, such as Oracle Planning for planning, reporting and forecasting purposes - as shown in figure \ref{fig:planning-fccs}.
+%
+By seamlessly loading data from FCCS to the planning system, the Group can leverage the consolidated financial data for budgeting, forecasting, and scenario planning. 
+%
+This native integration ensures a cohesive and holistic approach to financial management, facilitating data-driven decision-making across the organizations.
+%
+Data from FCCS are copied periodically into Planning with specific rules set to keep data aligned between the two environments.
+%
+The import rule is automatic but it can also be launched at Group level. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/planning-fccs.pdf}
+	\caption{Integration between FCCS and Oracle Planning}
+	\label{fig:planning-fccs}
+\end{figure}
+
+The integration between Oracle FCCS and Oracle Planning allows organizations to seamlessly transfer financial data from the consolidated financial system to the planning system. 
+%
+This automated data flow eliminates the need for manual data entry and reduces the risk of errors that can occur during manual data transfer.
+%
+By leveraging the data from Oracle FCCS, organizations can align their planning and budgeting processes with the actual financial results, as the system incorporates the most up-to-date and accurate financial information from the consolidation process.
+%
+The automatic data loading from FCCS to Oracle Planning ensures data integrity and consistency throughout the planning and budgeting cycle; any changes or updates made in the consolidated financial system are automatically reflected in the planning system, enabling users to work with real-time data for their budgeting and forecasting activities.
+%
+Furthermore, the automation of data loading from to Oracle Planning enhances the efficiency of the planning and budgeting process by reducing the time and effort required for data reconciliation and ensuring that the planning system is always synchronized with the latest financial information. 
+
+Oracle Planning offers a robust set of functionalities that empower businesses to streamline their financial processes and make informed decisions. 
+%
+With activities like planning and modeling, budgeting and forecasting together with reporting and analysis, Oracle Planning provides a comprehensive suite of tools and features to support organizations in their journey towards optimized financial performance. 
+%
+ Let's explore the key functionalities of Oracle Planning in detail.
+
+\paragraph{Planning and Modeling:} 
+
+Planning and modeling refers to the process of creating strategic plans, setting goals, and developing models that simulate various business scenarios.
+%
+By modeling different scenarios, organizations can assess the potential impact of changes and make informed decisions based on those insights.
+%
+Oracle Planning allows users to create multiple planning scenarios to assess the impact of different business variables on financial outcomes, enabling organizations to evaluate various what-if scenarios and make informed decisions based on different assumptions.
+%
+Users can model and forecast financial results based on key business drivers such as sales volume, pricing or production capacity.
+%
+This approach helps organizations understand the relationships between drivers and financial outcomes.
+%
+Oracle Planning also includes specialized features for workforce planning and modeling which enable organizations to forecast and manage their human resources-related expenses, such as salaries, benefits, and workforce allocation, ensuring alignment between workforce planning and overall financial planning.
+
+\paragraph{Budgeting and Forecasting:}
+
+Budgeting and forecasting involve the creation of financial plans and projections for a specific period.
+%
+Budgeting focuses on allocating financial resources to different areas of the organization, while forecasting predicts future financial performance based on historical data and anticipated changes. 
+%
+Oracle Planning provides a user-friendly interface for creating and managing budgets: users can input, review, and adjust budget data, leveraging predefined templates and workflows to streamline the budgeting process. 
+%
+At the same time, organizations can perform rolling forecasts using Oracle Planning, allowing them to update and revise their forecasts periodically based on actual performance and changing business conditions. 
+%
+This helps to keep forecasts accurate and relevant throughout the planning period.
+
+\paragraph{Reporting and Analysis:}
+
+Reporting and analysis encompass the generation of financial statements, performance reports, and key performance indicators (KPIs) to assess the financial health and performance of an organization. 
+%
+Reporting and analysis facilitate data-driven decision-making, provide visibility into financial performance, and support effective communication with stakeholders.
+%
+Oracle Planning enables the generation of financial statements, including balance sheets, income statements, and cash flow statements: users can create customized reports that provide insights into financial performance, variances, and key metrics. 
+%
+The solution supports various reporting formats, including tabular reports, graphical dashboards, and interactive visualizations.
+%
+The system also empowers users to perform ad-hoc analysis by providing intuitive tools and interfaces. 
+%
+Users can explore data, drill down into details, create personalized views, and conduct multidimensional analysis to uncover trends, patterns, and outliers.
+%
+With Oracle Planning, organizations can analyze and compare actual performance against budgeted or forecasted figures in order to identify areas of variance and take corrective actions as necessary.
+%
+Finally, Oracle Planning offers interactive dashboards with real-time data visualizations and KPI monitoring that users can use to create personalized dashboards to track performance, monitor progress, and gain insights into key business metrics.
+
+\section{Data transformations and calculations}
+
+In Oracle Cloud EPM, data transformation and calculation are fundamental aspects that enable organizations to derive meaningful insights and make informed decisions. 
+%
+Within the EPM environment, these capabilities are achieved through the utilization of business rules.
+%
+This section delves into the world of data transformation and calculation in Oracle Cloud EPM, focusing on how business rules drive these processes.
+%
+Data transformation and calculation in Oracle Cloud EPM play a key role in aggregating, consolidating, and manipulating data across the multidimensional cubes of the EPM application.
+%
+Business rules serve as the mechanism to define and automate complex calculations, allowing organizations to streamline their financial modeling, scenario planning, and other analytical operations.
+%
+Within this section, we explore the specific programming language used for creating business rules, known as Calculation Manager Script. 
+%
+This proprietary language provides a robust set of functions, operators, and syntax elements tailored to the EPM environment, empowering users to construct intricate calculations with precision and flexibility.
+%
+Additionally, this section elucidates the mechanics of how business rules operate across the multidimensional cubes. 
+%
+It explores the sequence and flow of calculations, the retrieval of data from source locations, and the storage of results in target locations, ensuring consistency and accuracy throughout the EPM application.
+
+In Oracle Cloud EPM, data transformation and calculation capabilities are achieved through the use of business rules. 
+%
+Business rules provide a powerful mechanism for defining and automating complex calculations, data transformations, and validation logic within the multidimensional cubes of the EPM application.
+%
+The main elements of a business rule in Oracle Cloud EPM include:
+
+\begin{enumerate}
+    \item Rule Components: Business rules consist of various components, such as members, formulas, conditions, and data mappings. Members define the dimensions and hierarchy elements on which calculations are performed. Formulas define the mathematical or logical operations to be executed. Conditions allow for the application of calculations based on specific criteria. Data mappings define the source and target locations for data transformations.
+    \item Functions and Operators: Calculation Manager Script provides a wide range of built-in functions and operators that enable complex calculations. These include mathematical functions (e.g., SUM, AVG, MAX), string functions, date functions, logical operators (e.g., IF-THEN-ELSE), and more. These functions and operators allow for the manipulation and transformation of data within the multidimensional cubes.
+    \item Calculation Logic: Business rules define the sequence and flow of calculations. They specify how data is aggregated, allocated, consolidated, or transformed across dimensions within the OLAP cubes. Calculation logic can involve multiple steps, nested formulas, and conditional statements to perform calculations at different levels of aggregation.
+\end{enumerate}
+
+Business rules operate across the multidimensional cubes of the EPM application by applying calculations to specific intersections of dimensions. 
+%
+The rules are executed during the data consolidation and aggregation processes, allowing for real-time calculations and updates to the cube data.
+%
+When a business rule is triggered, it retrieves data from the specified source locations, performs the defined calculations using the specified logic and formulas, and then stores the results in the target locations within the multidimensional cube. 
+%
+This process ensures consistent and accurate calculations across the entire EPM application.
 
 %----------------------------------------------------------------------------------------
 \chapter{\conclusionsname}
