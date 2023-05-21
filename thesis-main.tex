@@ -689,8 +689,10 @@ The production environment is the live environment where users interact with the
 %
 The test environment, on the other hand, is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment. \\
 
-\begin{lstlisting}
-https://epm-[test]-idDomain.epm.dataCenterRegion.oraclecloud.com/epmcloud
+\begin{lstlisting}[
+    basicstyle=\footnotesize
+    ]
+https://epm-idDomain.epm.dataCenterRegion.oraclecloud.com/epmcloud
 \end{lstlisting}
 
 Both the environments can be accessed via unique launch URLs composed by the service name (EPM), the type of environment (test or production), the identity domain name and the data center in which the environment is located.
@@ -1085,7 +1087,7 @@ Finally, Oracle Planning offers interactive dashboards with real-time data visua
 
 \section{Data transformations and calculations}
 
-In Oracle Cloud EPM, data transformation and calculation are fundamental aspects that enable organizations to derive meaningful insights and make informed decisions. 
+In Oracle Cloud EPM, data transformation and calculation are fundamental aspects that enable organizations to derive meaningful insights from data. 
 %
 Within the EPM environment, these capabilities are achieved through the utilization of business rules.
 %
@@ -1095,7 +1097,7 @@ Data transformation and calculation in Oracle Cloud EPM play a key role in aggre
 %
 Business rules serve as the mechanism to define and automate complex calculations, allowing organizations to streamline their financial modeling, scenario planning, and other analytical operations.
 %
-Within this section, we explore the specific programming language used for creating business rules, known as Calculation Manager Script. 
+Within this section, we explore the specific programming language used for creating business rules, known as Calculation Manager Script\footnote{The Calculation Manager script can be considered a programming language tailored specifically for performing calculations and data transformations in the context of EPM applications. Although it has its own syntax and structure, it shares similarities with other programming languages, such as control flow structures, variables, functions, and operators.}. 
 %
 This proprietary language provides a robust set of functions, operators, and syntax elements tailored to the EPM environment, empowering users to construct intricate calculations with precision and flexibility.
 %
@@ -1107,13 +1109,57 @@ In Oracle Cloud EPM, data transformation and calculation capabilities are achiev
 %
 Business rules provide a powerful mechanism for defining and automating complex calculations, data transformations, and validation logic within the multidimensional cubes of the EPM application.
 %
-The main elements of a business rule in Oracle Cloud EPM include:
+They are composed of several key components that work together to define and automate calculations and data transformations. 
 
-\begin{enumerate}
-    \item Rule Components: Business rules consist of various components, such as members, formulas, conditions, and data mappings. Members define the dimensions and hierarchy elements on which calculations are performed. Formulas define the mathematical or logical operations to be executed. Conditions allow for the application of calculations based on specific criteria. Data mappings define the source and target locations for data transformations.
-    \item Functions and Operators: Calculation Manager Script provides a wide range of built-in functions and operators that enable complex calculations. These include mathematical functions (e.g., SUM, AVG, MAX), string functions, date functions, logical operators (e.g., IF-THEN-ELSE), and more. These functions and operators allow for the manipulation and transformation of data within the multidimensional cubes.
-    \item Calculation Logic: Business rules define the sequence and flow of calculations. They specify how data is aggregated, allocated, consolidated, or transformed across dimensions within the OLAP cubes. Calculation logic can involve multiple steps, nested formulas, and conditional statements to perform calculations at different levels of aggregation.
-\end{enumerate}
+\paragraph{Members:}
+Members are the individual elements or dimensions within a multidimensional data set. 
+%
+They represent specific entities, such as products, countries, time periods, or accounts. 
+%
+In the context of business rules, members are used to identify the source and target data elements involved in calculations, defining the scope of calculations and determining which data points are affected by the rule.
+
+\paragraph{Formulas:}
+Formulas define the calculation logic within a business rule.
+%
+They specify how the source data members are combined and transformed to derive the desired results.
+%
+Formulas can include mathematical operations, aggregation functions, conditional statements, and references to other members or variables. 
+%
+They determine how data is manipulated, consolidated, allocated, or transformed during the calculation process.
+
+\paragraph{Conditions:}
+Conditions are logical expressions that determine whether a particular calculation or action should be performed. 
+%
+They evaluate specific criteria based on member values or other conditions and determine the flow of execution within the business rule. 
+%
+Conditions can be used to include or exclude certain data points, define branching logic, or control the application of specific calculations based on specific conditions being met.
+
+\paragraph{Variables:}
+Variables are used to store and manipulate intermediate results or temporary values within a business rule. %
+They can be declared and assigned values dynamically during rule execution. 
+%
+Variables enhance the flexibility and efficiency of calculations by allowing users to store and reuse values, perform calculations using intermediate results, and simplify complex logic by breaking it down into smaller, manageable steps.
+
+\paragraph{Templates:}
+Templates are predefined structures or patterns that can be used as a starting point for creating business rules. 
+%
+They provide a framework that includes placeholders for members, formulas, conditions, and other components. 
+%
+Templates offer a consistent and standardized approach to developing business rules, saving time and effort by providing a starting point and ensuring adherence to best practices.
+
+\paragraph{Member Range:}
+Member range specifies a subset of members within a dimension that should be considered during the calculation process. 
+%
+It allows users to define specific criteria for selecting members dynamically based on their properties or attributes. 
+%
+Member ranges can be used to restrict the calculation scope to a subset of data, improve performance by reducing unnecessary calculations, or target specific members for allocation or consolidation purposes.
+
+\paragraph{Metadata Loop:}
+The metadata loop is a powerful feature in Oracle Cloud EPM that allows for dynamic calculation and manipulation of members and their properties. 
+%
+It enables iterating over members of a dimension and performing calculations or actions based on their metadata values. 
+%
+The metadata loop provides flexibility in handling members with changing properties, such as applying specific calculations only to members that meet certain criteria or dynamically adjusting formulas based on metadata values. \\
 
 Business rules operate across the multidimensional cubes of the EPM application by applying calculations to specific intersections of dimensions. 
 %
@@ -1122,6 +1168,65 @@ The rules are executed during the data consolidation and aggregation processes, 
 When a business rule is triggered, it retrieves data from the specified source locations, performs the defined calculations using the specified logic and formulas, and then stores the results in the target locations within the multidimensional cube. 
 %
 This process ensures consistent and accurate calculations across the entire EPM application.
+
+When writing a business rule, it is important to follow a systematic approach to ensure accurate and efficient calculations.
+%
+The first step is to understand the dimensions and the data flow across the cube.
+%
+The goal is to gain a deep understanding of how the dimensions are structured in the EPM application, identifying the key dimensions involved in the calculation process and understand how data moves across the cube.
+%
+This understanding is crucial to accurately define the source and target members in the business rule.
+%
+Then, it is important to determine the purpose of the rule by clearly defining the objective of the business rule and understanding the specific calculation or data transformation to achieve.
+%
+At the same time, the scope of the rule should be defined.
+%
+The scope of the rule regards the subset of members - source members and target members - to be considered in the calculation process. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/cube.pdf}
+	\caption{Data Block in a Multidimensional Database}
+	\label{fig:cube}
+\end{figure}
+
+Before making calculations, it is necessary to create blocks in the cube which allow for efficient data management and calculation process.
+%
+Blocks provide a structured and organized format for storing data in a multidimensional cube: by partitioning the cube into blocks, data can be stored and retrieved more efficiently. 
+%
+Each block contains a subset of the cube's data, typically defined by specific combinations of dimension members, allowing for faster access to data during calculations and queries, as only relevant blocks need to be accessed.
+%
+At the same time, creating blocks helps optimize the performance of data processing operations as, by dividing the cube into manageable chunks, calculations can be performed more efficiently. 
+%
+During calculations, only the blocks affected by the specific calculation or data transformation need to be processed, reducing the overall processing time. 
+%
+This partitioning also facilitates parallel processing, allowing multiple blocks to be processed simultaneously, further improving performance.
+%
+Partitioning the cube into blocks provides flexibility in managing data because blocks can be selectively loaded or unloaded based on data requirements, thus optimizing storage space. 
+%
+This flexibility also extends to data backups and recovery processes, as individual blocks can be easily backed up, restored, or migrated independently, enabling efficient data management and maintenance.
+
+Once the scope has been defined, the calculations to perform should be set.
+%
+In this step we will use the Calculation Manager script or graphical interface to define the calculations, formulas, and logic required for the business rule. 
+%
+By all means, the calculation logic should be written using the appropriate syntax, functions, operators, and control structures.
+%
+Now that we are sure that the calculations align with the purpose and scope of the rule, we can test and validate the business rule to ensure its correctness and accuracy. 
+%
+To do so, we can use the validation tools provided by Oracle Cloud EPM to identify any syntax errors, formula inconsistencies, or logical issues. 
+%
+At the same time, it is essential to review the calculations and logic to ensure they align with the intended purpose and produce the expected results.
+%
+Once the rule is validated, we can deploy it to the appropriate EPM application, ensuring that the rule is assigned to the relevant data intersections and is ready for execution. 
+%
+At this point, we can set up any necessary schedule or trigger for the rule execution, considering factors such as frequency, dependencies, and performance requirements.
+%
+Now, we can use Smart View, the Microsoft Office Excel add-in, to access and analyze the results of the business rule.
+%
+To do so, we need to connect Smart View to the EPM application and retrieve the data that has been calculated or transformed by the rule, verifying that the results align with the expected outcomes and meet the defined requirements.
+
+
 
 %----------------------------------------------------------------------------------------
 \chapter{\conclusionsname}
