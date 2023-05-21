@@ -593,7 +593,7 @@ The implementation of the EPM solution should be in line with the company's stra
 
 In this chapter we will explore the case study of an Oracle Cloud EPM implementation project for an international Group with multiple entities.
 %
-Such implementation was necessary for the Group to streamline financial reporting, improve decision-making based on financial data, and, most importantly, provide a centralized system for financial management across all entities.
+Such implementation was necessary for the Group to streamline financial reporting, improve decision-making based on financial data and, most importantly, provide a centralized system for financial management across all entities.
 
 The Group has a complex financial structure and was facing significant challenges in managing financial data across all entities. 
 %
@@ -603,9 +603,9 @@ In addition, the Group's reporting processes were inefficient, relying heavily o
 %
 Also, they lacked visibility into financial data across all entities, making it difficult to make informed decisions and to drive growth and profitability.
 
-Throughout this case study, we will examine the challenges faced during the implementation process, the solutions that were implemented, and the outcomes of the project.
+Throughout this case study, we will examine each step of the implementation process, analyzing the structure of the EPM solution and the data load process.
 %
-We will start by defining the challenge, then we will explore the solution selection process and examine in depth the implementation phase.
+We will start by defining the solution selection process, moving to the structure of the solution and then, we will examine in depth the implementation phase.
 
 \section{EPM solution selection}
 
@@ -848,7 +848,7 @@ Dimensions are the building blocks of an EPM system; they serve as the axes alon
 %
 Each dimension consists of a hierarchical structure which allows users to drill down information from high-level summaries to more granular details and vice versa.
 
-Dimensions serve several purposes, including analysis and reporting, data integration and restructuring.
+Dimensions serve several purposes, including analysis, reporting, data integration and restructuring.
 %
 First of all, dimensions allow for the segmentation and grouping of data which facilitate analysis and reporting by enabling users to generate reports based on specific dimensions, providing insights from different angles.
 %
@@ -889,13 +889,13 @@ The entity dimension allows for analysis and reporting based on individual entit
 %
 Finally, the channel dimension allows for analysis based on different distribution channels used by the companies to deliver the products and helps assess sales performance and customer preferences across the various channels. 
 
-Once dimensions have been defined, the next crucial step is to load and map the data within the EPM solution and, more in details, to the Financial Consolidation and Close Solution (FCCS). 
+Once dimensions have been defined, the next crucial step is to load and map the data within the EPM solution and, specifically, to the Financial Consolidation and Close Solution (FCCS). 
 %
 To populate the dimensions with data, the Holding Group needs to collect financial data from all the entities of the Group as illustrated in figure \ref{fig:dataload}.
 %
 Of course, different entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets, BI tools or cloud solutions.
 %
-Each Brand is responsible for collecting the financial data of entities that belong to it, which will be transformed and adapted in order to meet the standards for loading.  
+Each Brand is responsible for collecting the financial data of the entities that belong to it, which will be transformed and adapted in order to meet the standards for loading.  
 %
 FCCS allows users to integrate financial data from various sources, such as ERP systems, spreadsheets, and other data sources by means of pre-built connectors that allow users to easily integrate data.
 
@@ -1097,7 +1097,7 @@ Data transformation and calculation in Oracle Cloud EPM play a key role in aggre
 %
 Business rules serve as the mechanism to define and automate complex calculations, allowing organizations to streamline their financial modeling, scenario planning, and other analytical operations.
 %
-Within this section, we explore the specific programming language used for creating business rules, known as Calculation Manager Script\footnote{The Calculation Manager script can be considered a programming language tailored specifically for performing calculations and data transformations in the context of EPM applications. Although it has its own syntax and structure, it shares similarities with other programming languages, such as control flow structures, variables, functions, and operators.}. 
+Within this section, we will explore the specific programming language used for creating business rules, known as Calculation Manager Script\footnote{The Calculation Manager script can be considered a programming language tailored specifically for performing calculations and data transformations in the context of EPM applications. Although it has its own syntax and structure, it shares similarities with other programming languages, such as control flow structures, variables, functions, and operators.}. 
 %
 This proprietary language provides a robust set of functions, operators, and syntax elements tailored to the EPM environment, empowering users to construct intricate calculations with precision and flexibility.
 %
@@ -1114,7 +1114,7 @@ They are composed of several key components that work together to define and aut
 \paragraph{Members:}
 Members are the individual elements or dimensions within a multidimensional data set. 
 %
-They represent specific entities, such as products, countries, time periods, or accounts. 
+They represent specific elements, such as products, countries, time periods, or accounts. 
 %
 In the context of business rules, members are used to identify the source and target data elements involved in calculations, defining the scope of calculations and determining which data points are affected by the rule.
 
@@ -1212,9 +1212,9 @@ In this step we will use the Calculation Manager script or graphical interface t
 %
 By all means, the calculation logic should be written using the appropriate syntax, functions, operators, and control structures.
 %
-Now that we are sure that the calculations align with the purpose and scope of the rule, we can test and validate the business rule to ensure its correctness and accuracy. 
+Once that we are sure that the calculations align with the purpose and scope of the rule, we can test and validate the business rule to ensure its correctness and accuracy. 
 %
-To do so, we can use the validation tools provided by Oracle Cloud EPM to identify any syntax errors, formula inconsistencies, or logical issues. 
+To do so, we can use the validation tools provided by Oracle Cloud EPM to identify any syntax errors, formula inconsistencies or logical issues. 
 %
 At the same time, it is essential to review the calculations and logic to ensure they align with the intended purpose and produce the expected results.
 %
