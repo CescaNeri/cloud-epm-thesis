@@ -1,4 +1,4 @@
-# The Role of Enterprise Performance Management in Modern Businesses: A Case Study of Oracle Cloud EPM Implementation
+# Leveraging Oracle Cloud EPM Business Rules for Efficient Planning: Insights and Implementation Strategy
 
 This thesis explores the importance of Enterprise Performance Management in modern businesses for planning, reporting and forecasting purposes.
 Specifically, this thesis will focus on a case study of Oracle Cloud implementation in a business to illustrate how EPM solutions can improve organizational performance. 
