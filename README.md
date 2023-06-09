@@ -8,8 +8,8 @@ Specifically, this thesis will focus on a case study of Oracle Cloud implementat
 - [Introduction](#introduction)
 - [Literature Review](#literature-review)
 - [Methodology](#methodology)
-- [EPM Implementation Project: A Global Perspective](#epm-implementation-project:-a-global-perspective)
-- [A Practical Journey: My Role in the Implementation Process](#a-practical-journey:-my-role-in-the-implemenation-process)
+- [EPM Implementation Project: A Global Perspective](#epm-implementation-project-a-global-perspective)
+- [A Practical Journey: My Role in the Implementation Process](#a-practical-journey-my-role-in-the-implemenation-process)
 - [Conclusions](#conclusions)
 
 ## Introduction
