@@ -8,7 +8,8 @@ Specifically, this thesis will focus on a case study of Oracle Cloud implementat
 - [Introduction](#introduction)
 - [Literature Review](#literature-review)
 - [Methodology](#methodology)
-- [Case Study: Oracle Cloud EPM Implementation](#case-study-oracle-cloud-epm-implementation)
+- [EPM Implementation Project: A Global Perspective](#epm-implementation-project:-a-global-perspective)
+- [A Practical Journey: My Role in the Implementation Process](#a-practical-journey:-my-role-in-the-implemenation-process)
 - [Conclusions](#conclusions)
 
 ## Introduction
@@ -23,9 +24,13 @@ This section reviews the literature on Enterprise Performance Management, includ
 
 The methodology section outlines the approach and methodology used for the  implementation of an Enterprise Performance Management solution in a company.
 
-## Case Study: Oracle Cloud EPM Implementation
+## EPM Implementation Project: A Global Perspective
 
 This section presents the case study of Oracle Cloud implementation in a business, including the company background and context, the EPM solution selection and the implementation process. It also analyzes key features and functionalities of the implemented EPM solution, investigating the impact of the EPM solution on the company's performance and the best practices for EPM implementation. 
+
+## A Practical Journey: My Role in the Implementation Process
+
+This section focuses on the my personal involvement in the implementation project during the internship experience. It highlights the specific tasks, experiences, and challenges encountered throughout the project, discussing the practical aspects of the implementation, lessons learned, and best practices.
 
 ## Conclusions
 
