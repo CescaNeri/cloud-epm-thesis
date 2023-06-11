@@ -1248,9 +1248,9 @@ This chapter delves into my contributions and experiences during the internship 
 %
 While working on various sections of the EPM solution, these two implementations emerged as particularly relevant, showcasing how Oracle Cloud EPM can meet specific needs of customers.
 %
-The chapter begins by providing an overview of the importance of cost allocation and intercompany management in the context of EPM. 
+The chapter begins by providing an overview of the importance of cost allocation and intercompany management in the context of Enterprise Performance Management. 
 %
-Then, it highlights the challenges and complexities associated with these areas and delves into my practical journey in addressing them during the implementation project.
+Then, it highlights the challenges and complexities associated with these areas and delves into my practical journey in addressing them during the implementation process.
 %
 Furthermore, it offers insights into the strategies, methodologies, and tools employed to establish efficient cost allocation processes and streamline intercompany transactions, while discussing the challenges encountered during the implementation.
 %
@@ -1272,20 +1272,20 @@ These policies take into account various factors such as the nature of business 
 To define such policies, the holding group undertook the following steps:
 
 \begin{enumerate}
-    \item Identifying cost drivers: Cost drivers are the factors that directly influence the recording of costs. Here, the Group identified three variables as driver, which are Brand, Geography and Channel of Distribution.
-    \item Allocating direct costs: Direct costs, which can be easily attributed to specific departments, are allocated based on a straightforward allocation basis.
-    \item Allocating indirect costs: Indirect costs, which cannot be directly attributed to specific areas, require more complex allocation methods. These methods involve the use of allocation drivers that reflect the usage or benefit received by different departments.
-    \item Determining granularity level: The granularity level refers to the degree of detail at which costs are allocated within the holding group. 
+    \item Identifying cost drivers: cost drivers are the factors that directly influence the recording of costs. Here, the Group identified three variables as driver, which are Brand, Geography and Channel of Distribution.
+    \item Allocating direct costs: direct costs, which can be easily attributed to specific departments, are allocated based on a straightforward allocation basis.
+    \item Allocating indirect costs: indirect costs, which cannot be directly attributed to specific areas, require more complex allocation methods. These methods involve the use of allocation drivers that reflect the usage or benefit received by different departments.
+    \item Determining granularity level: the granularity level refers to the degree of detail at which costs are allocated within the holding group. 
 \end{enumerate}
 
 % What the customer want
-The Holding Group aims to establish an automated system that can accurately allocate costs based on predefined rules, taking into account the validity of drivers with respect to the starting intersections.
+The Holding Group aims at establishing an automated system that can accurately allocate costs based on predefined rules, taking into account the validity of drivers with respect to the starting intersections to allocate.
 %
 By implementing this system, the holding group seeks to achieve greater efficiency, accuracy, and transparency in their cost allocation practices.
 %
-At the same time,  by establishing clear rules and leveraging the platform's capabilities, they aim to streamline their financial processes, improve decision-making, and gain better insights into the performance and profitability of the entities within the holding group.
+At the same time,  by establishing clear rules and leveraging the platform's capabilities, they aim to streamline their financial processes, improve decision-making, and gain better insights into the performance and profitability of the entities within the Holding Group.
 
-The holding group has identified three key dimensions for cost allocation: brand, geography, and channel. 
+The Holding Group has identified three key dimensions for cost allocation: Brand, Geography, and Channel. 
 %
 For each dimension, they have categorized the starting intersections into three types: 
 
@@ -1310,7 +1310,7 @@ Figure \ref{fig:combos} displays all the possible combinations to which the cost
 
 One of the significant challenges faced during the cost allocation process is the lack of detailed information in the intersections of the variables Brand, Geography, and Channel.
 %
-This limitation arises from the fact that different entities within the group employ diverse tools for collecting financial data and, at the same time, each entity follows its own business policy, resulting in variations in the granularity levels at which data is collected.
+This limitation arises from the fact that different entities within the Group employ different tools for collecting financial data and, at the same time, each entity follows its own business policy, resulting in variations in the granularity levels at which data is collected.
 %
 In the context of cost allocation, it refers to the extent to which expenses are tracked and categorized based on various dimensions and explains the presence of different types of intersections to allocate based on the different detail level.
 %
@@ -1345,15 +1345,76 @@ The system will incorporate specific rules that govern the validity of drivers b
 \end{figure}
 
 Figure \ref{fig:driver} illustrates the validity of the drivers based on the combinations of Brand, Geography and Channel for the intersections to allocate.
+%
+As we can see, the different drivers allocate costs in different destinations based on the nature of the  starting intersection:
+%
+A specific driver is valid with a specific member only if they are equivalent; we cannot move a cost from a specific Brand, Geography or Channel to another one.
+%
+On the contrary, when the detail for a dimension is not given (No Member), the cost can be allocated on any specific member or combination of specific members.
+%
+With Members to allocate, where the detail of the dimension is of high level, the specific driver is valid only if the member on which the cost should be allocated belong to the same group of the Member to Allocate.
+%
+For example, a cost with EMEA as member of the Geography dimension, can be allocated only on countries which belong to the EMEA geographical grouping (Europe, Middle East and Africa).
+%
+The same guiding principle goes for multiple driver, meaning that a Member to Allocate can be allocated on multiple specific members as long as they belong to the same group for that dimension.
+%
+Ultimately, ``Driver ALL''is always valid and allocates the cost on the same member of the starting intersection for the dimension in which it is used.
 
-to be continued
- 
-% Define the task
- 
-% Describe the activities performed
+As a general rule, the cost for a specific intersection of Brand, Geography and Channel can be allocated only if the driver covers the intersection entirely.
+%
+For instance, figure \ref{fig:allocation} exhibits two examples of allocations: as we can see, both cases starts from a cost to allocate that has a specific Brand (Brand A), EMEA and E-commerce as a starting intersection for the dimensions Brand, Geography and Channel, which amounts to € 1,000.00.
+%
+The drivers for both the cases are composed of a specific Brand, a multiple driver for Geography and a ``Driver All'' for the Channel dimension.
+%
+Specifically for the first case, 70\% of the cost should be allocated on the intersection ``Brand A, Spain, E-commerce'' and the remaining 30\% on the intersection ``Brand A, China, E-commerce'', while in the second case, 70\% of the cost belongs to ``Brand A, Spain, E-commerce'' and 30\% goes to ``Brand A, Germany, E-commerce''.
+%
+Nevertheless, the first case represents an invalid driver and only the driver of the second case can correclty allocate the cost.
+%
+The first driver does not cover the intersection entirely as 30\% of the driver is invalid, due to the fact that China does not belong to EMEA but is part of the APAC group.
+%
+The second driver, on the other hand, accurately allocate the cost entirely as it meets all the rules that govern the validity of the drivers.
 
-% Outline the result
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/allocation.pdf}
+	\caption{Valid and Invalid Allocation Example}
+	\label{fig:allocation}
+\end{figure}
 
+The first step for the implementation process of the allocation system involved the gathering of the requirements from the client in order to understand deeply the business processes, financial goals and the allocation needs.
+%
+Once the allocation logics have been defined, the next step is to design the solution.
+%
+This involves identifying all the possible combinations of drivers and intersections to allocate, as well as defining the technical elements needed for the implementation.
+%
+In particular, the key elements needed for the allocation system, include:
+
+\begin{enumerate}
+    \item Business Rules: the allocation process was split into two phases, each of which was carried out through a specific business rule.
+    \item Members: several new members were added to the relevant dimensions, including Brand, Geography, Channel and some technical dimensions which allow the correct functioning of the rule.
+    \item User Defined Attributes (UDA): to identify the members to allocate, a new UDA was added to the specific members.
+    \item Forms: an ad hoc input form was designed to allow users to input the drivers for the allocation.
+    \item Reports: some reports were created in order to check the outcome of the allocation process.
+\end{enumerate}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/process.pdf}
+	\caption{Steps Involved in the Allocation Process}
+	\label{fig:process}
+\end{figure}
+
+To effectively manage the allocation system, the process was broken down into two tasks carried out by the respective business rule.
+%
+The first rule deals with the driver while the second one performs the allocation of the cost.
+%
+Drivers are defined by the Holding Group each month and are designed in order to cover all the combinations of accounts and cost centers (one driver for each intersection).
+%
+The first rule is purely technical and functional to the second one: it analyzes the composition of the driver and assigns some flags on predefined support intersections which will be used by the second rule to complete the allocation process.
+%
+These numerical flags simply categorize each dimension of the driver according to weather the driver is specific, all or multiple.
+
+tbc
 
 \section{Intercompany management}
 
