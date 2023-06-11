@@ -1404,23 +1404,88 @@ In particular, the key elements needed for the allocation system, include:
 	\label{fig:process}
 \end{figure}
 
-To effectively manage the allocation system, the process was broken down into two tasks carried out by the respective business rule.
-%
-The first rule deals with the driver while the second one performs the allocation of the cost.
+To effectively manage the allocation system, the process was broken down into two tasks carried out by two respective business rule: the first rule deals with the driver while the second one performs the allocation of the cost.
 %
 Drivers are defined by the Holding Group each month and are designed in order to cover all the combinations of accounts and cost centers (one driver for each intersection).
 %
 The first rule is purely technical and functional to the second one: it analyzes the composition of the driver and assigns some flags on predefined support intersections which will be used by the second rule to complete the allocation process.
 %
-These numerical flags simply categorize each dimension of the driver according to weather the driver is specific, all or multiple.
+These numerical flags simply categorize each dimension of the driver according to whether the driver is specific, all or multiple.
+%
+At the same time, it calculates and stores the allocation percentage for each intersection of the driver, which will be multiplied by the amount of the cost to be allocate during the second phase.
 
-tbc
+Regarding the second rule, figure \ref{fig:process} displays the key logical steps performed by the rule, starting from the retrieval of the value of the driver until the allocation of the cost.
+%
+The rule starts by checking whether the cost is to allocate, that is when at least one dimension is either ``No Member'' or ``Member to allocate'' and, if this is the case, ti check the driver validity.
+%
+To do so, it uses the numerical flags applied by the previous rule and compares the driver combination to the combination of Brand, Geography and Channel of the starting intersection to allocate.
+%
+Once the validity is assessed, the rule proceeds to verify that the driver covers the intersection to allocate entirely.
+%
+Finally, the rule concludes the process with the cancellation of the cost on the starting intersection, which will be distributed across the dimensions based on the percentages of the driver.
+%
+As soon as one of the requirements is not met, the rule stops and the cost will remain on the starting intersection.
+
+After implementing the business rules, it is crucial to thoroughly test the allocation system.
+%
+This involves performing tests with massive launches of data to simulate real-world scenarios, with the purpose of verifying the system's performance, identify any bottlenecks or errors, and ensure that the allocation calculations are accurate and consistent across the various dimensions. 
+%
+Testing also helps in uncovering any unforeseen issues that may arise during the allocation process.
+%
+Once the allocation system has been tested and validated, the focus shifts to optimizing its performance. 
+%
+This was done by identifying and addressing any performance bottlenecks and by fine-tuning the system configuration and calculations to achieve a discrete level of efficiency and responsiveness. 
+%
+The final step in the implementation process was conducting a User Acceptance Testing (UAT) with the client: during the UAT, the client verified that the allocation system meets the agreed requirements and performs as expected. 
+%
+During this phase, feedbacks about the functioning of the system are of key importance in order to carry out any necessary adjustments or refinements to the rules.
+%
+Once the client approves the system, it is ready for release, meaning that the allocation system is deployed in the production environment, enabling users to leverage its capabilities for accurate and efficient allocation of costs across the dimensions of interest.
 
 \section{Intercompany management}
 
 % Describe Intercompany Management
+Intercompany transactions refer to financial transactions that occur between entities within the same parent company. 
+%
+These transactions can involve the transfer of goods, services, or funds between related entities.
+%
+This concept plays a crucial role within the Holding Group, as it enables the coordination and collaboration between different entities while maintaining centralized control and ownership.
+%
+By all means, intercompany transactions are a common occurrence, especially for Holding Group with this size and expansion level.
+%
+These transactions serve various purposes, such as the sharing of resources and services or the transfer of assets across the entities. 
+%
+However, it is important to note that intercompany transactions can introduce complexities in financial reporting and consolidation: when intercompany transactions are not appropriately accounted for and eliminated during the consolidation process, they can distort the financial statements and create an artificial economic value within the group.
+%
+Eliminating intercompany transactions during the consolidation process is crucial for the Holding Group as it helps prevent the duplication of revenues, expenses, assets, and liabilities, which can lead to inflated financial results.
+%
+At the same time, eliminating intercompany transactions supports the goal of creating a clear and transparent view of the group's operations and finances, allowing stakeholders to evaluate the group's financial performance through reliable financial information.
 
 % What the customer want
+To achieve the elimination of intercompany transactions, the Holding Groups requested a specialized system which is able to automate the process of identifying, matching, and eliminating intercompany transactions during the consolidation process.
+%
+The implementation of such system posed several challenges due to the nature of intercompany transactions and the complexities associated with data protection within the Holding Group.
+%
+Intercompany transactions involve a two-way relationship between entities: on one side, an entity records a revenue in its local currency, while on the other side, another entity incurs a cost. 
+%
+This creates a complex intersection of financial relationships that need to be accurately identified, matched, and eliminated during the consolidation process.
+%
+The complexity increases further when considering the concept of data protection: each entity within the group operates independently and has its own set of financial data, which is confidential and sensitive. 
+%
+As a result, the different entities of the group cannot have unrestricted access to the financial data of other entities.
+%
+The challenge arises from the fact that the intercompany elimination process requires access to financial data from multiple entities to accurately identify and eliminate intercompany transactions.
+%
+However, allowing unrestricted access to financial data poses a significant risk to data privacy and security.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{figures/intercompany.pdf}
+	\caption{Intercompany Elimination Logic}
+	\label{fig:icp}
+\end{figure}
+
+
  
 % Define the task
  
