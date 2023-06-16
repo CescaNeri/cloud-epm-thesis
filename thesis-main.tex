@@ -1261,27 +1261,27 @@ In conclusion, this chapter delves into best practices and lessons learned throu
 % Describe Cost Allocation
 Cost allocation is a financial management process that involves assigning and distributing costs to various departments, divisions, products, or projects within an organization. 
 %
-In a holding group, cost allocation plays a crucial role in accurately determining the financial performance and profitability of each entity.
+Within the Holding Group, cost allocation plays a crucial role in accurately determining the financial performance and profitability of each entity.
 %
 It helps in evaluating the contribution of each entity and each Brand to the overall success of the group, enabling effective decision-making regarding resource allocation, investment opportunities, and strategic planning.
 %
 Cost allocation policies can be personalized to align with the specific needs and characteristics of the company. 
 %
-These policies take into account various factors such as the nature of business operations, the structure of the holding group, the legal relationship between entities and the strategic objectives of the parent company.
+These policies take into account various factors such as the nature of business operations, the structure of the Group, the legal relationship between entities and the strategic objectives of the parent company.
 
-To define such policies, the holding group undertook the following steps:
+To define such policies, the Holding Group undertook the following steps:
 
 \begin{enumerate}
     \item Identifying cost drivers: cost drivers are the factors that directly influence the recording of costs. Here, the Group identified three variables as driver, which are Brand, Geography and Channel of Distribution.
     \item Allocating direct costs: direct costs, which can be easily attributed to specific departments, are allocated based on a straightforward allocation basis.
     \item Allocating indirect costs: indirect costs, which cannot be directly attributed to specific areas, require more complex allocation methods. These methods involve the use of allocation drivers that reflect the usage or benefit received by different departments.
-    \item Determining granularity level: the granularity level refers to the degree of detail at which costs are allocated within the holding group. 
+    \item Determining granularity level: the granularity level refers to the degree of detail at which costs are allocated within the Group. 
 \end{enumerate}
 
 % What the customer want
 The Holding Group aims at establishing an automated system that can accurately allocate costs based on predefined rules, taking into account the validity of drivers with respect to the starting intersections to allocate.
 %
-By implementing this system, the holding group seeks to achieve greater efficiency, accuracy, and transparency in their cost allocation practices.
+By implementing this system, the Holding Group seeks to achieve greater efficiency, accuracy, and transparency in their cost allocation practices.
 %
 At the same time,  by establishing clear rules and leveraging the platform's capabilities, they aim to streamline their financial processes, improve decision-making, and gain better insights into the performance and profitability of the entities within the Holding Group.
 
@@ -1318,7 +1318,7 @@ For example, one entity may have a more granular approach, capturing expenses at
 %
 On the other hand, another entity might adopt a more aggregated approach, grouping expenses at a higher level and lacking the necessary level of detail in these intersections.
 %
-The lack of consistent granularity levels across the holding group poses challenges when it comes to allocate costs.
+The lack of consistent granularity levels across the Holding Group poses challenges when it comes to allocate costs.
 %
 It becomes difficult to accurately allocate expenses when there are discrepancies in the level of detail captured for the variables considered, which hampers the ability to precisely attribute costs to specific intersections.
 %
@@ -1481,17 +1481,99 @@ However, allowing unrestricted access to financial data poses a significant risk
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{figures/intercompany.pdf}
-	\caption{Intercompany Elimination Logic}
+	\caption{Intercompany Transaction Logic}
 	\label{fig:icp}
 \end{figure}
 
+Figure \ref{fig:icp} represents the intercompany transaction logic requested by the Holding Group.
+%
+The table represents the value of Revenues, Cost of Good Sold (COGS) and Gross Margin, for two entities (Entity 1 and Entity 2), highlighting the presence of the intercompany.
+%
+In this example, Entity 1 registered a sale transaction of € 500.00 with Entity 2, which registered a COGS for the same amount. 
+%
+At the same time, Entity 1 registered percentage margin of 3\%, meaning that the COGS for that transaction amounts to € 485.00 (97\% of the revenue).
+%
+The remaining revenue margin is reflected in the financial view of the Group by checking the difference between the Gross Margin towards third parties and those towards intercompany transactions.
+%
+This statutory view serves as the starting block on which the consolidated process is built, which represents the overall financial position of the Group as a whole.
+%
+It provides a comprehensive view that combines the financial information of all the entities and is built by distinguishing two distinct perspectives: the Entity View and the Brand View.
 
- 
-% Define the task
- 
-% Describe the activities performed
+The Entity View focuses on the values at the entity level, inclusive of intercompany transactions.
+%
+In this perspective, each individual entity is treated as a separate reporting unit and the financial information of each entity, including its assets, liabilities, revenues, and expenses, is consolidated without any eliminations of intercompany transactions. 
+%
+This approach provides a detailed understanding of each entity's financial standing and performance, allowing stakeholders to assess the individual contribution of each entity to the group as a whole.
+%
+On the other hand, the Brand View takes into consideration the values at the brand level, with the elimination of intercompany transactions among entities of the same brand group. 
+%
+Under this perspective, entities within are grouped based on their shared brand and intercompany transactions between entities belonging to the same brand group are eliminated to avoid double-counting and provide a more accurate representation of the brand's financial position and performance. 
+%
+This approach allows stakeholders to evaluate the financial results specifically related to a particular brand within the holding group, enabling strategic decision-making and brand-level performance analysis.
 
-% Outline the result
+Both the entity view and brand view of the consolidated financial statement offer unique insights and serve different purposes. 
+%
+The Entity View provides a granular understanding of each entity's financial performance, while the Brand View enables a focused assessment of the performance and financial health of specific brands within the  Group. 
+%
+The choice between these perspectives depends on the specific needs of stakeholders and the level of detail required for decision-making and analysis.
+%
+It is worth noting that the Entity View and Brand View are not mutually exclusive, and both perspectives can be presented within a consolidated financial statement. 
+%
+In this case, the consolidated financial statement includes separate sections that highlight the entity-level financial information as well as the brand-level financial information after the elimination of intercompany transactions. 
+%
+This dual perspective provides a comprehensive picture of the holding group's financial performance, encompassing both the individual entities and the brands operating within the group.
+
+Concerning the implementation process of this intercompany solution, to overcome the issue of the restricted access on data belonging to different entities, the system is designed to allow data to be inputted by only one entity, specifically the one responsible for registering the cost of goods sold (COGS).
+%
+In this system, the revenues of other entities can be automatically calculated based on a predefined business rule that extract the relevant entity based on the intersection of dimensions in which the COGS is registered.
+%
+By designating one entity as the sole provider of COGS data, the system reduces redundancy and potential errors that may arise from multiple entities independently recording the same transaction. 
+%
+This entity becomes the source of reference for determining the cost of goods sold across the group.
+%
+At the same time, the entities which register the revenue have the possibility to input the margin which will adjust the value of the cogs related to the specific intercompany transaction.
+%
+When the COGS data is registered by the designated entity, the intercompany management system identifies the appropriate dimensions associated with the transaction and the business rules will determine the entities that are impacted by the transaction and calculate the corresponding revenues for each entity.
+%
+This automated approach eliminates the need for manual data input and revenue calculations across multiple entities, thus reducing the potential for errors and ensuring consistency in the intercompany reconciliation process. 
+%
+Furthermore, it provides real-time visibility into intercompany transactions and facilitates efficient and accurate financial reporting and analysis.
+
+\section{Best practices for implementation}
+
+Throughout my experience in Enterprise Performance Management teat, I gained valuable insights into best practices for implementation and stakeholders management.
+%
+Here, I reflect on these key takeaways, which encompass data accuracy, stakeholder engagement, clear communication, and continuous improvement.
+
+\paragraph{Data Accuracy:}
+One of the fundamental aspects of successful implementation and, in particular, for the implementation of the cost allocation and intercompany management systems, is ensuring data accuracy. 
+%
+When manipulating data through business rules in an Oracle Cloud EPM implementation, it is essential to prioritize data accuracy and avoid permanently modifying meaningful data. 
+%
+Before deploying business rules to production, it is important to create test scenarios that cover various data scenarios and performing extensive testing to ensure the rules produce the expected outcomes. 
+%
+By validating business rules against known data sets, it is possible to identify any discrepancies or unintended consequences and make necessary adjustments to maintain data accuracy.
+
+\paragraph{Stakeholder Engagement:}
+Engaging stakeholders at various levels is vital for the success of the implementations. 
+%
+As I worked on the project, I realized the significance of involving key stakeholders from different departments in the requirements gathering, design, and testing phases. 
+%
+By actively involving stakeholders, we could gain a deeper understanding of their specific needs and challenges, enabling us to tailor the EPM solution to meet the requirements of the Group effectively.
+
+\paragraph{Clear Communication:}
+Clear and effective communication played a key role in the success of the implementations. 
+%
+This involved breaking down complex concepts into easily understandable terms, providing regular updates on the implementation progress, and addressing any concerns or questions of the client promptly. 
+%
+By fostering transparent and open communication channels, we could ensure alignment among stakeholders and maintain their support throughout the implementation journey.
+
+\paragraph{Continuous Improvement:}
+The implementation of cost allocation and intercompany management is an iterative process that requires continuous improvement. 
+%
+As we encountered challenges and learned from the practical implementation experience, it became evident that ongoing optimization and refinement were necessary. 
+%
+This can be done by reviewing the implemented processes and monitoring their performance to identify areas for improvement. 
 
 %----------------------------------------------------------------------------------------
 \chapter{\conclusionsname}
