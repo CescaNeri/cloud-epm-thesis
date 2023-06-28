@@ -18,50 +18,29 @@
 
 \begin{acknowledgements}
 
-This thesis is linked to my curricular internship for the final examination carried out at PricewaterhouseCoopers (PwC) from January to March 2023.
-%
-During the internship experience at PwC Italy, I worked in the advisory-transformation Line of Service, cooperating with the Enterprise Performance Management - Financial Service (EPM-FS) team.
-%
-The EPM-FS team works for the main players in the financial sector and deal with business transformation projects which are aimed at re-engineering and optimizing the company's internal processes.
-%
-Along the internship period, I worked directly with the EPM team in a project concerning the Oracle Cloud EPM platform.
-%
-This project is addressed to an Italian Corporate Group which has more than 7,000 points of sale around the world. 
-%
-Due to corporate policy, the name, data and information of the Corporate Group to which the project is addressed, cannot be disclosed. 
-%
-It is important to note that respecting the privacy and confidentiality of companies' data is critical in maintaining their trust and credibility.
-%
-Therefore, throughout this thesis, I will be referring to the company only in general terms and avoiding the use of any identifying information or data. \\
-
-I would like to express my gratitude to PwC Italy for this opportunity, to the entire EPM team for welcoming me and making me feel like a part of the team, and my supervisor for his guidance and support throughout the internship. \\
-
-To be continued...
+%I would like to express my gratitude to PwC Italy for this opportunity, to the entire EPM team for welcoming me and making me feel like a part of the team, and my supervisor for his guidance and support throughout the internship. \\
 
 \end{acknowledgements}
 
 \begin{abstract}	
 
-This thesis explores the role of Enterprise Performance Management (EPM) solutions in modern businesses, ranging from planning, reporting and forecasting purposes. 
+This thesis explores the potential of leveraging Enterprise Performance Management (EPM) to enhance planning efficiency in modern businesses. 
 %
-The project was carried out using Oracle Cloud EPM, a cloud-based platform developed by Oracle Corporation, that offers an integrated suite of financial and operational planning and analysis tools.
+The project was carried out using Oracle Cloud EPM, a cloud-based platform developed by Oracle Corporation, which offers an integrated suite of financial and operational planning and analysis tools.
+%
+The study provides valuable insights and details on the implementation strategy specifically focused on harnessing the capabilities of Oracle Cloud EPM and its business rules for optimal planning outcomes.
 
-The thesis starts by providing an overview of Enterprise Performance Management and its importance in modern businesses. 
+The thesis starts by providing the background and significance of the project, highlighting the need for efficient planning in organizations. The scope and objectives of the study are defined, along with the project requirements. An overview of the methodology employed throughout the research is also provided.
 %
-It then delves into the benefits of using a cloud platform for EPM, including lower costs, increased flexibility, and easier scalability.
+The main focus of the thesis regards the exploration of how financial and operational processes are integrated in a single EPM solution, whilst using data coming from different sources.
+%
+It dives into the implementation of an EPM solution, with a specific focus on the role of business rules in driving efficient planning within Oracle Cloud EPM. 
+%
+The project involved working with a real-world organization to identify the planning needs and goals.
 
-The main focus of the thesis regards the exploration of how financial and operational processes are integrated in a single EPM solution, whilst using data coming from different sources. 
+The goal of this project is to provide a detailed exploration of the role of EPM solutions in modern business, with a focus on valuable insights and implementation strategies in the optimization of performance management.
 %
-The project involved working with a real-world client to identify the company planning needs and
-then manipulating dimensions, elements, and hierarchies to meet those needs.
-%
-The techniques used to create customized planning models for the client will be analyzed, including the use of pre-built templates and the creation of custom calculations and formulas.
-
-In addition to the technical aspects of the project, this thesis also explores the business benefits of using an integrated EPM solution, including better decision-making, improved financial performance, and increased visibility into operational processes.
-
-Overall, the goal of this project is to provide a detailed exploration of the role of EPM solutions in modern businesses, with a focus on the importance of using a cloud platform and integrating financial and operational processes in a single solution. 
-%
-The project, carried out using Oracle Cloud EPM, provides a practical example of how businesses can leverage EPM solutions to improve their financial and operational planning and analysis capabilities.
+The project provides a practical example of how businesses can leverage EPM solutions to improve their financial and operational planning and analysis capabilities.
 
 \end{abstract}
 
@@ -86,11 +65,27 @@ Optional. Max a few lines.
 \label{chap:introduction}
 %----------------------------------------------------------------------------------------
 
+This thesis is linked to my curricular internship for the final examination carried out at PricewaterhouseCoopers (PwC) from January to March 2023.
+%
+During the internship experience at PwC Italy, I worked in the advisory-transformation Line of Service, cooperating with the Enterprise Performance Management - Financial Service (EPM-FS) team.
+%
+The EPM-FS team works for the main players in the financial sector and deal with business transformation projects which are aimed at re-engineering and optimizing the company's internal processes.
+%
+Along the internship period, I worked directly with the EPM team in a project concerning the Oracle Cloud EPM platform.
+%
+This project is addressed to an Italian Holding Group which has more than 7,000 points of sale around the world. 
+%
+Due to corporate policy, the name, data and information of the Holding Group to which the project is addressed, cannot be disclosed. 
+%
+It is important to note that respecting the privacy and confidentiality of companies' data is critical in maintaining their trust and credibility.
+%
+Therefore, throughout this thesis, I will be referring to the company only in general terms and avoiding the use of any identifying information or data.
+
 In today's highly competitive business environment, effective performance management is essential for organizations to achieve their strategic goals and stay ahead of the competition.
 %
 With the advent of digital transformation, companies are now offered with huge opportunities from which they can benefit.
 %
-It is an inevitable change that organization must embrace to stay competitive and meet customer demands in the digital era.
+It is an inevitable change that organizations must embrace to stay competitive and meet customer demands in the digital era.
 %
 One of the way to go in order to thrive among rivals in turbulent markets is to excel at various performance dimensions. 
 %
@@ -100,9 +95,7 @@ These systems help companies to continuously react and adapt to external changes
 
 Enterprise and corporate performance and management methods can be viewed as the seamless integration of managerial systems. 
 %
-Each method should be embedded with business analytic operations like correlation, segmentation, regression and predictive analysis.
-%
-Performance management provides valuable data and insights that can help businesses make informed decisions by identifying trends, anticipating issues, and making adjustments to their strategy as needed.
+Each method should be embedded with business analytic operations to provide valuable data and insights that can help businesses make informed decisions by identifying trends, anticipating issues, and making adjustments to their strategy as needed.
 %
 Enterprise Performance Management (EPM) is an integral part of the success of modern enterprises as it helps organizations to gain visibility into their performance and to identify areas of improvement.
 %
@@ -110,21 +103,22 @@ It is a management approach that integrates multiple business processes and syst
 
 Enterprise Performance Management enables businesses to improve strategic decision-making, maximize their productivity and achieve the desired business results while ensuring that expenses are minimized and that the best use of resources is made.
 %
-It assists businesses to effectively forecast and plan for their future financial performance, helping hem to ensure compliance and reduce risk. 
+It assists businesses to effectively forecast and plan for their future financial performance, helping them to ensure compliance and reduce risk. 
 %
 The advantages of EPM are numerous and make it a valuable tool for organizations of all sizes.
-The aim of this thesis is to investigate the role of EPM in modern businesses and the benefits and hallenges of implementing EPM solutions. 
-%
-Specifically, this thesis will focus on a case study of Oracle Cloud implementation in a business to llustrate how EPM solutions can improve organizational performance. 
 
-Oracle Cloud is a leading cloud-based EPM solution that provides organizations with a comprehensive suite f financial and operational performance management applications.
+The aim of this thesis is to investigate the role of EPM in modern businesses and the benefits and challenges of implementing EPM solutions. 
+%
+Specifically, this thesis will focus on a practical case of Oracle Cloud implementation for a business to illustrate how EPM solutions can improve organizational performance. 
+
+Oracle Cloud is a leading cloud-based EPM solution that provides organizations with a comprehensive suite of financial and operational performance management applications.
 %
 Oracle Cloud EPM provides a flexible and scalable solution that can meet the needs of organizations of all sizes.
 %
 It offers various tools and solutions that allow companies to plan, budget, forecast, and report on their financial and operational performance.
 %
 The implementation of an Oracle Cloud EPM solution involves a series of steps throughout which organizations must work closely with their implementation partner to ensure that the solution is tailored to their specific needs and requirements.
-
+%
 Using a cloud platform to implement an EPM solution can provide numerous benefits for the organization. 
 %
 One of the primary advantages regards the ability to access critical data and applications from anywhere and at anytime.
@@ -135,50 +129,75 @@ Cloud-based EPM solutions also enable organizations to leverage the latest techn
 %
 Cloud providers typically offer high levels of security and compliance, which can help organizations protect sensitive data and maintain regulatory compliance. 
 
-%
+\newpage
+
 \paragraph{Thesis Structure.}
 %
 
 Accordingly, the reminder of this thesis is structures as follows:
 %
-\Cref{chap:introduction} will provide an overview of the background and significance of the topic, scope and limitations of the study, and an overview of the methodology.
+\Cref{chap:introduction} provides an overview of the background and significance of the project.
 %
-\Cref{chap:background} will review the literature on Enterprise Performance Management, including the definition and concepts of EPM and its evolution in modern businesses. 
+The chapter outlines the scope and objectives of the project, highlighting the specific areas that will be addressed. 
 %
-It also provides an overview on Oracle Cloud and its EPM solutions, together with the benefits and challenges of implementing EPM in businesses. 
+Additionally, the project requirements are defined, and an overview of the methodology used in the study is presented. 
 %
-\Cref{chap:design} will describe the approach and methodology used for the implementation of and EPM solution to a company.
+This chapter serves as an introduction to the thesis, setting the stage for the subsequent chapters to delve deeper into the topic of efficient planning using Oracle Cloud EPM.
 %
-\Cref{chap:implementation} will present the implementation process of an EPM solution for a Holding Group, including the EPM solution selection, the implementation process with key features and functionalities and a deep dive on the elements of the solution.
+\Cref{chap:epm} explores the concept of Enterprise Performance Management. 
 %
-\Cref{chap:cmyactivity} will focus on the my personal involvement in the implementation project during the internship experience. 
+It defines EPM and provides an understanding of its key concepts and components. 
 %
-It highlights the specific tasks, experiences, and challenges encountered throughout the project, discussing the practical aspects of the implementation, lessons learned, and best practices.
+The chapter discusses the benefits that organizations can achieve by implementing EPM and highlights the challenges that may arise during the implementation process. 
 %
-Finally, \Cref{chap:conclusions} concludes the thesis summarizing the main concepts ans discussing the implication for theory and practice.
+This chapter aims to establish a foundation of knowledge regarding EPM, laying the groundwork for the subsequent chapters.
+%
+\Cref{chap:implementation} focuses on the implementation of Oracle Cloud EPM. 
+%
+It begins with discussing the process of selecting an EPM solution and outlines the key considerations involved in the decision-making process. 
+%
+The chapter then explores the elements of the implementation process, providing insights into the steps required to successfully deploy Oracle Cloud EPM. 
+%
+Additionally, it discusses the importance of building a comprehensive EPM solution, emphasizing the integration of various modules and functionalities. 
+%
+The chapter also addresses data transformation and calculations, introducing Business Rules and highlighting their significance in optimizing the use of Oracle Cloud EPM.
+%
+\Cref{chap:cmyactivity} delves into the concept of Business Rules and how they can enhance efficient planning within Oracle Cloud EPM. 
+%
+It examines two practical implementations: cost allocation and intercompany management. 
+%
+The chapter explores the implementation of business rules in these domains, providing insights into the best practices and strategies for achieving efficient planning outcomes. 
+%
+By exploring these specific use cases, the chapter aims to provide practical guidance and actionable recommendations for leveraging Oracle Cloud EPM business rules.
+%
+Finally, \Cref{chap:conclusions} offers a summary of the entire project. 
+%
+It recaps the main points discussed in each chapter, highlighting the key findings and insights. 
+%
+The chapter also includes a discussion section where the implications of the research findings are analyzed and interpreted. 
+%
+Finally, the chapter presents concluding thoughts, offering a reflection on the overall study and its contribution to the field of efficient planning using Oracle Cloud EPM.
 
 \section{Background and significance of the study}
 
 Enterprise Performance Management is a management approach that involves using data and analytics to monitor, measure, and improve an organization's performance. 
 %
-It integrates various management processes, including financial planning, budgeting, forecasting, risk management, and performance measurement, to help organizations align their goals with their strategies and improve their overall performance.
+It integrates various management processes, including financial planning, budgeting, forecasting, risk management, and performance measurement, to help organizations to align their goals with their strategies and improve their overall performance.
 %
 To access and analyze data more quickly and accurately, organizations typically use software applications that automate and streamline this process.
-
-These application often include dashboards, pre-built report templates and other tools that provide real-time insights into organizational performance.
-
-The ultimate goal of EPM is to help organizations to achieve their strategic objectives and optimize their performance, whether that be in terms of financial performance, customer satisfaction, operational efficiency, or other key performance indicators. 
+%
+These applications often include dashboards, pre-built report templates and other tools that provide real-time insights into organizational performance.
 %
 By using data-driven insights and decision-making, EPM enables organizations to more effectively manage risks, allocate resources, and make strategic decisions that improve their overall performance and competitiveness in the marketplace.
 
 Enterprise Performance Management operates within a complex and dynamic business environment, characterized by a number of key trends and challenges. 
 %
 One of the most significant trends in recent years has been the growing adoption of cloud technology for enterprise applications, including EPM. 
-
+%
 Cloud-based EPM solutions offer many advantages over traditional on-premises systems, including greater scalability, flexibility, and accessibility, as well as lower costs and reduced IT complexity. 
 %
 As a result, more and more organizations are turning to cloud-based EPM solutions to improve their performance management processes.
-
+%
 Another key trend in modern business is the growing importance of data-driven decision making. 
 %
 With the increasing availability of data and advanced analytical tools, organizations are able to gain deeper insights into their operations and performance, and make more informed decisions. 
@@ -192,50 +211,261 @@ In addition to these trends, EPM also operates within a business environment tha
 The need for businesses to be agile and responsive to these changes is an ongoing challenge, and EPM can help address this by providing a flexible and adaptable framework for performance management. 
 %
 By monitoring key performance indicators and providing real-time insights into performance, EPM enables businesses to quickly identify and respond to changes in market conditions, and to make strategic decisions that keep them ahead of the competition.
+%
+The context in which EPM operates is characterized by a rapidly evolving business environment, where technology, data, and agility are critical to success. 
+%
+It plays a critical role in helping organizations to adapt to these trends and challenges, by providing a data-driven and agile approach to performance management that enables them to optimize their operations, resources, and strategic decision making.
 
-Overall, the context in which EPM operates is characterized by a rapidly evolving business environment, where technology, data, and agility are critical to success. 
+Over the years, Enterprise Performance Management has evolved from traditional financial-centric approaches to a more holistic and integrated framework that encompasses financial, operational, and strategic aspects of performance management. 
 %
-Enterprise Performance Management plays a critical role in helping organizations to adapt to these trends and challenges, by providing a data-driven and agile approach to performance management that enables them to optimize their operations, resources, and strategic decision making.
+It has moved beyond mere financial reporting and budgeting to encompass performance measurement, analysis, forecasting, and decision support across all functional areas of an organization.
+%
+Moreover, the digital revolution has significantly impacted the evolution of EPM. 
+%
+The availability of vast amounts of data, advancements in data analytics, and the proliferation of cloud computing have transformed how organizations collect, analyze, and utilize performance-related information.
 
-\section{Scope and limitations of the study}
+In a 2021 press release, KPMG\footnote{KPMG is one of the leading global professional services firms, providing audit, tax, and advisory services to organizations across various industries. Known for its extensive knowledge in areas such as financial reporting, risk management, and business transformation, KPMG plays a significant role in shaping the business landscape and driving innovation.} outlined how enterprise performance management has evolved as a result of the post-pandemic landscape, presenting new opportunities for organizations \cite{kpmg2021evolution}.
+%
+In the midst of the ongoing pandemic, organizations were grappling with unprecedented levels of uncertainty that had disrupted business operations and strategies. 
+%
+As the future remains uncertain, the survival and success of most organizations now hinge on their ability to engage in effective scenario planning.
+%
+Scenario planning relies heavily on accurate and reliable data to develop realistic plans, budgets, and forecasts. 
+%
+Organizations must establish robust data governance frameworks that ensure the availability of good-quality internal and external data. 
+%
+At the same time, with rapidly changing circumstances, organizations need to adopt a dynamic approach to planning and forecasting to respond effectively to evolving situations. 
+%
+Embracing scenario planning allows organizations to explore various potential future outcomes, develop resilient strategies, and gain a competitive edge: as uncertainties persist, organizations that prioritize scenario planning will be better equipped to thrive in changing circumstances and emerge stronger in the long run.
 
-The scope of the project includes different areas of focus that range from the definition of Enterprise Performance Management, its benefits, its implementation in companies and the future trends.
+In the present era, Enterprise Performance Management has undergone significant evolution. 
 %
-The thesis starts by defining what Enterprise Performance Management is and how it differs from the other management approaches in place.
+Despite the advancements in modern analytics and business intelligence, a considerable 54\% of finance organizations still encounter challenges in providing data that effectively supports stakeholders' decision-making. \cite{gartner2021report}
+%
+Often, the insights generated lack contextual information and are not easily comprehensible for the majority of users who primarily engage with pre-defined dashboards. 
+%
+Furthermore, certain organizations continue to rely on outdated systems, and the budgeting process can still consume up to four months to reach completion.
+%
+On a global scale, organizations that have embarked on their EPM journey have strategically shifted their focus from reactive and descriptive reporting to proactive and forward-looking prescriptive analysis. 
+%
+By devoting more time to providing forward-looking guidance, management can effectively capitalize on upcoming opportunities and gain more meaningful insights to support superior decision-making. 
+%
+This transformation can be achieved by harnessing the power of predictive and prescriptive analytics techniques, which enable organizations to anticipate future outcomes and prescribe optimal courses of action.
 
-Then, the project investigates the potential benefits that EPM can bring to modern businesses including enhanced decision-making, better alignment of business objectives with strategies, increased efficiency and improved performance.
-%
-It then explores the challenges associated with implementing EPM solutions in businesses which, for example, include issues related to data collection and analysis, performance measurement, reporting and the use of technologies and specific software.
-%
-Data is the core element of a performance management system; in order to have accurate reports and effective forecasts, it is important to have large quantities of data which which the EPM system is populated. 
+\section{Scope and objectives of the project}
 
-The project aims at analyzing a case study regarding the implementation of an EPM solution in a company.
+The EPM implementation project has been implemented for a Holding Group, which is a global leader in high-end design with pro-forma revenues of \$ 960 million in 2022.
 %
-Then, it explores the future trends and challenges that are likely to impact the role of Enterprise Performance Management in relation with emerging technologies, changing business models, and evolving business needs and expectations.
+The Holding Group is characterised by an unparalleled portfolio of iconic Brands and a multi-channel distribution approach across the globe.
+%
+Its mission is to provide long-lasting value for clients through an innovative manufacturing process carried out by the Brands which compose the Holding Group.
+%
+It is composed of ten brands which own a total amount of ten factory locations in Italy, Spain, Denmark and US.
+%
+The Holding Group has a presence in more than 130 countries with more than 7,000 points of sale worldwide. 
+%
+They created an exclusive network of highly professional dealers and mono-brand stores, consolidating its international presence with the opening of wholly owned flag-ship stores in leading capital cities around the world.
 
-There are some limitations related to the study that should be taken into account.
+Their goal is to foster an ecosystem which enables their companies to grow into a strong worldwide presence with both reach and scale by curating a powerful and iconic culture across the Brands.
 %
-Such limitations include both extrinsic and intrinsic elements of the project, ranging from the access to large amounts of data, the complexity of the topic investigated and the diversity of applications involved.
+This ecosystem has been geared towards the success of each individual Brand, so that the Holding Group invests its resources at Brand level, boosting the creative process and the customer experience.
+%
+By bringing together multiple Brands and helping them achieving their best, the Holding Group is a global leader in an otherwise traditionally highly fragmented market of high-end design. 
+%
+With a strong cultural heritage, characterised by multi-channel distribution and diversified product categories, the Holding Group has created a unique design hub, offering a platform with which carefully selected Brands can be accelerated to grow at scale through a well-defined strategic approach.
+%
+Their strategic pillars are:
 
-More in details, in order to explore the impact of Enterprise Performance Management on businesses, it may be necessary to have access to data related to business performance belonging to different organizations.
+\begin{enumerate}
+    \item Brand desirability, making Brands more attractive, better known and sought after.
+    \item Direct to consumers, enhance and personalize the customers’ experience, getting closer to end customers and the design community.
+    \item International expansion, expand the geographical reach, boosting their presence in markets with high growth potential and building a strong position into mature ones.
+    \item Contract business, strengthen the leadership in high-end Contract business, providing considerable added value to the overall quality of a project in the eyes of architects, designers, and developers.
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{figures/structure.pdf}
+	\caption{Structure of the Holding Group}
+	\label{fig:structure}
+\end{figure}
+
+The Management Control Department\footnote{Management Control in a business refers to the processes and activities undertaken by a dedicated department to plan, monitor, and control organizational activities. The aim of management control is to align the actions of individuals and departments with the company's strategic goals and objectives, enabling effective decision-making, performance evaluation, and the optimization of resources.} of the Holding Group is responsible for assessing the financial situation and evaluating the overall performance of the Entities.
 %
-However, in this thesis we will analyze a case of implementation carried out for a specific company which operates in a specific industry sector. 
+Their tasks and activities range from monitoring financial performance, tracking key performance indicators (KPIs), and identifying areas for improvement.
 %
-Of course, each company has its own characteristics in terms of operations and business management, which impact the implementation of the solution and its overall effectiveness.
+Prior to the implementation of the Enterprise Performance Management solution, the Management Control Department faced significant challenges in accessing and consolidating financial data from across the Entities.
 %
-Also, modern businesses vary widely in terms of size, sector, business model and many other factors.
+This made it difficult to accurately evaluate performance and to make informed decisions.
 %
-In particular, the activities of management and performance control carried out by the company have a significant impact on how the EPM solution will be implemented and maintained.
+With the EPM solution, the Management Control Department plans to improve data accuracy, streamline reporting processes, and gain real-time visibility into financial data across all Entities. 
 %
-Of course, there is no single solution that can be applied to any business but they vary according to the needs of the company.
+The final goal is to drive better decision-making and improve overall financial performance for the Holding Group and, ultimately, make informed decisions that lead to growth and increased profitability. 
 %
-As a result, it can be difficult to generalize findings in one type of business to other types of businesses.
+Additionally, the increased efficiency and productivity that comes with a cloud EPM solution can help to reduce costs and improve compliance and risk management.
+
+The goal of the project is to implement a planning environment in Oracle Cloud EPM in which the data belonging to the different Brands and Entities of the Holding Group are all integrated in a single view.
+%
+Therefore, the implementation project involves the deployment of a software solution that will enable the company to effectively manage its financial data, analyze it, and make informed business decisions.
+%
+In particular, the planning environment is used an maintained by the Holding Group Management Control Department so, along the implementation process, we interacted directly with the people working in that area.
+
+The Holding Group was born in 2018 as the result of the aggregation of different Entities which belong to the same industry sector, as illustrated in figure \ref{fig:structure}
+%
+The Entities which compose the Holding Group have a different story, a different culture, different business models and, as a consequence, different control models.
+%
+Since its creation, the Holding Group has planned several initiatives to facilitate the integration between the different realities.
+%
+The lack of organizational structure due to the different control models was considered as a key issue in sustaining the new planning and reporting needs of the Holding Group.
+%
+To solve this issue, the Holding Group started an activity of homogenization of Enterprise Performance Management of the Entities, by:
+
+\begin{enumerate}
+    \item Defining a consolidated financial reporting;
+    \item Defining a performance reporting system based on KPI’s;
+    \item Defining a treasury reporting and rolling cash flow forecast process\footnote{Treasury reporting refers to the process of generating and presenting financial information related to the organization's cash and liquidity management activities, while rolling cash flow forecast process involves regularly projecting and updating the organization's anticipated cash inflows and outflows over a specified period.}.
+\end{enumerate}
+
+The objective of the Holding Group is that of gaining visibility and control over the group's performance with an homogeneous and consolidated reporting activity.
+%
+They plan to achieve a deep visibility on the single performances, in order to extract insights and KPIs from entities independently.
+%
+At the same time, the Entities which are part of the Holding Group necessitate a clear consolidation process and homogeneous reporting.
+%
+For them, it is important to achieve high reliability on data and reporting, thus enhancing data quality, as well as enlarging the Enterprise Performance Management model at Entity level to extract analytics locally.
+
+The project implementation goes around three main macro-areas, which are financial reporting, management reporting and performance analysis.
+%
+Financial reporting is mandatory for businesses and is mainly used for external purposes.
+%
+Financial reports include the Profit and Loss Statement, Income Statement, Balance Sheet, Accounts Payable, Accounts Receivable and the Statement of Cash Flows.
+%
+These reports are important for stakeholders like banks, investors and regulators, to ensure that the company is following accounting standards correctly.
+%
+Financial reporting reflects the financial position of a business at the time of reporting, however, they cannot be used to predict future performance or provide insights.
+
+Management reporting is optional and is for internal business purposes. 
+%
+Management reports aim to dive deeper into the company financials and provide insights that enable more informed business decisions. 
+%
+Management reporting focuses on individual areas of the business, allowing companies to identify areas that are strong and any area of potential improvement. 
+%
+For example, they might want to see how well the sales department is performing one month before making the decision to expand. Management reporting for performance management enables leaders to rely on their numbers.
+
+Performance analysis, on the other hand, is the process of evaluating the performance of a business, product, service or process against established benchmarks and objectives. 
+%
+It involves collecting and analyzing data to identify patterns, trends, and opportunities for improvement.
+%
+Performance analysis is particularly important for businesses because it helps them to identify areas of strength and weakness, improve efficiency and productivity, reduce costs and waste, increase revenue and profitability, enhance customer satisfaction and stay competitive in the market.
+
+Finally, in terms of people and organization, the goal of the project is to define the financial organization process at the Holding Group level in order to manage all processes in line with the Group Control Model.
+%
+Processes are defined at the Holding Group level, based on their best practices, while the financial organization process is reviewed at Entity level with different prioritization, in order to align the needs of the Group Control Model.
+
+\section{Project requirements}
+
+For a Holding Group whose goal is to design and maintain a comprehensive and integrated planning solutions to monitor the performance of all the Brands, we can identify several key requirements to be considered in order to ensure a successful implementation:
+%
+First of all, the EPM system should allow for centralized data management, ensuring that data can be collected, consolidated, and analyzed across all Brands.
+%
+It is of key importance to define some common standards that need to be followed by the Brands in order to integrate data smoothly.
+%
+More in details, to obtain an integrated view on the Brands' performance, Entities should adopt technologies that bring data together from across the business ecosystem to create a single, accurate and transparent record of the truth.
+%
+Such solution is known as Master Data Management and is the core process used to manage, centralize, organize, categorize, localize, synchronize and enrich master data according to the business rules of the controlling Group.
+%
+The efficient management of master data in a central repository allows for a single authoritative view of information and eliminates costly inefficiencies caused by data silos.
+%
+It supports business initiatives and objectives through identification and linking of information and contents across products, customers, stores/locations, employees, suppliers, digital assets and more.
+
+Then, the EPM system should provide flexible and customizable reporting capabilities that can be tailored to the needs of each Brand.
+%
+At the same time, the system should be easy to use for employees across all Brands, with an intuitive interface that requires minimal training.
+%
+Moreover, it should be able to integrate seamlessly with existing systems used by the Holding Group and its Brands, such as ERP (Enterprise Resource Planning) and CRM (Customer Relationship Management) software.
+%
+By all means, the system should be scalable to accommodate future growth and expansion of the Holding Group and its Brands.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/requirements.pdf}
+	\caption{Technical, Business and Strategic Requirements}
+    \floatfoot{*Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)}
+	\label{fig:requirements}
+\end{figure}
+
+Figure \ref{fig:requirements} lists all the technical, business and strategic requirements that should be considered when choosing the right tools and technologies for the implementation of the EPM solution.
+%
+It is important to identify and prioritize both business requirements and technical requirements when planning an EPM implementation project, in order to build an effective and maintainable solution.
+
+Technical requirements cover the specific features and capabilities that the system must have in order to ensure that the EPM system is effective, reliable, and able to meet the unique needs of the Holding Group and its Entities.
+%
+More in details, the use of technologies that allow for integrated modeling that is easy-to-maintain and with no limitations of dimensions is of key importance for this project.
+%
+For example, a Holding Group which owns different Brands and Entities across the globe may need to frequently update the \textit{Product} or \textit{Geography} dimension every time they add a new product or sell to a new country.
+%
+At the same time, users need to have a clear and structured workflow of activities that supports them in the use of the EPM system, while the Management Control Department should be able to track and monitor the progress of single activities carried out by the Entities.
+%
+Then, in terms of calculation and allocation flexibility, we refer to the possibility to perform custom calculations and extend predefined rules (like consolidation and currency translation), in order to meet the specific needs and requirements of each Entity.
+%
+The system should also be able to manage data of different granularity as the level of detail and precision in data structures depends on the activity to perform.
+%
+The EPM platform needs to manage high-volume data and possibly interface with big data systems.
+%
+Naturally, system and data integration must be available.
+%
+In particular, the system should have an integrated solution for ETL (Extract, Transform and Load) activities, completed with advanced mapping features to accommodate multi-source and multi-ERP loading.
+%
+Reporting and dashboarding can be setup ``live'' for all data available in the interconnected solution
+applications to enable the Holding Group to make informed decisions based on its financial data.
+%
+Finally, the EPM system should have robust security features to protect sensitive financial data, while allowing the Management Control Department to manage granular securities at the micro-detail of data to handle the read and write permissions of the different entities.
+
+Business requirements, on the other hand, regard the specific goals, needs, and expectations of the stakeholders and users of a system. 
+%
+In our context of EPM implementation project for a Holding Group, business requirements are set to reach key business goals, like streamlining financial reporting, improving decision-making based on financial data, increasing efficiency and accuracy in budgeting and forecasting, and providing a centralized system for financial management across all entities. 
+%
+One of the key priorities for a Holding Group is to have a clear statutory and consolidation process with the possibility to adopt multiple consolidation methods, including full consolidation, proportionate consolidation, and equity consolidation.
+%
+Consolidation accounting is the process of combining the financial results of several subsidiary companies into the combined financial results of the parent company as though they were a single firm.
+%
+The system should have predefined modules to address different planning standard processes and an open ``free from'' planning mode to create personalized planning environments. 
+%
+At the same time, it should include embedded predictive planning, risk based planning and strategic  long-term modeling feature.
+
+Public companies must prepare disclosure reports for internal and external stakeholders to shine a light on the company's performance and operating activities.
+%
+Disclosure reports contain information about a company's business activities, financial condition, management compensation, operating performance and future direction. 
+%
+It is therefore essential for the EPM system to provide disclosure management functionalities to help the Holding Group to fulfill the disclosure requirements of regulators like the Security and Exchange Commission or the European Central Bank.
+%
+The system should provide  a unified environment able to guarantee the consistency and coherence of data generated at each level of the statutory, management and disclosure reporting.
+%
+In this regard, users should be able to compare multiple accounting views depending on the country of interest (GAAP for United States and IFRS world-wide).
+%
+Finally, the EPM system should be flexible enough to adapt to changing business needs and requirements, allowing for an easy-to-use, adjustable interface that every user can use to create different versions of reports, depending on the current need.
+
+At the strategic level, making architecture changes or modifying operations takes a clear plan of where the organization is, where it wants to go, and how to get there. 
+%
+A strategic road-map lays out the direction of IT efforts that span across an organization in a simple way to align teams and key stakeholders.
+%
+The implementation of the EPM solution should be in line with the company's strategic road-map, both in terms of deliverables, process schedule and timing.
 
 \section{Overview of the methodology}
 
-The methodology applied to the implementation of an Enterprise Project Management solution follows some key steps and best practices that depend on the specific requirements of the client company, the size and complexity of the project and the available resources.
+The successful implementation of an Enterprise Performance Management system can have a significant impact on the performance and competitiveness of a business. 
 %
-The entire implementation process is built together with the client company which is responsible for assessing the quality of each step and ensuring the compliance with the requested features of the system.
+However, the implementation of such a system requires careful planning, preparation, and execution to ensure success. 
+%
+In this section, we will examine the methodology used in the implementation of a Oracle Cloud EPM solution for the Holding Group.
+%
+We will explore specific approaches, methodologies, and tools used in each phase of the project, and discuss the challenges and lessons learned throughout the implementation. 
+%
+By examining the methodology used in this project, we can gain insights into best practices for Oracle Cloud EPM implementation and its unique features and tools.
+%
+The methodology applied to the implementation of an Enterprise Project Management solution follows some key steps and best practices that depend on the specific requirements of the company, the size and complexity of the project and the available resources.
+%
+The entire implementation process is built together with the Management Control Department of the Holding Group, which is responsible for assessing the quality of each step and ensuring the compliance with the requested features of the system.
 
 The project begins with a planning phase, during which the company's business needs and goals are identified and the scope of the project is defined.
 %
@@ -243,31 +473,60 @@ This involves identifying the objectives and key deliverables of the project, as
 %
 During this phases, it is important to identify the stakeholders by determining who will be impacted by the implementation and what their needs and requirements are.
 %
-Another key element in the planning phase is the definition of success criteria in order to measure the outcome by using performance indicators.
+A project plan is a comprehensive document that outlines the key objectives, milestones, tasks, timelines, and resources required for the successful completion of a project. 
 %
-Finally, a clear and detailed project plan is developed, outlining the timeline, the budget, and resources required to complete the implementation.
+It is an essential tool for project management, as it provides a road-map for project execution and allows for effective tracking and monitoring of progress.
+%
+Project plans help to define the scope and objectives of the project, identify the specific tasks and activities required to achieve the project objectives and determine the timelines and milestones for each task and activity.
+%
+At an operational level, designing a precise project plan allow for the effective allocation of the necessary resources, such as budget, personnel, and equipment, to complete the project.
+%
+At the same time, it ensure effective communication and collaboration between team members while facilitating the tracking and monitoring of progress towards project goals.
+%
+It gives a good reality check and enables to change course if needed, bringing the project back on track. 
+%
+Finally, during this planning phase, the definition of success criteria is performed, in order to measure the outcome by using performance indicators.
 
-Then, during the solution design phase, the EPM solution is designed based on the identified business requirements and goals, including the configuration of the environment, customizing features and workflows, and integrating with other systems.
+Along the planning phase, it is essential to conduct a needs assessment to efficiently allocate resources and set the details for the solution design.
+%
+The needs assessment is a systematic process for determining and addressing needs and requirements to fill the gap between the current conditions and the desired conditions.
+%
+The goal of this initial phase is to assess the current financial reporting and analysis process used by the Holding Group to identify pain points, inefficiencies and areas of improvement.
+%
+The key steps carried out during the process, include:
 
-The development and testing phase is the core part of the project.
-%
-In this phase the EPM solution is built and configured, relying on a process of continuous feedback from the customer.
-%
-Both individual components and the solution as a whole are tested to ensure that they meet the business requirements and goals.
+\begin{enumerate}
+    \item Identification of the requirements: understanding everything that is involved with the project, ensuring that the project’s context and objectives are clear. By understanding the specifics, it is easier to identify the needs associated with the project, as well as explaining individual milestones and deliverables to the people involved to provide a broader context.
+    \item Selection of the resources: match the existing, available resources to what is needed to perform the project. 
+    \item Identification of potential gaps: once the resources have been identified, we can truly address the ones that are not already fulfilled. In this way, we will make sure to uncover and address any gaps, which can vary from a particular skill set to the software needed to execute a task. 
+    \item Creation of a plan to fill the gaps: once all the gaps have been successfully identified, we can use this information and address these issues by designing a plan of action. 
+\end{enumerate}
 
-After that, the client company's personnel which will use the system is trained through training sessions, user manuals, and other resources to help users understand the system and use it effectively.
+Overall, the needs assessment phase is critical in ensuring that a project is aligned with the needs of its intended beneficiaries, and that it is designed to meet their needs and address the specific problem or opportunity effectively.
 
-Finally, the solution is deployed to the client's company environment.
+Now that we have a clear plan for the implementation process, we can design the EPM solution based on the identified business requirements and goals.
 %
-If applicable, the data of the old system will be migrated into the new one, which will be integrating with additional existing systems.
+Solution design involves translating the gathered requirements into a detailed design for the Oracle Cloud EPM solution. 
 %
-After the EPM solution is deployed, configured and permissions are set, ongoing support and maintenance are provided to ensure the system runs smoothly and meets the company's needs.
+The solution design process encompasses various aspects, such as the system configuration, to configure the Oracle Cloud EPM environment based on the requirements, the workflow design and the reporting design, to meet the Holding Group's reporting needs.
 %
-This involves providing technical support, troubleshooting issues, and applying updates to keep up with the software advancements.
+The implementation phase involves deploying the designed solution while continuously assessing and refining the system. 
+%
+This include the monitoring and evaluatioon of the implemented solution during the User Acceptance Testing (UAT), to gather feedback and identify areas for improvement or modifications. 
+
+Once the solution is live, ongoing support and training are crucial. 
+%
+User training programs are conducted to ensure users understand how to effectively use the Oracle Cloud EPM systems.
+%
+At the same time, it is important to regularly implement system enhancements and upgrades to keep the solution up-to-date.
+%
+Additionally, user adoption and change management strategies are employed to promote the use of the EPM solution throughout the organization. 
+%
+This involves monitoring user feedback, measuring system usage, and implementing change management practices to ensure a smooth transition and alignment with the implemented solution.
 
 %----------------------------------------------------------------------------------------
-\chapter{Literature Review}
-\label{chap:background}
+\chapter{Enterprise Performance Management}
+\label{chap:epm}
 %----------------------------------------------------------------------------------------
 
 In today's dynamic and highly competitive business landscape, organizations face numerous challenges in effectively managing and improving their performance. 
@@ -284,7 +543,7 @@ This chapter presents a comprehensive literature review that explores the theore
 %
 This review aims at providing valuable insights and a solid understanding of the concepts, methodologies, and technologies that drive effective performance management in today's digital era.
 
-\section{Definition and concepts of Enterprise Performance Management}
+\section{Definition and concepts}
 
 Enterprise Performance Management (EPM) is a comprehensive approach that helps organizations effectively manage and optimize their performance in order to achieve strategic goals and objectives. 
 %
@@ -296,17 +555,53 @@ The technology uses feedback drawn from data generated from systems, processes, 
 %
 The resulting analytics help to identify business drivers and other insights so that companies can assess new opportunities, augment profitability in existing business, and respond with greater agility in the face of unexpected change and disruption.
 
-Neely et al.\cite{neely2002performance} define a performance measurement system as a ``set of metrics used to quantify the efficiency and effectiveness of past actions'' that ``enables informed decisions to be made and actions to be taken because it quantifies the efficiency and effectiveness of past actions through the acquisition, collation, sorting, analysis and interpretation of appropriate data.''
+Neely et al. \cite{neely2002performance} define a performance measurement system as a ``set of metrics used to quantify the efficiency and effectiveness of past actions'' that ``enables informed decisions to be made and actions to be taken because it quantifies the efficiency and effectiveness of past actions through the acquisition, collation, sorting, analysis and interpretation of appropriate data.''
 %
 The geographical location of a firm, historical development of a country/region and an enterprise culture have played significant roles in reinventing performance management systems. 
 %
 Nowadays, effective systems explicitly address not only economic trends but also social, political and environmental ones.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[]{figures/cycle.pdf}
+	\caption{Enterprise Performance Management Framework}
+    \floatfoot{Source: PricewaterhouseCoopers HK}
+	\label{fig:cycle}
+\end{figure}
+
+Figure \ref{fig:cycle} represents the three main stages of Enterprise Performance Management, each of which plays a critical role in managing and improving the performance of a business. 
+%
+The strategy phase is the foundation of the EPM cycle, where the business establishes its objectives and formulates its strategic plans. 
+%
+This phase involves the following key activities: objective setting, planning and budgeting.
+%
+Firstly, the business defines its short-term and long-term objectives, which could include revenue targets, market share goals, cost reduction objectives or customer satisfaction metrics.
+%
+Then, based on the objectives, the business develops a comprehensive plan to achieve its goals by identifying key initiatives, allocating resources, and setting timelines.
+%
+Finally, the business drafts a budget with the aim of allocating financial resources to different departments, projects or activities, ensuring that the financial plans align with the strategic objectives.
+%
+The outcome of the strategy phase is a well-defined roadmap that guides the organization's actions in the subsequent stages of the EPM cycle.
+
+Then, the execution phase focuses on implementing the plans and strategies developed in the strategy phase and involves activities related to reporting, control, and performance tracking.
+%
+The business collects and analyzes data from various sources, such as financial and operational systems and then transform the data collected into meaningful reports and dashboards that provide insights into the organization's performance.
+%
+At the same time, through an attentive control process, the business makes sure that the defined plans and objectives are followed by monitoring key metrics, comparing actual results against targets, and taking corrective actions when necessary.
+%
+The execution phase is crucial for ensuring that day-to-day activities are aligned with the overall goals of the business.
+
+Finally, the performance phase involves evaluating the organization's performance, calculating key performance indicators (KPIs), and deriving insights to drive continuous improvement. 
+%
+This is done by assessing the business performance against the objectives set in the strategy phase and by calculating KPIs to measure the organization's progress on an operational and strategical level.
+%
+The insights gained from performance evaluation and KPI analysis guide decision-making processes, helping identifying areas of strength, areas for improvement, and potential opportunities for growth.
+
 As the business world is continuously changing, performance management systems are continuously remastered and updated to maintain their effectiveness.
 %
 Top performers studied by The Hackett Group\footnote{The Hackett Group is a leading global consulting firm that specializes in business performance improvement and benchmarking. Founded in 1991, The Hackett Group offers a wide range of advisory services, research, and best practice insights to help organizations optimize their operations, enhance efficiency, and achieve world-class performance.} have recognized the importance of aggressively reducing Enterprise Performance Management complexity while simultaneously embracing new waves of digital capability.
 %
-These organizations understand that simplifying and streamlining their EPM processes and systems can lead to improved efficiency, agility, and improved decision-making.\cite{balog2017best}
+These organizations understand that simplifying and streamlining their EPM processes and systems can lead to improved efficiency, agility, and improved decision-making. \cite{balog2017best}
 %
 EPM complexity refers to the intricate set of processes, systems, and data that can often burden organizations and hinder their ability to effectively manage performance. 
 %
@@ -326,7 +621,7 @@ Enterprise Performance Management is continuously evolving as organizations seek
 %
 In this era of rapid technological advancements, emerging technologies such as Big Data and the Internet of Things (IoT) have emerged as powerful enablers for driving sustainable practices and enhancing EPM. 
 %
-By leveraging the capabilities of these technologies, organizations can gain deeper insights into their environmental impact, social responsibility, and economic sustainability.\cite{yang2023bigdata}
+By leveraging the capabilities of these technologies, organizations can gain deeper insights into their environmental impact, social responsibility, and economic sustainability. \cite{yang2023bigdata}
 %
 The combination of these new technologies enables organizations to gather and analyze vast amounts of real-time data from various sources, leading to more accurate and comprehensive insights into their performance.
 %
@@ -340,7 +635,7 @@ As we have seen, Enterprise Performance Management plays a crucial role in helpi
 %
 In today's data-driven world, the integration of Business Intelligence (BI) tools and techniques within EPM has become essential for organizations to gain valuable insights and make informed decisions. 
 %
-Stefan et al.\cite{stefan2010enterprise} provide a comprehensive approach to develop a decision-performance relationship within a company by identifying key factors and performance indicators. 
+Stefan et al. \cite{stefan2010enterprise} provide a comprehensive approach to develop a decision-performance relationship within a company by identifying key factors and performance indicators. 
 %
 They emphasize the importance of integrating performance evaluation not only at the individual employee level but also within project teams and the overall organizational performance. 
 %
@@ -349,48 +644,6 @@ The premise of this approach is that performance evaluation should be viewed hol
 One of the fundamental aspects highlighted in the paper is the need for a continuous flow of monitoring and analysis to build a sustainable mechanism for supporting organizational performance. 
 %
 This aligns with the core principles of EPM, which emphasize the importance of ongoing measurement, analysis, and improvement of key performance indicators, making the integration of Business Intelligence within EPM an opportunity to unlock the full potential of their performance data. 
-
-\section{The evolution of EPM in modern businesses}
-
-Enterprise Performance Management has emerged as a critical discipline that enables organizations to effectively align their strategies, measure progress, and make data-driven decisions to achieve their goals. 
-%
-Over the years, EPM has evolved from traditional financial-centric approaches to a more holistic and integrated framework that encompasses financial, operational, and strategic aspects of performance management. 
-%
-It has moved beyond mere financial reporting and budgeting to encompass performance measurement, analysis, forecasting, and decision support across all functional areas of an organization.
-%
-Moreover, the digital revolution has significantly impacted the evolution of EPM. 
-%
-The availability of vast amounts of data, advancements in data analytics, and the proliferation of cloud computing have transformed how organizations collect, analyze, and utilize performance-related information.
-%
-This section explores the evolution of EPM in modern businesses, highlighting key trends, challenges, and opportunities that have shaped its development.
-
-In a 2021 press release, KPMG\footnote{KPMG is one of the leading global professional services firms, providing audit, tax, and advisory services to organizations across various industries. Known for its extensive knowledge in areas such as financial reporting, risk management, and business transformation, KPMG plays a significant role in shaping the business landscape and driving innovation.} outlined how enterprise performance management has evolved as a result of the post-pandemic landscape, presenting new opportunities for organizations\cite{kpmg2021evolution}.
-%
-In the midst of the ongoing pandemic, organizations were grappling with unprecedented levels of uncertainty that had disrupted business operations and strategies. 
-%
-As the future remains uncertain, the survival and success of most organizations now hinge on their ability to engage in effective scenario planning.
-%
-Scenario planning relies heavily on accurate and reliable data to develop realistic plans, budgets, and forecasts. 
-%
-Organizations must establish robust data governance frameworks that ensure the availability of good-quality internal and external data. 
-%
-At the same time, with rapidly changing circumstances, organizations need to adopt a dynamic approach to planning and forecasting to respond effectively to evolving situations. 
-%
-Embracing scenario planning allows organizations to explore various potential future outcomes, develop resilient strategies, and gain a competitive edge: as uncertainties persist, organizations that prioritize scenario planning will be better equipped to thrive in changing circumstances and emerge stronger in the long run.
-
-In the present era, Enterprise Performance Management has undergone significant evolution. 
-%
-Despite the advancements in modern analytics and business intelligence, a considerable 54\% of finance organizations still encounter challenges in providing data that effectively supports stakeholders' decision-making.\cite{gartner2021report}
-%
-Often, the insights generated lack contextual information and are not easily comprehensible for the majority of users who primarily engage with pre-defined dashboards. 
-%
-Furthermore, certain organizations continue to rely on outdated systems, and the budgeting process can still consume up to four months to reach completion.
-%
-On a global scale, organizations that have embarked on their EPM journey have strategically shifted their focus from reactive and descriptive reporting to proactive and forward-looking prescriptive analysis. 
-%
-By devoting more time to providing forward-looking guidance, management can effectively capitalize on upcoming opportunities and gain more meaningful insights to support superior decision-making. 
-%
-This transformation can be achieved by harnessing the power of predictive and prescriptive analytics techniques, which enable organizations to anticipate future outcomes and prescribe optimal courses of action.
 
 \section{Benefits and challenges of implementing EPM in businesses}
 
@@ -426,7 +679,7 @@ Furthermore, organizations must navigate complexities related to data integratio
 
 Organizations that have implemented Enterprise Performance Management have reaped significant benefits, as highlighted by two key findings. 
 %
-The first finding, derived from a press release issued by Oracle Corporation in 2022\cite{toomey2022oracle}, reveals that Oracle Cloud EPM customers have experienced a remarkable 61\% improvement in forecast accuracy. 
+The first finding, derived from a press release issued by Oracle Corporation in 2022 \cite{toomey2022oracle}, reveals that Oracle Cloud EPM customers have experienced a remarkable 61\% improvement in forecast accuracy. 
 %
 This improvement is a testament to the power of EPM in providing organizations with better visibility and control over their financial planning processes. 
 %
@@ -434,7 +687,7 @@ By leveraging EPM solutions, organizations can align their financial plans with 
 %
 This integration enables a more holistic and comprehensive approach to decision-making, ultimately driving improved forecast accuracy and facilitating better-informed strategic choices.
 %
-The second finding, derived from KPMG's 2021 EPM survey\cite{kpmg2021survey}, underscores the positive impact of EPM on revenue growth. 
+The second finding, derived from KPMG's 2021 EPM survey \cite{kpmg2021survey}, underscores the positive impact of EPM on revenue growth. 
 %
 According to the survey, 72\% of mature EPM clients have already embarked on their EPM journey, actively embracing EPM practices such as supporting centers of excellence, predictive forecasting, and upskilling their employees. 
 %
@@ -463,326 +716,19 @@ Organizations that invest in EPM, establish a robust EPM framework, and prioriti
 These findings underscore the value of EPM as a strategic enabler, empowering organizations to drive accurate forecasts, align financial plans with other critical areas, and ultimately achieve revenue growth and financial success.
 
 %----------------------------------------------------------------------------------------
-\chapter{Methodology}
-\label{chap:design}
-%----------------------------------------------------------------------------------------
-
-The successful implementation of an Enterprise Performance Management (EPM) system can have a significant impact on the performance and competitiveness of modern businesses. 
-%
-However, the implementation of such a system requires careful planning, preparation, and execution to ensure success. 
-
-In this chapter, we will examine the methodology used in the implementation of a Oracle Cloud EPM solution for a company.
-%
-We will discuss the key steps involved in the implementation process, the needs and requirements of the company, what they want to achieve and how they plan to achieve it.
-
-We will also explore specific approaches, methodologies, and tools used in each phase of the project, and discuss the challenges and lessons learned throughout the implementation. 
-%
-By examining the methodology used in this project, we can gain insights into best practices for Oracle Cloud EPM implementation and its unique features and tools.
-
-\section{Scope and objectives of the project}
-
-This project has been implemented for a global leader in high-end design with pro-forma revenues of \$ 960 million in 2022.
-%
-The company is characterised by an unparalleled portfolio of iconic Brands and a multi-channel distribution approach across the globe.
-%
-The Group’s mission is to provide long-lasting value for clients through an innovative manufacturing process carried out by the Brands which compose the Group.
-%
-It is composed of ten brands which own a total amount of ten factory locations in Italy, Spain, Denmark and US.
-%
-The Group has a presence in more than 130 countries with more than 7,000 points of sale worldwide. 
-%
-They created an exclusive network of highly professional dealers and mono-brand stores, consolidating its international presence with the opening of wholly owned flag-ship stores in leading capital cities around the world.
-
-Their goal is to foster an ecosystem which enables their companies to grow into a strong worldwide presence with both reach and scale by curating a powerful and iconic culture across the Brands.
-%
-This ecosystem has been geared towards the success of each individual Brand, so that the Group invests its resources at Brand level, boosting the creative process and the customer experience.
-
-By bringing together multiple Brands and helping them achieving their best, the Group is a global leader in an otherwise traditionally highly fragmented market of high-end design. 
-%
-With a strong cultural heritage, characterised by multi-channel distribution and diversified product categories, the Group has created a unique design hub, offering a platform with which carefully selected Brands can be accelerated to grow at scale through a well-defined strategic approach.
-%
-Their strategic pillars are:
-
-\begin{enumerate}
-    \item Brand desirability, making Brands more attractive, better known and sought after.
-    \item Direct to consumers, enhance and personalize the customers’ experience, getting closer to end customers and the design community.
-    \item International expansion, expand the geographical reach, boosting their presence in markets with high growth potential and building a strong position into mature ones.
-    \item Contract business, strengthen the leadership in high-end Contract business, providing considerable added value to the overall quality of a project in the eyes of architects, designers, and developers.
-\end{enumerate}
-
-The management control department\footnote{Management control in a business refers to the processes and activities undertaken by a dedicated department to plan, monitor, and control organizational activities. The aim of management control is to align the actions of individuals and departments with the company's strategic goals and objectives, enabling effective decision-making, performance evaluation, and the optimization of resources.} of the Holding Group is responsible for assessing the financial situation and evaluating the overall performance of the entities.
-%
-Their tasks and activities range from monitoring financial performance, tracking key performance indicators (KPIs), and identifying areas for improvement.
-%
-Prior to the implementation of the Enterprise Performance Management solution, the management control department faced significant challenges in accessing and consolidating financial data from across the Group's entities.
-%
-This made it difficult to accurately evaluate performance and to make informed decisions.
-%
-With the EPM solution, the management control department plans to improve data accuracy, streamline reporting processes, and gain real-time visibility into financial data across all entities. 
-%
-The final goal is to drive better decision-making and improve overall financial performance for the Group.
-%
-With better data, streamlined processes, and more accurate reporting, the management control department can make informed decisions that lead to growth and profitability for the Group. 
-%
-Additionally, the increased efficiency and productivity that comes with a cloud EPM solution can help to reduce costs and improve compliance and risk management.
-
-The goal of the project is to implement a planning environment in Oracle Cloud EPM in which the data belonging to the different Brands of the Group are all integrated in a single view.
-
-Therefore, the implementation project involves the deployment of a software solution that will enable the company to effectively manage its financial data, analyze it, and make informed business decisions.
-%
-In particular, the planning environment is used an maintained by the client's management control department so, along the implementation process, we interacted directly with the people working in that area.
-
-The Corporate Group was born in 2018 and is the result of the aggregation of different companies which belong to the same industry sector.
-%
-The entities which compose the Group have a different story, a different culture, different business models and, as a consequence, different Group Control Models.
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{figures/structure.pdf}
-	\caption{Structure of the Holding Group}
-	\label{fig:structure}
-\end{figure}
-
-Since its creation, the new Group has planned several initiatives to facilitate the integration between the different realities.
-%
-The lack of organizational structure due to the different Group Control Models was considered as a key issue in sustaining the new planning and reporting needs of the Group.
-%
-To solve this issue, the Group started an activity of  homogenization of Enterprise Performance Management model of the entities, by:
-
-\begin{enumerate}
-    \item Defining a consolidated financial reporting;
-    \item Defining a performance reporting system based on KPI’s;
-    \item Defining a treasury reporting and rolling cash flow forecast process.
-\end{enumerate}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[]{figures/cycle.pdf}
-	\caption{Enterprise Performance Management Framework}
-    \floatfoot{Source: PricewaterhouseCoopers HK}
-	\label{fig:cycle}
-\end{figure}
-
-Figure \ref{fig:cycle} represents the three main stages of Enterprise Performance Management, each pf which plays a critical role in managing and improving the performance of a business. 
-%
-The strategy phase is the foundation of the EPM cycle, where the business establishes its objectives and formulates its strategic plans. 
-%
-This phase involves the following key activities: objective setting, planning and budgeting.
-%
-Firstly, the business defines its short-term and long-term objectives, which could include revenue targets, market share goals, cost reduction objectives or customer satisfaction metrics.
-%
-Then, based on the objectives, the business develops a comprehensive plan to achieve its goals by identifying key initiatives, allocating resources, and setting timelines.
-%
-Finally, the business drafts a budget with the aim of allocating financial resources to different departments, projects or activities, ensuring that the financial plans align with the strategic objectives.
-%
-The outcome of the strategy phase is a well-defined roadmap that guides the organization's actions in the subsequent stages of the EPM cycle.
-
-Then, the execution phase focuses on implementing the plans and strategies developed in the strategy phase and involves activities related to reporting, control, and performance tracking.
-%
-The business collects and analyzes data from various sources, such as financial and operational systems and then transform the data collected into meaningful reports and dashboards that provide insights into the organization's performance.
-%
-At the same time, through an attentive control process, the business makes sure that the defined plans and objectives are followed by monitoring key metrics, comparing actual results against targets, and taking corrective actions when necessary.
-%
-The execution phase is crucial for ensuring that day-to-day activities are aligned with the overall goals of the business.
-
-Finally, the performance phase involves evaluating the organization's performance, calculating key performance indicators (KPIs), and deriving insights to drive continuous improvement. 
-%
-This is done by assessing the business performance against the objectives set in the strategy phase and by calculating KPIs to measure the organization's progress on an operational and strategical level.
-%
-The insights gained from performance evaluation and KPI analysis guide decision-making processes, helping identifying areas of strength, areas for improvement, and potential opportunities for growth.
-
-The objective of the client company is that of gaining visibility and control over the Group performance with an homogeneous and consolidated reporting activity.
-%
-They plan to achieve a deep visibility on the companies performances, in order to extract insights and KPIs from entities independently.
-
-At the same time, the companies which are part of the Group necessitate a clear consolidation process and homogeneous reporting.
-%
-For them, it is important to achieve high reliability on data and reporting, thus enhancing data quality, as well as enlarging the Enterprise Performance Management model at entity level to extract analytics locally.
-
-The project implementation goes around two main macro-areas which are: financial and management reporting and performance analysis.
-%
-Financial reporting and analysis are mandatory for businesses and are mainly used for external purposes.
-%
-Financial reports include:
-
-\begin{enumerate}
-    \item Profit and Loss Statement;
-    \item Income Statement;
-    \item Balance Sheet;
-    \item Accounts Payable;
-    \item Accounts Receivable;
-    \item Statement of Cash Flows.
-\end{enumerate}
-
-These reports are important for stakeholders like banks, investors and regulators, to ensure that the company is following accounting standards correctly.
-%
-Financial reporting reflects the financial position of a business at the time of reporting, however, they cannot be used to predict future performance or provide insights.
-
-Management reporting is optional and is for internal business purposes. 
-%
-Management reports aim to dive deeper into the company financials and provide insights that enable more informed business decisions. 
-%
-These reports include:
-
-\begin{enumerate}
-    \item Profit and loss by category (team, job, department);
-    \item Inventory reports;
-    \item Sales reports;
-    \item Utilisation reports.
-\end{enumerate}
-
-Management reporting focuses on individual areas of the business, allowing companies to identify areas that are strong and any area of potential improvement. 
-%
-For example, they might want to see how well the sales department is performing one month before making the decision to expand. Management reporting for performance management enables leaders to rely on their numbers.
-
-Performance analysis, on the other hand, is the process of evaluating the performance of a business, product, service, or process against established benchmarks and objectives. 
-%
-It involves collecting and analyzing data to identify patterns, trends, and opportunities for improvement.
-
-Performance analysis is particularly important for businesses because it helps them to identify areas of strength and weakness, improve efficiency and productivity, reduce costs and waste, increase revenue and profitability, enhance customer satisfaction and stay competitive in the market.
-%
-Financial reports can be used to assess different areas of a business and provide valuable insights into its performance.
-
-Then, in terms of people and organization, the goal of the project is to define the financial organization process at Holding level in order to manage all processes in line with the Group Control Model.
-%
-Processes are defined at the Group level, based on their best practices, while the financial organization process is reviewed at entity level with different prioritization, in order to align the needs of the Group Control Model.
-
-\section{Project plan and needs assessment}
-
-A project plan is a comprehensive document that outlines the key objectives, milestones, tasks, timelines, and resources required for the successful completion of a project. 
-%
-It is an essential tool for project management, as it provides a road-map for project execution and allows for effective tracking and monitoring of progress.
-
-Project plans help to define the scope and objectives of the project, identify the specific tasks and activities required to achieve the project objectives and determine the timelines and milestones for each task and activity.
-
-At an operational level, designing a precise project plan allow for the effective allocation of the necessary resources, such as budget, personnel, and equipment, to complete the project.
-%
-At the same time, it ensure effective communication and collaboration between team members while facilitating the tracking and monitoring of progress towards project goals.
-%
-It gives a good reality check and enables to change course if needed, bringing the project back on track. 
-
-The needs assessment is a systematic process for determining and addressing needs and requirements to fill the gap between the current conditions and the desired conditions.
-%
-This process should be undertaken before the project work begins, therefore, it belongs to the initiation phase.
-
-The goal of this initial phase is to assess the current financial reporting and analysis process used by the company to identify pain points, inefficiencies and areas of improvement.
-%
-The key steps carried out during the process, include:
-
-\begin{enumerate}
-    \item Identification of the requirements: understanding everything that is involved with the project, ensuring that the project’s context and objectives are clear. By understanding the specifics, it is easier to identify the needs associated with the project, as well as explaining individual milestones and deliverables to the people involved to provide a broader context.
-    \item Selection of the resources: match the existing, available resources to what is needed to perform the project. 
-    \item Identification of potential gaps: once the resources have been identified, we can truly address the ones that are not already fulfilled. In this way, we will make sure to uncover and address any gaps, which can vary from a particular skill set to the software needed to execute a task. 
-    \item Creation of a plan to fill the gaps: once all the gaps have been successfully identified, we can use this information and address these issues by designing a plan of action. 
-\end{enumerate}
-
-Overall, the needs assessment phase is critical in ensuring that a project is aligned with the needs of its intended beneficiaries, and that it is designed to meet their needs and address the specific problem or opportunity effectively.
-
-Before starting an EPM implementation project, it is important for a company to conduct a thorough need assessment to ensure that the project aligns with its objectives and addresses its most pressing needs.
-
-\section{Project requirements}
-
-For a Holding Group whose goal is to design and maintain a comprehensive and integrated planning solutions to monitor the performance of all the Brands that are part of the Group, we can identify several key requirements to be considered in order to ensure a successful implementation:
-
-First of all, the EPM system should allow for centralized data management, ensuring that data can be collected, consolidated, and analyzed across all Brands.
-%
-It is of key importance to define some common standards that need to be followed by the Brands in order to integrate data smoothly.
-%
-More in details, to obtain an integrated view on the Brands' performance, entities should adopt technologies that bring data together from across the business ecosystem to create a single, accurate and transparent record of the truth.
-
-Such solution is known as Master Data Management and is the core process used to manage, centralize, organize, categorize, localize, synchronize and enrich master data according to the business rules of the controlling Group.
-%
-The efficient management of master data in a central repository allows for a single authoritative view of information and eliminates costly inefficiencies caused by data silos.
-%
-It supports business initiatives and objectives through identification and linking of information and contents across products, customers, stores/locations, employees, suppliers, digital assets and more.
-
-Then, the EPM system should provide flexible and customizable reporting capabilities that can be tailored to the needs of each Brand.
-%
-At the same time, the system should be easy to use for employees across all Brands, with an intuitive interface that requires minimal training.
-
-Moreover, it should be able to integrate seamlessly with existing systems used by the Holding Group and its Brands, such as ERP (Enterprise Resource Planning) and CRM (Customer Relationship Management) software.
-%
-By all means, the system should be scalable to accommodate future growth and expansion of the Holding Group and its Brands.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\linewidth]{figures/requirements.pdf}
-	\caption{Technical, Business and Strategic Requirements}
-    \floatfoot{*Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)}
-	\label{fig:requirements}
-\end{figure}
-
-Figure \ref{fig:requirements} lists all the technical, business and strategic requirements that should be considered when choosing the right tools and technologies for the implementation of the EPM solution.
-%
-It is important to identify and prioritize both business requirements and technical requirements when planning an EPM implementation project, in order to build an effective and maintainable solution.
-
-Technical requirements cover the specific features and capabilities that the system must have in order to ensure that the EPM system is effective, reliable, and able to meet the unique needs of the Group and its entities.
-%
-More in details, the use of technologies that allow for integrated modeling that is easy-to-maintain and with no limitations of dimensions is of key importance for this project.
-
-For example, a Holding Group which owns different Brands and entities across the globe may need to frequently update the \textit{Product} or \textit{Geography} dimension every time they add a new product or sell to a new country.
-%
-At the same time, users need to have a clear and structured workflow of activities that supports them in the use of the EPM system, while the Control Group should be able to track and monitor the progress of single activities carried out by the entities.
-
-Then, in terms of calculation and allocation flexibility, we refer to the possibility to perform custom calculations and extend predefined rules (like consolidation and currency translation), in order to meet the specific needs and requirements of each entity.
-%
-The system should also be able to manage data of different granularity as the level of detail and precision in data structures depends on the activity to perform.
-%
-The EPM platform needs to manage high-volume data and possibly interface with big data systems.
-
-Naturally, system and data integration must be available.
-%
-In particular, the system should have an integrated solution for ETL (Extract, Transform and Load) activities, completed with advanced mapping features to accommodate multi-source and multi-ERP loading.
-
-Reporting and dashboarding can be setup ``live'' for all data available in the interconnected solution
-applications to enable the Group to make informed decisions based on its financial data.
-
-Finally, the EPM system should have robust security features to protect sensitive financial data, while allowing the Control Group to manage granular securities at the micro-detail of data to handle the read and write permissions of the different entities.
-
-Business requirements, on the other hand, regard the specific goals, needs, and expectations of the stakeholders and users of a system. 
-%
-In our context of EPM implementation project for a Holding Group, business requirements are set to reach key business goals, like streamlining financial reporting, improving decision-making based on financial data, increasing efficiency and accuracy in budgeting and forecasting, and providing a centralized system for financial management across all entities. 
-
-One of the key priorities for a Holding Group is to have a clear statutory and consolidation process with the possibility to adopt multiple consolidation methods, including full consolidation, proportionate consolidation, and equity consolidation.
-%
-Consolidation accounting is the process of combining the financial results of several subsidiary companies into the combined financial results of the parent company as though they were a single firm.
-
-The system should have predefined modules to address different planning standard processes and an open ``free from'' planning mode to create personalized planning environments. 
-%
-At the same time, it should include embedded predictive planning, risk based planning and strategic  long-term modeling feature.
-
-Public companies must prepare disclosure reports for internal and external stakeholders to shine a light on the company's performance and operating activities.
-%
-Disclosure reports contain information about a company's business activities, financial condition, management compensation, operating performance and future direction. 
-%
-It is therefore essential for the EPM system to provide disclosure management functionalities to help the Group to fulfill the disclosure requirements of regulators like the Security and Exchange Commission or the European Central Bank.
-
-The system should provide  a unified environment able to guarantee the consistency and coherence of data generated at each level of the statutory, management and disclosure reporting.
-%
-In this regard, users should be able to compare multiple accounting views depending on the country of interest (GAAP for United States and IFRS world-wide).
-
-Finally, the EPM system should be flexible enough to adapt to changing business needs and requirements, allowing for an easy-to-use, adjustable interface that every user can use to create different versions of reports, depending on the current need.
-
-At the strategic level, making architecture changes or modifying operations takes a clear plan of where the organization is, where it wants to go, and how to get there. 
-%
-A strategic road-map lays out the direction of IT efforts that span across an organization in a simple way to align teams and key stakeholders.
-%
-The implementation of the EPM solution should be in line with the company's strategic road-map, both in terms of deliverables, process schedule and timing.
-
-%----------------------------------------------------------------------------------------
-\chapter{EPM Implementation Project}
+\chapter{Oracle Cloud EPM Implementation}
 \label{chap:implementation}
 %----------------------------------------------------------------------------------------
 
-In this chapter we will explore the case study of an Oracle Cloud EPM implementation project for an international Group with multiple entities.
+In this chapter we will explore the case study of an Oracle Cloud EPM implementation project for an international Holding Group with multiple entities.
 %
-Such implementation was necessary for the Group to streamline financial reporting, improve decision-making based on financial data and, most importantly, provide a centralized system for financial management across all entities.
+Such implementation was necessary for the Holding Group to streamline financial reporting, improve decision-making based on financial data and, most importantly, provide a centralized system for financial management across all entities.
 
-The Group has a complex financial structure and was facing significant challenges in managing financial data across all entities. 
+The Holding Group has a complex financial structure and was facing significant challenges in managing financial data across all entities. 
 %
 Its financial systems were disconnected, making it difficult to get a clear view of financial performance and to generate accurate and timely reports. 
 %
-In addition, the Group's reporting processes were inefficient, relying heavily on manual data entry and resulting in errors and inconsistencies. 
+In addition, its reporting processes were inefficient, relying heavily on manual data entry and resulting in errors and inconsistencies. 
 %
 Also, they lacked visibility into financial data across all entities, making it difficult to make informed decisions and to drive growth and profitability.
 
@@ -792,7 +738,7 @@ We will start by defining the solution selection process, moving to the structur
 
 \section{EPM solution selection}
 
-Selecting the right EPM solution is crucial to effectively manage the financial data of the Group and drive growth.
+Selecting the right EPM solution is crucial to effectively manage the financial data of the Holding Group and drive growth.
 %
 In order to design a solution architecture for consolidation, planning and reporting that is able to provide system integration, automatic and standard processes, we need to identify the most suitable EPM tool among the ones available in the market.
 
@@ -811,7 +757,7 @@ Gartner defines Financial Planning Software as ``the key tool that enables organ
 Financial Planning Software solutions allow organizations to plan and analyze the business financial strategy across all three financial statements (profit and loss, balance sheet, and cash flows). 
 %
 It supports modeling, collaboration, analytics, and performance-reporting capabilities, all of which enhance a user’s ability to effectively manage financial performance.
-
+%
 The Magic Quadrant evaluates vendors based on their completeness of vision and ability to execute. 
 %
 Oracle Cloud has been named a Leader in the Gartner Magic Quadrant for Cloud Financial Planning and Analysis Solutions for several years in a row. 
@@ -821,18 +767,18 @@ This recognition highlights Oracle's continued commitment to innovation and cust
 As a Leader in the Magic Quadrant, Oracle Cloud is recognized for its ability to provide a comprehensive and customizable EPM solution for Holding Groups and other organizations.
 
 According to Oracle Corporation, the current global uncertainties have proven the value of Oracle Fusion Cloud EPM as businesses of every size have experienced extreme volatility in demand and supply environments, making agility in financial planning processes a must-have competency \cite{toomey2022oracle}.
-
+%
 The ability to support and connect planning across the organization is a competitive differentiator. 
 %
 Oracle delivers purpose-built solutions to streamline and manage planning processes in sales, marketing, human resources, IT and supply chain functions.
-
+%
 Oracle Cloud EPM brings together multiple Enterprise Performance Management capabilities into a single suite: financial and operational planning, profitability and cost management, account reconciliation, consolidation and close, tax reporting, narrative reporting, and enterprise master data management. 
 %
 These capabilities, along with built-in best practices, help customers to gain value quickly.
 
 For the Holding Group in our case study, Oracle Cloud EPM was the right choice due to its ability to be customized to meet the specific needs of the organization, its comprehensive security and compliance features, and its strong support and training resources.
 %
-Choosing the right EPM solution can make all the difference in the Group's ability to effectively manage their financial data and drive growth and profitability.
+Choosing the right EPM solution can make all the difference in the Holding Group's ability to effectively manage their financial data and drive growth and profitability.
 
 \section{Elements of the implementation process}
 
@@ -841,8 +787,6 @@ To successfully implement a new system, it is essential to have a comprehensive 
 This section explores the essential elements necessary for a successful EPM implementation process, providing a roadmap for organizations seeking to deploy EPM solutions effectively.
 %
 Throughout this section, we will delve into key components that form the foundation of an EPM implementation solution. 
-%
-At the same time, we will provide practical insights, best practices, and real-world examples specific to the case study, to better explain the steps to undertake and the variables to consider when implementing and EPM solution.
 
 \paragraph{License}
 
@@ -859,7 +803,7 @@ These licenses provide access to specific functionalities within the application
 On the other hand, instance-based licenses are allocated to the overall EPM environment, rather than individual users. 
 %
 These licenses are typically purchased in bundles and may be allocated based on factors such as the number of users or the level of usage.
-
+%
 Oracle will provision by default two environments to users: one environment dedicated to production use and a second environment dedicated as a staging environment for non-production use.
 %
 Additional environments or business processes can be ordered and provisioned separately.
@@ -870,15 +814,15 @@ Oracle Cloud EPM applications are typically deployed in two environments: produc
 %
 The production environment is the live environment where users interact with the EPM application to perform their day-to-day financial management tasks.
 %
-The test environment, on the other hand, is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment. \\
+The test environment, on the other hand, is a sandbox environment in which we can test new features, perform system upgrades, and make changes without affecting the live production environment. 
+%
+Both the environments can be accessed via unique launch URLs composed by the service name (EPM), the type of environment (test or production), the identity domain name and the data center in which the environment is located.\\
 
 \begin{lstlisting}[
     basicstyle=\footnotesize
     ]
 https://epm-idDomain.epm.dataCenterRegion.oraclecloud.com/epmcloud
 \end{lstlisting}
-
-Both the environments can be accessed via unique launch URLs composed by the service name (EPM), the type of environment (test or production), the identity domain name and the data center in which the environment is located.
 
 \paragraph{Modules and Applications}
 
@@ -939,7 +883,7 @@ Dimensions provide a way to organize and analyze data in a multidimensional stru
 They are typically structured as hierarchies, with each level in the hierarchy representing a different level of detail. 
 %
 Members represent the values within each level of the hierarchy and can be associated with attributes such as descriptions or tags to provide additional context. 
-
+%
 Hierarchies provide the ability to roll up or drill down data to gain insights into different levels of detail. 
 %
 Through dimensions, it is possible to execute dynamic calculations to generate on-the-fly calculations at runtime, without requiring the user to manually enter the data. 
@@ -965,17 +909,17 @@ In this dimension, data can be dynamically aggregated along the levels in order 
 Forms and reports are key components of Oracle Cloud EPM that enable users to interact with and analyze data in a multidimensional database. 
 %
 Forms are used to input or edit data, while reports are used to analyze data in a structured format.
-
+%
 Forms provide users with a familiar interface for entering or editing data in a multidimensional database. 
 %
 They can be designed to incorporate a variety of data entry methods, including text boxes, drop-down lists, and radio buttons. 
 %
 Users can also navigate between different cells and dimensions in a form to enter or edit data in a specific location.
-
+%
 Reports, on the other hand, provide a way to analyze data in a structured format. 
 %
 These reports can be customized to include specific data points and dimensions, and can be designed to incorporate a variety of formatting options, including charts, graphs, and tables.
-
+%
 One of the key advantages of forms and reports is their flexibility. 
 %
 Users can design and customize forms and reports to meet their organization's unique business requirements, incorporating specific data points and dimensions as needed. 
@@ -1025,12 +969,12 @@ The implementation of this EPM solution involves a systematic and comprehensive 
 %
 One crucial aspect of this process regards the creation of the dimensions that will be used to build reports from various perspectives. 
 %
-They are used to categorize and structure information in order to obtain a complete view on the performance of the Group.
+They are used to categorize and structure information in order to obtain a complete view on the performance of the Holding Group.
 
 Dimensions are the building blocks of an EPM system; they serve as the axes along which data is organized and analyzed, providing a multidimensional view on financial and operational information. 
 %
 Each dimension consists of a hierarchical structure which allows users to drill down information from high-level summaries to more granular details and vice versa.
-
+%
 Dimensions serve several purposes, including analysis, reporting, data integration and restructuring.
 %
 First of all, dimensions allow for the segmentation and grouping of data which facilitate analysis and reporting by enabling users to generate reports based on specific dimensions, providing insights from different angles.
@@ -1039,15 +983,15 @@ At the same time, they act as a common framework for integrating data from vario
 %
 Specifically, by aligning different systems and processes with a consistent set of dimensions, data can be harmonized and consolidated for accurate analysis and reporting.
 %
-Finally, dimensions provide flexibility to adapt to changing business requirements as they can be modified, expanded, or restructured to accommodate new entities, geographies, products, or brands as the Group evolves.
+Finally, dimensions provide flexibility to adapt to changing business requirements as they can be modified, expanded, or restructured to accommodate new entities, geographies, products, or brands as the Holding Group evolves.
 
 Building dimensions require a systematic process during which different aspects are taken into account.
 %
-The first step is to analyze the specific needs of the Group to identify the dimensions that will provide meaningful insights for analysis and reporting.
+The first step is to analyze the specific needs of the Holding Group to identify the dimensions that will provide meaningful insights for analysis and reporting.
 %
 Then, it is essential to determine the levels of the hierarchy for each dimension and assign member properties to capture additional information about each dimension member. 
 %
-These properties provide contextual information and can include attributes such as currency, time zone, brand category, or legal entity type. \\
+These properties provide contextual information and can include attributes such as currency, time zone, brand category, or legal Entity type. \\
 
 \begin{figure}[htbp]
 	\centering
@@ -1056,7 +1000,7 @@ These properties provide contextual information and can include attributes such 
 	\label{fig:dimensions}
 \end{figure}
 
-As we can see in figure \ref{fig:dimensions}, the activities of the group will be evaluated under five different dimensions of analysis: geography, channel, product, brand and entity.
+As we can see in figure \ref{fig:dimensions}, the activities of the Holding Group will be evaluated under five different dimensions of analysis: geography, channel, product, brand and Entity.
 %
 The geography dimension helps analyze financial and operational data based on different geographic regions, thus enabling the Holding Group to understand the performance of its entities across different countries, states, or regions. 
 %
@@ -1068,15 +1012,15 @@ The product dimension allows for a detailed analysis of revenue, costs, and prof
 %
 The brand dimension enables analysis and reporting based on different brands owned or managed by the Holding Group. It helps assess brand performance, market share, and customer preferences.
 %
-The entity dimension allows for analysis and reporting based on individual entities within the Holding Group, allowing the assessment of the performance of each entity separately and in comparison within each others.
+The Entity dimension allows for analysis and reporting based on individual entities within the Holding Group, allowing the assessment of the performance of each Entity separately and in comparison within each others.
 %
 Finally, the channel dimension allows for analysis based on different distribution channels used by the companies to deliver the products and helps assess sales performance and customer preferences across the various channels. 
 
 Once dimensions have been defined, the next crucial step is to load and map the data within the EPM solution and, specifically, to the Financial Consolidation and Close Solution (FCCS). 
 %
-To populate the dimensions with data, the Holding Group needs to collect financial data from all the entities of the Group as illustrated in figure \ref{fig:dataload}.
+To populate the dimensions with data, the Holding Group needs to collect financial data from all the Entities as illustrated in figure \ref{fig:dataload}.
 %
-Of course, different entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets, BI tools or cloud solutions.
+Of course, different Entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets, BI tools or cloud solutions.
 %
 Each Brand is responsible for collecting the financial data of the entities that belong to it, which will be transformed and adapted in order to meet the standards for loading.  
 %
@@ -1151,7 +1095,7 @@ This is done by creating a member mapping for each target dimension which, based
 When processing the source values for transformations, multiple mappings may apply to a specific source value. 
 %
 The order of precedence is Explicit, Between, In, Multi-Dimension, and Like. 
-
+%
 Once data have been mapped into the correct dimensions and members, the next step is to transform them to match the requirements of FCCS. 
 %
 Data transformation is a critical aspect of data integration and management as it enables organizations to convert data from various source systems into a consistent format that can be used for financial consolidation and reporting.
@@ -1179,7 +1123,7 @@ At the same time, it ensures that sensitive data is protected from unauthorized 
 %
 On a more technical level, data governance ensures that data is shared in a controlled and secure manner, while ensuring that data is managed and used consistently across all entities, improving standardization and efficiency.
 
-The process of data load runs continuously to keep the EPM system up-to-date with respect to the financial situation of the Group in real-time.
+The process of data load runs continuously to keep the EPM system up-to-date with respect to the financial situation of the Holding Group in real-time.
 %
 It is therefore important to update the process systematically to meet changes in business operations and allow the system to run smoothly, providing an accurate representation of reality.
 %
@@ -1193,7 +1137,7 @@ It allows organizations to define close calendars, assign responsibilities, and 
 %
 The integration capabilities of FCCS enable a smooth flow of data to other Oracle EPM solutions, such as Oracle Planning for planning, reporting and forecasting purposes - as shown in figure \ref{fig:planning-fccs}.
 %
-By seamlessly loading data from FCCS to the planning system, the Group can leverage the consolidated financial data for budgeting, forecasting, and scenario planning. 
+By seamlessly loading data from FCCS to the planning system, the Holding Group can leverage the consolidated financial data for budgeting, forecasting, and scenario planning. 
 %
 This native integration ensures a cohesive and holistic approach to financial management, facilitating data-driven decision-making across the organizations.
 %
@@ -1410,7 +1354,7 @@ Now, we can use Smart View, the Microsoft Office Excel add-in, to access and ana
 To do so, we need to connect Smart View to the EPM application and retrieve the data that has been calculated or transformed by the rule, verifying that the results align with the expected outcomes and meet the defined requirements.
 
 %----------------------------------------------------------------------------------------
-\chapter{My Role in the Implementation Process}
+\chapter{Business Rules for Efficient Planning}
 \label{chap:cmyactivity}
 %----------------------------------------------------------------------------------------
 
@@ -1433,21 +1377,21 @@ In conclusion, this chapter delves into best practices and lessons learned throu
 % Describe Cost Allocation
 Cost allocation is a financial management process that involves assigning and distributing costs to various departments, divisions, products, or projects within an organization. 
 %
-Within the Holding Group, cost allocation plays a crucial role in accurately determining the financial performance and profitability of each entity.
+Within the Holding Group, cost allocation plays a crucial role in accurately determining the financial performance and profitability of each Entity.
 %
-It helps in evaluating the contribution of each entity and each Brand to the overall success of the group, enabling effective decision-making regarding resource allocation, investment opportunities, and strategic planning.
+It helps in evaluating the contribution of each Entity and each Brand to the overall success of the Holding Group, enabling effective decision-making regarding resource allocation, investment opportunities, and strategic planning.
 %
 Cost allocation policies can be personalized to align with the specific needs and characteristics of the company. 
 %
-These policies take into account various factors such as the nature of business operations, the structure of the Group, the legal relationship between entities and the strategic objectives of the parent company.
+These policies take into account various factors such as the nature of business operations, the structure of the Holding Group, the legal relationship between entities and the strategic objectives of the parent company.
 
 To define such policies, the Holding Group undertook the following steps:
 
 \begin{enumerate}
-    \item Identifying cost drivers: cost drivers are the factors that directly influence the recording of costs. Here, the Group identified three variables as driver, which are Brand, Geography and Channel of Distribution.
+    \item Identifying cost drivers: cost drivers are the factors that directly influence the recording of costs. Here, the Holding Group identified three variables as driver, which are Brand, Geography and Channel of Distribution.
     \item Allocating direct costs: direct costs, which can be easily attributed to specific departments, are allocated based on a straightforward allocation basis.
     \item Allocating indirect costs: indirect costs, which cannot be directly attributed to specific areas, require more complex allocation methods. These methods involve the use of allocation drivers that reflect the usage or benefit received by different departments.
-    \item Determining granularity level: the granularity level refers to the degree of detail at which costs are allocated within the Group. 
+    \item Determining granularity level: the granularity level refers to the degree of detail at which costs are allocated within the Holding Group. 
 \end{enumerate}
 
 % What the customer want
@@ -1482,13 +1426,13 @@ Figure \ref{fig:combos} displays all the possible combinations to which the cost
 
 One of the significant challenges faced during the cost allocation process is the lack of detailed information in the intersections of the variables Brand, Geography, and Channel.
 %
-This limitation arises from the fact that different entities within the Group employ different tools for collecting financial data and, at the same time, each entity follows its own business policy, resulting in variations in the granularity levels at which data is collected.
+This limitation arises from the fact that different Entities employ different tools for collecting financial data and, at the same time, each Entity follows its own business policy, resulting in variations in the granularity levels at which data is collected.
 %
 In the context of cost allocation, it refers to the extent to which expenses are tracked and categorized based on various dimensions and explains the presence of different types of intersections to allocate based on the different detail level.
 %
-For example, one entity may have a more granular approach, capturing expenses at a detailed level for each specific Brand, Geography and Channel combination. 
+For example, one Entity may have a more granular approach, capturing expenses at a detailed level for each specific Brand, Geography and Channel combination. 
 %
-On the other hand, another entity might adopt a more aggregated approach, grouping expenses at a higher level and lacking the necessary level of detail in these intersections.
+On the other hand, another Entity might adopt a more aggregated approach, grouping expenses at a higher level and lacking the necessary level of detail in these intersections.
 %
 The lack of consistent granularity levels across the Holding Group poses challenges when it comes to allocate costs.
 %
@@ -1627,7 +1571,7 @@ By all means, intercompany transactions are a common occurrence, especially for 
 %
 These transactions serve various purposes, such as the sharing of resources and services or the transfer of assets across the entities. 
 %
-However, it is important to note that intercompany transactions can introduce complexities in financial reporting and consolidation: when intercompany transactions are not appropriately accounted for and eliminated during the consolidation process, they can distort the financial statements and create an artificial economic value within the group.
+However, it is important to note that intercompany transactions can introduce complexities in financial reporting and consolidation: when intercompany transactions are not appropriately accounted for and eliminated during the consolidation process, they can distort the financial statements and create an artificial economic value within the Holding Group.
 %
 Eliminating intercompany transactions during the consolidation process is crucial for the Holding Group as it helps prevent the duplication of revenues, expenses, assets, and liabilities, which can lead to inflated financial results.
 %
@@ -1638,13 +1582,13 @@ To achieve the elimination of intercompany transactions, the Holding Groups requ
 %
 The implementation of such system posed several challenges due to the nature of intercompany transactions and the complexities associated with data protection within the Holding Group.
 %
-Intercompany transactions involve a two-way relationship between entities: on one side, an entity records a revenue in its local currency, while on the other side, another entity incurs a cost. 
+Intercompany transactions involve a two-way relationship between entities: on one side, an Entity records a revenue in its local currency, while on the other side, another Entity incurs a cost. 
 %
 This creates a complex intersection of financial relationships that need to be accurately identified, matched, and eliminated during the consolidation process.
 %
-The complexity increases further when considering the concept of data protection: each entity within the group operates independently and has its own set of financial data, which is confidential and sensitive. 
+The complexity increases further when considering the concept of data protection: each Entity operates independently and has its own set of financial data, which is confidential and sensitive. 
 %
-As a result, the different entities of the group cannot have unrestricted access to the financial data of other entities.
+As a result, the different entities cannot have unrestricted access to the financial data of other entities.
 %
 The challenge arises from the fact that the intercompany elimination process requires access to financial data from multiple entities to accurately identify and eliminate intercompany transactions.
 %
@@ -1665,47 +1609,47 @@ In this example, Entity 1 registered a sale transaction of € 500.00 with Entit
 %
 At the same time, Entity 1 registered percentage margin of 3\%, meaning that the COGS for that transaction amounts to € 485.00 (97\% of the revenue).
 %
-The remaining revenue margin is reflected in the financial view of the Group by checking the difference between the Gross Margin towards third parties and those towards intercompany transactions.
+The remaining revenue margin is reflected in the financial view of the Holding Group by checking the difference between the Gross Margin towards third parties and those towards intercompany transactions.
 %
 This statutory view serves as the starting block on which the consolidated process is built, which represents the overall financial position of the Group as a whole.
 %
 It provides a comprehensive view that combines the financial information of all the entities and is built by distinguishing two distinct perspectives: the Entity View and the Brand View.
 
-The Entity View focuses on the values at the entity level, inclusive of intercompany transactions.
+The Entity View focuses on the values at the Entity level, inclusive of intercompany transactions.
 %
-In this perspective, each individual entity is treated as a separate reporting unit and the financial information of each entity, including its assets, liabilities, revenues, and expenses, is consolidated without any eliminations of intercompany transactions. 
+In this perspective, each individual Entity is treated as a separate reporting unit and the financial information of each Entity, including its assets, liabilities, revenues, and expenses, is consolidated without any eliminations of intercompany transactions. 
 %
-This approach provides a detailed understanding of each entity's financial standing and performance, allowing stakeholders to assess the individual contribution of each entity to the group as a whole.
+This approach provides a detailed understanding of each Entity's financial standing and performance, allowing stakeholders to assess the individual contribution of each Entity to the Group as a whole.
 %
 On the other hand, the Brand View takes into consideration the values at the brand level, with the elimination of intercompany transactions among entities of the same brand group. 
 %
 Under this perspective, entities within are grouped based on their shared brand and intercompany transactions between entities belonging to the same brand group are eliminated to avoid double-counting and provide a more accurate representation of the brand's financial position and performance. 
 %
-This approach allows stakeholders to evaluate the financial results specifically related to a particular brand within the holding group, enabling strategic decision-making and brand-level performance analysis.
+This approach allows stakeholders to evaluate the financial results specifically related to a particular brand within the Holding Group, enabling strategic decision-making and brand-level performance analysis.
 
 Both the Entity View and Brand View of the consolidated financial statement offer unique insights and serve different purposes. 
 %
-The Entity View provides a granular understanding of each entity's financial performance, while the Brand View enables a focused assessment of the performance and financial health of specific brands within the  Group. 
+The Entity View provides a granular understanding of each Entity's financial performance, while the Brand View enables a focused assessment of the performance and financial health of specific brands within the Holding  Group. 
 %
 The choice between these perspectives depends on the specific needs of stakeholders and the level of detail required for decision-making and analysis.
 %
 It is worth noting that the Entity View and Brand View are not mutually exclusive, and both perspectives can be presented within a consolidated financial statement. 
 %
-In this case, the consolidated financial statement includes separate sections that highlight the entity-level financial information as well as the brand-level financial information after the elimination of intercompany transactions. 
+In this case, the consolidated financial statement includes separate sections that highlight the Entity-level financial information as well as the brand-level financial information after the elimination of intercompany transactions. 
 %
-This dual perspective provides a comprehensive picture of the holding group's financial performance, encompassing both the individual entities and the brands operating within the group.
+This dual perspective provides a comprehensive picture of the Holding Group's financial performance, encompassing both the individual entities and the brands.
 
-Concerning the implementation process of this intercompany solution, to overcome the issue of the restricted access on data belonging to different entities, the system is designed to allow data to be inputted by only one entity, specifically the one responsible for registering the cost of goods sold (COGS).
+Concerning the implementation process of this intercompany solution, to overcome the issue of the restricted access on data belonging to different entities, the system is designed to allow data to be inputted by only one Entity, specifically the one responsible for registering the cost of goods sold (COGS).
 %
-In this system, the revenues of other entities can be automatically calculated based on a predefined business rule that extract the relevant entity based on the intersection of dimensions in which the COGS is registered.
+In this system, the revenues of other entities can be automatically calculated based on a predefined business rule that extract the relevant Entity based on the intersection of dimensions in which the COGS is registered.
 %
-By designating one entity as the sole provider of COGS data, the system reduces redundancy and potential errors that may arise from multiple entities independently recording the same transaction. 
+By designating one Entity as the sole provider of COGS data, the system reduces redundancy and potential errors that may arise from multiple entities independently recording the same transaction. 
 %
-This entity becomes the source of reference for determining the cost of goods sold across the group.
+This Entity becomes the source of reference for determining the cost of goods sold across the Holding Group.
 %
 At the same time, the entities which register the revenue have the possibility to input the margin which will adjust the value of the cogs related to the specific intercompany transaction.
 %
-When the COGS data is registered by the designated entity, the intercompany management system identifies the appropriate dimensions associated with the transaction and the business rules will determine the entities that are impacted by the transaction and calculate the corresponding revenues for each entity.
+When the COGS data is registered by the designated Entity, the intercompany management system identifies the appropriate dimensions associated with the transaction and the business rules will determine the entities that are impacted by the transaction and calculate the corresponding revenues for each Entity.
 %
 This automated approach eliminates the need for manual data input and revenue calculations across multiple entities, thus reducing the potential for errors and ensuring consistency in the intercompany reconciliation process. 
 %
