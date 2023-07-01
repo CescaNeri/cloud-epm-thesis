@@ -15,12 +15,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-
-      - name: Exclude Folder Flowchart
-        run: rm -rf ${{ github.workspace }}/flowchart
-
-      - name: Exclude README
-        run: rm -rf ${{ github.workspace }}/README.md
+          sparse-checkout: |
+            thesis-style.sty
+            thesis-main.tex
+            front.tex
+            bibliography.bib
+            figures
 
       - name: Build latex
         uses: xu-cheng/latex-action@v2
