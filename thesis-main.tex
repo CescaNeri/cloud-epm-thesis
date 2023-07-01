@@ -1369,8 +1369,6 @@ The chapter begins by providing an overview of the importance of cost allocation
 Then, it highlights the challenges and complexities associated with these areas and delves into my practical journey in addressing them during the implementation process.
 %
 Furthermore, it offers insights into the strategies, methodologies, and tools employed to establish efficient cost allocation processes and streamline intercompany transactions, while discussing the challenges encountered during the implementation.
-%
-In conclusion, this chapter delves into best practices and lessons learned throughout the implementation process, reflecting on the key takeaways, including the importance of data accuracy, stakeholder engagement, clear communication, and continuous improvement. 
 
 \section{Cost allocation}
 
@@ -1664,41 +1662,130 @@ This automated approach eliminates the need for manual data input and revenue ca
 %
 Furthermore, it provides real-time visibility into intercompany transactions and facilitates efficient and accurate financial reporting and analysis.
 
-\section{Best practices for implementation}
+%----------------------------------------------------------------------------------------
+\chapter{\conclusionsname}
+\label{chap:conclusions}
+%----------------------------------------------------------------------------------------
+
+The concluding chapter of this thesis provides a comprehensive summary of the entire project, highlighting the key findings and insights derived from the implementation project on leveraging Oracle Cloud Enterprise Performance Management business rules for efficient planning. 
+%
+This chapter aims to offer a concise overview of the project's outcomes, followed by an exploration of best practices for implementing EPM solutions and a thoughtful discussion of the implications and concluding thoughts.
+
+\section{Summary of the project}
+
+The primary objective of this project was to implement an Enterprise Performance Management solution for a Holding Group based in Italy, which aims at achieving a complete and comprehensive view of the performance of its Entities. 
+%
+The project encompassed several essential steps, which will be summarized in this section, highlighting the key aspects and outcomes.
+
+The initial phase involved collecting the needs and requirements of the Holding Group in order to gain a comprehensive understanding of the organization's specific planning and performance management needs.
+%
+This step laid the foundation for selecting a suitable EPM solution and a resulting project plan.
+%
+After a careful evaluation, the chosen solution was Oracle Cloud EPM, which is a comprehensive suite of cloud-based applications and services provided by Oracle Corporation.
+%
+This decision was driven by its ability to be customized to meet the specific requirements of the Holding Group, its comprehensive security and compliance features and its robust support and training resources. 
+%
+Oracle Cloud EPM was deemed an ideal fit to address the complex planning and reporting needs of the Holding Group.
+
+Next, the planning environment was set up, focusing on defining dimensions and elements that would provide a structured framework for consolidating and analyzing financial data from the different Entities. 
+%
+One of the significant challenges encountered during the process was managing the data flow originating from the different Entities, each utilizing different software systems to collect financial data with varying levels of granularity. 
+%
+To achieve harmonization, financial data were standardized through data transformation and normalization in order to achieve a cohesive and unified view of the organization's performance.
+%
+As a consequence, data mapping and loading were crucial activities to ensure the accurate transfer of financial data into the planning environment. 
+%
+Through the mapping process, data from different sources were successfully aligned with the predefined dimensions and elements in the planning environment, enabling a unified view of the Holding Group performance while keeping the detail of the Entities.
+
+To automate critical processes such as financial close and consolidation, budgeting, cost and revenue allocations, and intercompany management, business rules were developed within Oracle Cloud EPM. 
+%
+These rules enabled the creation of ad hoc calculations and workflows, which are used to streamline the planning and reporting processes while ensuring accuracy and efficiency.
+%
+The focus of this project was specifically on business rules, exploring their functionality, how they operate and their role in driving efficient planning. 
+%
+The implementation of these rules played a vital role in achieving the desired comprehensive view of the Entities' performance within the Holding Group.
+%
+In particular, business rules are logical instructions that define calculations within the multidimensional database of the EPM application. 
+%
+They enable the calculation and aggregation of financial and operational data, eliminating the need for manual calculations, thus reducing errors and ensuring consistency in the planning process.
+%
+At the same time, they can be used for key data transformations within the Holding Group including, for example, currency conversions (keeping in mind that the Group operates in more than 130 countries), revenues and cost allocations or adjustments needed to comply with the different financial reporting standards worldwide. 
+
+Ultimately, the successful implementation of Oracle Cloud EPM provided the Holding Group with actionable insights for improved decision-making. 
+%
+The comprehensive and unified view of Entity performance enabled stakeholders to identify trends, analyze variances, and evaluate the effectiveness of strategic initiatives. 
+%
+With enhanced planning efficiency and accurate financial information available, the Holding Group was empowered to drive performance improvement and achieve their strategic objectives.
+%
+In conclusion, through a holistic approach encompassing needs assessment, solution selection, data management and the implementation of business rules, this project successfully delivered the desired outcomes of enhancing planning efficiency.
+%
+Such implementation enabled the Holding Group to have a comprehensive view of Entity performance, allowing them to succeed and stay competitive in a rapidly evolving business landscape.
+
+\section{Insights and final thoughts}
 
 Throughout my experience in the technology - EPM team, I gained valuable insights into best practices for Oracle Cloud EPM implementation and stakeholders management.
 %
 Here, I reflect on these key takeaways, which encompass data accuracy, stakeholder engagement, clear communication, and continuous improvement.
 
 \paragraph{Data Accuracy:}
-One of the fundamental aspects of successful implementation and, in particular, for the implementation of the cost allocation and intercompany management systems, is ensuring data accuracy. 
+One of the fundamental aspects of successful implementation is ensuring data accuracy. 
 %
 When manipulating data through business rules in an Oracle Cloud EPM implementation, it is essential to prioritize data accuracy and avoid permanently modifying meaningful data. 
 %
-Before deploying business rules to production, it is important to create test scenarios that cover various data scenarios and performing extensive testing to ensure the rules produce the expected outcomes. 
+The accuracy of data directly impacts the quality and reliability of financial and operational analyses. 
+%
+Inaccurate data can lead to erroneous calculations and can introduce inconsistencies, thus hindering the ability to identify trends, patterns, and areas for improvement.
+%
+Before deploying business rules to production, it is important to create ad hoc tests that cover various data scenarios and perform extensive testing to ensure the rules produce the expected outcomes. 
 %
 By validating business rules against known data sets, it is possible to identify any discrepancies or unintended consequences and make necessary adjustments to maintain data accuracy.
 
 \paragraph{Stakeholder Engagement:}
-Engaging stakeholders at various levels is vital for the success of the implementations. 
+Engaging stakeholders at various levels is vital for the success of the implementation process. 
 %
-As I worked on the project, I realized the significance of involving key stakeholders from different departments in the requirements gathering, design, and testing phases. 
+As I worked on the project, I realized how stakeholder engagement plays a crucial role in ensuring that the solution aligns with the needs and expectations of the Holding Group.
 %
-By actively involving stakeholders, we could gain a deeper understanding of their specific needs and challenges, enabling us to tailor the EPM solution to meet the requirements of the Group effectively.
+In particular, collaborating with finance professionals and involving end users ensured the consistency of financial operations and the effective utilization of the EPM application within the organization.
+%
+Finance professionals play a critical role in ensuring the accuracy and integrity of financial data and processes. 
+%
+Their expertise in financial management, reporting standards, and compliance requirements was essential during the implementation process.
+%
+At the same time, involving end users was equally important for the success of the implementation project:
+%
+End users, who are typically individuals working for different brands or business units within the organization, are the ones directly interacting with the EPM application on a day-to-day basis. 
+%
+Their involvement in the implementation process ensured that their needs, workflows, and reporting requirements are adequately addressed.
+%
+Involving end users also promotes user training and change management initiatives. 
+%
+They are best positioned to provide feedback on the usability and functionality of the EPM application and, by involving them in testing and training sessions, we were able to gather valuable insights on user experience, identifying areas for improvement and enhance usability and user satisfaction.
 
 \paragraph{Clear Communication:}
-Clear and effective communication played a key role in the success of the implementations. 
+Clear and effective communication lays a pivotal role in ensuring that project objectives, expectations, and information are effectively conveyed to all stakeholders involved.  
 %
-This involved breaking down complex concepts into easily understandable terms, providing regular updates on the implementation progress, and addressing any concerns or questions of the client promptly. 
+One of the key reasons why clear communication is essential is its ability to align stakeholders with the project goals and objectives.
 %
-By fostering transparent and open communication channels, we could ensure alignment among stakeholders and maintain their support throughout the implementation journey.
+Clear communication is especially crucial when it comes to technical and functional requirements. 
+%
+It involves effectively translating complex technical concepts into clear and understandable language for non-technical stakeholders. 
+%
+This enables them to grasp the functionalities and benefits of the Oracle Cloud EPM solution, ensuring that everyone is on the same page, working towards a common goal
+%
+Lastly, clear communication enhances post-implementation support and maintenance, making sure that users have access to the necessary documentation, training materials appropriate support to resolve any issues or challenges they may encounter.
 
 \paragraph{Continuous Improvement:}
-The implementation of cost allocation and intercompany management is an iterative process that requires continuous improvement. 
+Continuous improvement enables organizations to refine and enhance their processes, systems, and decision-making capabilities over time. 
 %
-As we encountered challenges and learned from the practical implementation experience, it became evident that ongoing optimization and refinement were necessary. 
+It involves a proactive approach to identify areas for improvement and make the necessary adjustments to drive ongoing optimization within the EPM framework. 
 %
-This can be done by reviewing the implemented processes and monitoring their performance to identify areas for improvement. \\
+One key reason why continuous improvement is important is that it allows organizations to adapt to changing business needs and dynamics: by continuously evaluating and improving their EPM solution, organizations can ensure that it remains aligned with their evolving business strategies and goals.
+%
+They can address emerging challenges, seize new opportunities, and stay competitive in a dynamic business environment.
+%
+Moreover, the EPM landscape is continuously evolving with new features and functionalities. 
+%
+Organizations can enhance their EPM solution by optimizing processes and leveraging innovative capabilities, to harness the full potential of the Oracle Cloud EPM solution, unlocking new efficiencies and competitive advantages.\\
 
 During the implementation of the EPM solution in Oracle Cloud EPM, I gained several valuable insights that have contributed to the successful deployment of the system.
 %
@@ -1713,20 +1800,10 @@ Given the diversified nature of the Holding Group, it was crucial to engage effe
 An important challenge that emerged during the implementation was the need for focused testing and validation of complex business rules as, due to the intricacies of the Group's financial structure, it was crucial to conduct comprehensive testing to ensure the accuracy and integrity of the calculations. 
 %
 Developing a robust testing framework, including test scenarios, data sets, and validation procedures, was critical to mitigating potential errors and identifying any anomalies before deploying to production.
-%
+
 In conclusion, the implementation of this EPM solution provided valuable insights into the benefits and challenges associated with leveraging business rules for complex financial structures. 
 %
 Through automation, collaboration, flexibility, and comprehensive testing, the implementation successfully integrated the EPM solution into the organization's financial management practices, driving better decision-making and optimizing performance across the Holding Group.
-
-%----------------------------------------------------------------------------------------
-\chapter{\conclusionsname}
-\label{chap:conclusions}
-%----------------------------------------------------------------------------------------
-
-\section{Summary of the project}
-
-\section{Discussion and concluding thoughts}
-
 
 %----------------------------------------------------------------------------------------
 % BIBLIOGRAPHY
