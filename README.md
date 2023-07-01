@@ -6,31 +6,32 @@ Specifically, this thesis will focus on a case study of Oracle Cloud implementat
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Literature Review](#literature-review)
-- [Methodology](#methodology)
-- [EPM Implementation Project: A Global Perspective](#epm-implementation-project-a-global-perspective)
-- [A Practical Journey: My Role in the Implementation Process](#a-practical-journey-my-role-in-the-implemenation-process)
+- [Enterprise Performance Management](#enterprise-performance-management)
+- [Oracle Cloud EPM Implementation](#oracle-cloud-epm-implementation)
+- [Business Rules for Efficient Planning](#business-rules-for-efficient-planning)
 - [Conclusions](#conclusions)
 
 ## Introduction
 
 The introduction provides an overview of the thesis and introduces the importance of Enterprise Performance Management in modern businesses. It also provides an overview of the background and significance of the topic, scope and limitations of the study, and an overview of the methodology.
 
-## Literature Review
+## Enterprise Performance Management
 
-This section reviews the literature on Enterprise Performance Management, including the definition and concepts of EPM and its evolution in modern businesses. It also provides an overview on Oracle Cloud and its EPM solutions, together with the benefits and challenges of implementing EPM in businesses. 
+This chapter explores the concept of Enterprise Performance Management. It defines EPM and provides an understanding of its key concepts and components. 
+It discusses the benefits that organizations can achieve by implementing EPM and highlights the challenges that may arise during the implementation process. 
+This chapter aims to establish a foundation of knowledge regarding EPM, laying the groundwork for the subsequent chapters.
 
-## Methodology
+## Oracle Cloud EPM Implementation
 
-The methodology section outlines the approach and methodology used for the  implementation of an Enterprise Performance Management solution in a company.
+This chapter focuses on the implementation of Oracle Cloud EPM. 
+It begins with discussing the process of selecting an EPM solution and outlines the key considerations involved in the decision-making process. 
+The chapter then explores the elements of the implementation process, providing insights into the steps required to successfully deploy Oracle Cloud EPM. 
 
-## EPM Implementation Project: A Global Perspective
+## Business Rules for Efficient Planning
 
-This section presents the case study of Oracle Cloud implementation in a business, including the company background and context, the EPM solution selection and the implementation process. It also analyzes key features and functionalities of the implemented EPM solution, investigating the impact of the EPM solution on the company's performance and the best practices for EPM implementation. 
-
-## A Practical Journey: My Role in the Implementation Process
-
-This section focuses on the my personal involvement in the implementation project during the internship experience. It highlights the specific tasks, experiences, and challenges encountered throughout the project, discussing the practical aspects of the implementation, lessons learned, and best practices.
+This chapter delves into the concept of Business Rules and how they can enhance efficient planning within Oracle Cloud EPM. 
+It examines two practical implementations: cost allocation and intercompany management. 
+The chapter explores the implementation of business rules in these domains, providing insights into the best practices and strategies for achieving efficient planning outcomes. 
 
 ## Conclusions
 
