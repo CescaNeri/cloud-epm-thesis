@@ -1360,11 +1360,11 @@ To do so, we need to connect Smart View to the EPM application and retrieve the 
 
 During the internship, I actively participated in diverse aspects of this EPM project, gaining hands-on experience in configuring, customizing, and optimizing the EPM solution. 
 %
-This chapter delves into my contributions and experiences during the internship period, specifically focusing on two essential implementations within the Enterprise Performance Management project: cost allocation and intercompany management. 
+This chapter delves into the role of business rules in Oracle Cloud EPM in shaping and automating the planning processes, specifically focusing on two essential implementations within the Enterprise Performance Management project: cost allocation and intercompany management. 
 %
 While working on various sections of the EPM solution, these two implementations emerged as particularly relevant, showcasing how Oracle Cloud EPM can meet specific needs of customers.
 %
-The chapter begins by providing an overview of the importance of cost allocation and intercompany management in the context of Enterprise Performance Management. 
+The chapter begins by providing an overview of the importance of cost allocation and intercompany management, which are not directly related between them but are of key importance in the context of Enterprise Performance Management.
 %
 Then, it highlights the challenges and complexities associated with these areas and delves into my practical journey in addressing them during the implementation process.
 %
@@ -1377,14 +1377,14 @@ In conclusion, this chapter delves into best practices and lessons learned throu
 % Describe Cost Allocation
 Cost allocation is a financial management process that involves assigning and distributing costs to various departments, divisions, products, or projects within an organization. 
 %
-Within the Holding Group, cost allocation plays a crucial role in accurately determining the financial performance and profitability of each Entity.
+For the Holding Group examined, cost allocation plays a crucial role in accurately determining the financial performance and profitability of each Entity.
 %
 It helps in evaluating the contribution of each Entity and each Brand to the overall success of the Holding Group, enabling effective decision-making regarding resource allocation, investment opportunities, and strategic planning.
 %
 Cost allocation policies can be personalized to align with the specific needs and characteristics of the company. 
 %
 These policies take into account various factors such as the nature of business operations, the structure of the Holding Group, the legal relationship between entities and the strategic objectives of the parent company.
-
+%
 To define such policies, the Holding Group undertook the following steps:
 
 \begin{enumerate}
@@ -1395,7 +1395,7 @@ To define such policies, the Holding Group undertook the following steps:
 \end{enumerate}
 
 % What the customer want
-The Holding Group aims at establishing an automated system that can accurately allocate costs based on predefined rules, taking into account the validity of drivers with respect to the starting intersections to allocate.
+The Holding Group aims at establishing an automated system that can accurately allocate costs based on predefined rules, taking into account the validity of drivers with respect to the starting combinations of Brand, Geography and Channel to allocate.
 %
 By implementing this system, the Holding Group seeks to achieve greater efficiency, accuracy, and transparency in their cost allocation practices.
 %
@@ -1403,7 +1403,7 @@ At the same time,  by establishing clear rules and leveraging the platform's cap
 
 The Holding Group has identified three key dimensions for cost allocation: Brand, Geography, and Channel. 
 %
-For each dimension, they have categorized the starting intersections into three types: 
+For each dimension, they have categorized the members of the combinations to allocate into three types: 
 
 \begin{enumerate}
     \item ``Specific Member'': the variable is given, meaning that the expense was incurred by a specific Brand (for Brand), in a specific country (for Geography) and through a specific channel of distribution (for Channel).
@@ -1411,9 +1411,11 @@ For each dimension, they have categorized the starting intersections into three 
     \item ``Member to Allocate'': the variable is given, but it represents a lower level of detail. The expense was incurred in a broad geographical area (like EMEA or APAC), regards a group of entities under the same sub-group or belong to a class of channels of distribution without identifying the specific one. In this case, the expense should be allocated with a greater level of detail.
 \end{enumerate}
 
-This results in a total of 27 possible combinations of starting intersections to allocate across the dimensions.
+Therefore, we can have three different types of element for the three dimensions Brand, Geography and Channel, leading to a total of 27 possible combinations of combinations to allocate across the dimensions.
 %
-By all means, a starting intersection in which Brand, Geography and Channel are all specific, already has the maximum level of detail and there is no need to allocate the expense, leading to 26 possible combinations to considerate.
+By all means, a combination in which Brand, Geography and Channel are all specific, already has the maximum level of detail and there is no need to allocate the expense, leading to 26 possible combinations to considerate.
+%
+For example, a cost recorded on Brand A, Italy and E-commerce as combination of Brand, Geography and Channel, presents the maximum level of detail and allocation is not needed.
 
 \begin{figure}[htbp]
 	\centering
@@ -1422,17 +1424,21 @@ By all means, a starting intersection in which Brand, Geography and Channel are 
 	\label{fig:combos}
 \end{figure}
 
-Figure \ref{fig:combos} displays all the possible combinations to which the costs to allocate may belong; for example, we may have sales, general and administrative expenses (SG\&A) incurred by a specific brand (B1), in a specific geographical area without the detail of the country (G3), through an unknown channel of distribution (C2).
+Figure \ref{fig:combos} displays all the possible combinations to which the costs to allocate may belong; for example, we may have sales, general and administrative expenses (SG\&A) incurred by a specific brand (B1), in a specific geographical area without the detail of the country like EMEA (G3), through an unknown channel of distribution, No Channel (C2).
+%
+Here, the goal is to fragment the initial cost within more specific combinations of Brand, Geography and Channel based on the driver chosen.
+%
+In particular, the Brand will remain the same since it is already specific, the Geography will regard one or more countries belonging to EMEA, while Channel can be allocated on any member of the dimension as it is unknown.
 
-One of the significant challenges faced during the cost allocation process is the lack of detailed information in the intersections of the variables Brand, Geography, and Channel.
+One of the significant challenges faced during the cost allocation process is the lack of detailed information in the combinations of the variables Brand, Geography, and Channel.
 %
 This limitation arises from the fact that different Entities employ different tools for collecting financial data and, at the same time, each Entity follows its own business policy, resulting in variations in the granularity levels at which data is collected.
 %
-In the context of cost allocation, it refers to the extent to which expenses are tracked and categorized based on various dimensions and explains the presence of different types of intersections to allocate based on the different detail level.
+In the context of cost allocation, it refers to the extent to which expenses are tracked and categorized based on various dimensions and explains the presence of different types of combinations to allocate based on the different detail level.
 %
 For example, one Entity may have a more granular approach, capturing expenses at a detailed level for each specific Brand, Geography and Channel combination. 
 %
-On the other hand, another Entity might adopt a more aggregated approach, grouping expenses at a higher level and lacking the necessary level of detail in these intersections.
+On the other hand, another Entity might adopt a more aggregated approach, grouping expenses at a higher level and lacking the necessary level of detail in these elements.
 %
 The lack of consistent granularity levels across the Holding Group poses challenges when it comes to allocate costs.
 %
@@ -1444,14 +1450,15 @@ In this regard, the Holding Group has defined three different types of drivers f
 
 \begin{enumerate}
     \item ``Specific Driver'': the driver allocates the cost on a specific member for the dimension Brand, Geography or Channel.
-    \item ``All Driver'': the driver allocates the cost on the same member of the starting intersection.
+    \item ``All Driver'': the driver allocates the cost on the same member of the starting combination.
     \item ``Multiple Driver'': the driver allocates the cost on a combination of specific members for the dimension Brand, Geography or Channel.
 \end{enumerate}
 
-These drivers play a critical role in determining the allocation of costs within the identified intersections.
+These drivers play a critical role in determining the allocation of costs within the identified combinations.
+%
 To meet the customer's requirements, the implementation project aims to develop an automated system that can handle the complex task of cost allocation. 
 %
-The system will incorporate specific rules that govern the validity of drivers based on the starting intersections; this ensures that costs are allocated accurately and in accordance with the predefined allocation methodology.
+The system will incorporate specific rules that govern the validity of drivers based on the starting combinations; this ensures that costs are allocated accurately and in accordance with the predefined allocation methodology.
 
 \begin{figure}[htbp]
 	\centering
@@ -1460,7 +1467,7 @@ The system will incorporate specific rules that govern the validity of drivers b
 	\label{fig:driver}
 \end{figure}
 
-Figure \ref{fig:driver} illustrates the validity of the drivers based on the combinations of Brand, Geography and Channel for the intersections to allocate.
+Figure \ref{fig:driver} illustrates the validity of the drivers based on the combinations of Brand, Geography and Channel.
 %
 As we can see, the different drivers allocate costs in different destinations based on the nature of the  starting intersection:
 %
@@ -1476,19 +1483,19 @@ The same guiding principle goes for multiple driver, meaning that a Member to Al
 %
 Ultimately, ``Driver ALL''is always valid and allocates the cost on the same member of the starting intersection for the dimension in which it is used.
 
-As a general rule, the cost for a specific intersection of Brand, Geography and Channel can be allocated only if the driver covers the intersection entirely.
+As a general rule, the cost for a specific combination of Brand, Geography and Channel can be allocated only if the driver covers the intersection entirely.
 %
-For instance, figure \ref{fig:allocation} exhibits two examples of allocations: as we can see, both cases starts from a cost to allocate that has a specific Brand (Brand A), EMEA and E-commerce as a starting intersection for the dimensions Brand, Geography and Channel, which amounts to € 1,000.00.
+For instance, figure \ref{fig:allocation} exhibits two examples of allocations: as we can see, both cases starts from a cost to allocate that has a specific Brand (Brand A), EMEA and E-commerce as a starting combination for the dimensions Brand, Geography and Channel, which amounts to € 1,000.00.
 %
 The drivers for both the cases are composed of a specific Brand, a multiple driver for Geography and a ``Driver All'' for the Channel dimension.
 %
 Specifically for the first case, 70\% of the cost should be allocated on the intersection ``Brand A, Spain, E-commerce'' and the remaining 30\% on the intersection ``Brand A, China, E-commerce'', while in the second case, 70\% of the cost belongs to ``Brand A, Spain, E-commerce'' and 30\% goes to ``Brand A, Germany, E-commerce''.
+
+Nevertheless, the first case represents an invalid driver, meaning that the driver does not cover the intersection to allocate entirely, therefore, only the driver of the second case can correctly allocate the cost.
 %
-Nevertheless, the first case represents an invalid driver and only the driver of the second case can correclty allocate the cost.
+More in details, in the first driver, 30\% of the driver is invalid due to the fact that China does not belong to EMEA but is part of the APAC group.
 %
-The first driver does not cover the intersection entirely as 30\% of the driver is invalid, due to the fact that China does not belong to EMEA but is part of the APAC group.
-%
-The second driver, on the other hand, accurately allocate the cost entirely as it meets all the rules that govern the validity of the drivers.
+The second driver, on the other hand, accurately allocate the cost entirely as it meets all the requirements that govern the validity of the drivers.
 
 \begin{figure}[ht]
 	\centering
@@ -1497,7 +1504,7 @@ The second driver, on the other hand, accurately allocate the cost entirely as i
 	\label{fig:allocation}
 \end{figure}
 
-The first step for the implementation process of the allocation system involved the gathering of the requirements from the client in order to understand deeply the business processes, financial goals and the allocation needs.
+The first step for the implementation process of the allocation system involved the gathering of the requirements from the client in order to understand deeply the business processes, the financial goals and the allocation needs.
 %
 Once the allocation logics have been defined, the next step is to design the solution.
 %
@@ -1532,7 +1539,7 @@ At the same time, it calculates and stores the allocation percentage for each in
 
 Regarding the second rule, figure \ref{fig:process} displays the key logical steps performed by the rule, starting from the retrieval of the value of the driver until the allocation of the cost.
 %
-The rule starts by checking whether the cost is to allocate, that is when at least one dimension is either ``No Member'' or ``Member to allocate'' and, if this is the case, ti check the driver validity.
+The rule starts by checking whether the cost is to allocate, that is when at least one dimension is either ``No Member'' or ``Member to allocate'' and, if this is the case, it checks the driver validity.
 %
 To do so, it uses the numerical flags applied by the previous rule and compares the driver combination to the combination of Brand, Geography and Channel of the starting intersection to allocate.
 %
@@ -1647,7 +1654,9 @@ By designating one Entity as the sole provider of COGS data, the system reduces 
 %
 This Entity becomes the source of reference for determining the cost of goods sold across the Holding Group.
 %
-At the same time, the entities which register the revenue have the possibility to input the margin which will adjust the value of the cogs related to the specific intercompany transaction.
+For example, if Entity 1 buys some products from Entity 2, Entity 1 will record the cost incurred from the purchase and the revenue for Entity 1 will be automatically calculated and recorded in the local currency of Entity 1 by the rule.
+
+At the same time, the entities which register the revenue have the possibility to input the margin which will adjust the value of the COGS related to the specific intercompany transaction.
 %
 When the COGS data is registered by the designated Entity, the intercompany management system identifies the appropriate dimensions associated with the transaction and the business rules will determine the entities that are impacted by the transaction and calculate the corresponding revenues for each Entity.
 %
