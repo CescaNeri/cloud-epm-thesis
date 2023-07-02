@@ -4,19 +4,19 @@ on:
     branches:
       - main
       - master
-    paths:
-      include:
-        - thesis-style.sty
-        - thesis-main.tex
-        - front.tex
-        - bibliography.bib
-        - listings\
-        - figures\
-      exclude:
-        - README.md
-        - renovate.json
-        - flowchart\
-        - .github\
+    #paths:
+      #include:
+        #- thesis-style.sty
+        #- thesis-main.tex
+        #- front.tex
+        #- bibliography.bib
+        #- listings\
+        #- figures\
+      #exclude:
+        #- README.md
+        #- renovate.json
+        #- flowchart\
+        #- .github\
 
 env:
   LATEX_ROOT: thesis-main
