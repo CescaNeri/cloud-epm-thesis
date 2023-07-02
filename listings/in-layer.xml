@@ -1,0 +1,19 @@
+vBra = #Missing;
+vGeo = #Missing;
+vCha = #Missing;
+vIsNoBra = #Missing;
+vIsNoGeo = #Missing;
+vIsNoCha = #Missing;
+aIsBraSpe = #Missing;
+aIsGeoSpe = #Missing;
+aIsChaSpe = #Missing;
+
+vBra = "No Geography"->"No Channel"->ALL_BRAND;
+vGeo = "No Brand"->"No Channel"->ALL_GEOGRAPHY;
+vCha = "No Brand"->"No Geography"->ALL_CHANNEL;
+vIsNoBra = @ISMBR("No Brand");
+vIsNoGeo = @ISMBR("No Geography");
+vIsNoCha = @ISMBR("No Channel");
+aIsBraSpe = ALL_GEOGRAPHY->ALL_CHANNEL->Driver_Total;
+aIsGeoSpe = ALL_BRAND->ALL_CHANNEL->Driver_Total;
+aIsChaSpe = ALL_BRAND->ALL_GEOGRAPHY->Driver_Total;

@@ -1,0 +1,5 @@
+FIX(@Relative("Total Entity", 0))
+  "working_local" (
+      @Createblock(@Member(@Concatenate("ICP_", @Name({Curr_Entity_Page}))));
+  ) 
+ENDFIX

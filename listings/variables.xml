@@ -1,0 +1,11 @@
+Var vBra;
+Var vGeo;
+Var vCha;
+
+Var vIsNoBra;
+Var vIsNoGeo;
+Var vIsNoCha;
+
+Array aIsBraSpe;
+Array aIsGeoSpe;
+Array aIsChaSpe;

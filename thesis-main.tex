@@ -16,11 +16,11 @@
 
 \input{front.tex}
 
-\begin{acknowledgements}
+%\begin{acknowledgements}
 
 %I would like to express my gratitude to PwC Italy for this opportunity, to the entire EPM team for welcoming me and making me feel like a part of the team, and my supervisor for his guidance and support throughout the internship. \\
 
-\end{acknowledgements}
+%\end{acknowledgements}
 
 \begin{abstract}	
 
@@ -44,9 +44,9 @@ The project provides a practical example of how businesses can leverage EPM solu
 
 \end{abstract}
 
-\begin{dedication}
-Optional. Max a few lines.
-\end{dedication}
+%\begin{dedication}
+%Optional. Max a few lines.
+%\end{dedication}
 
 % \begin{acknowledgements}
 % Optional. Max 1 page.
@@ -55,7 +55,7 @@ Optional. Max a few lines.
 %----------------------------------------------------------------------------------------
 \tableofcontents   
 %\listoffigures     % (optional) comment if empty
-%\lstlistoflistings % (optional) comment if empty
+\lstlistoflistings % (optional) comment if empty
 %----------------------------------------------------------------------------------------
 
 \mainmatter
@@ -1506,13 +1506,6 @@ In particular, the key elements needed for the allocation system, include:
     \item Reports: some reports were created in order to check the outcome of the allocation process.
 \end{enumerate}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\linewidth]{figures/process.pdf}
-	\caption{Steps Involved in the Allocation Process}
-	\label{fig:process}
-\end{figure}
-
 To effectively manage the allocation system, the process was broken down into two tasks carried out by two respective business rule: the first rule deals with the driver while the second one performs the allocation of the cost.
 %
 Drivers are defined by the Holding Group each month and are designed in order to cover all the combinations of accounts and cost centers (one driver for each intersection).
@@ -1523,9 +1516,122 @@ These numerical flags simply categorize each dimension of the driver according t
 %
 At the same time, it calculates and stores the allocation percentage for each intersection of the driver, which will be multiplied by the amount of the cost to be allocate during the second phase.
 
-Regarding the second rule, figure \ref{fig:process} displays the key logical steps performed by the rule, starting from the retrieval of the value of the driver until the allocation of the cost.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/rule-allocation.pdf}
+	\caption{Layout of the Allocation Business Rule}
+	\label{fig:rule-alloc}
+\end{figure}
+
+Regarding the second rule, figure \ref{fig:rule-alloc} illustrates the layout of rule from the Calculation Manager, which is the designed tool that allows users to create, manage, and execute complex calculations and business rules within the EPM environment. 
 %
-The rule starts by checking whether the cost is to allocate, that is when at least one dimension is either ``No Member'' or ``Member to allocate'' and, if this is the case, it checks the driver validity.
+Here, we can distinguish two elements: scripts and member ranges.
+%
+A script refers to a set of instructions, written in a scripting language that is used within Calculation Manager to define complex calculations, business rules, or custom logic.
+%
+Oracle Cloud EPM supports the use of scripts written in the Calculation Manager Scripting Language (CalcScript\footnote{CalcScript is a proprietary scripting language developed by Oracle specifically for use within Calculation Manager. It provides a rich set of functions, operators, and syntax to define calculations and perform data transformations within the Oracle EPM database.}) or in the Groovy scripting language\footnote{Groovy is a dynamic and versatile language that runs on the Java Virtual Machine (JVM). It combines features from languages like Java, Python, and Ruby, providing a simplified and expressive syntax for scripting and application development.}. 
+%
+These scripts allow users to define custom calculations, perform data manipulations, implement conditional logic, and execute various tasks within the EPM environment.
+%
+A member range, on the other hand, refers to a way of specifying a group of related members within a dimension or hierarchy when defining calculations within the Calculation Manager. 
+%
+It allows users to apply business rules to a subset of members based on specific criteria or patterns.
+%
+As we can see, the scripts in the rule are contained within member ranges (identified by the round logo), meaning that the calculations contained in the scripts are applied only to the intersections in the multidimensional cube specified in the member range.
+%
+By utilizing member ranges in business rules, we can apply calculations to specific subsets of members within dimensions, hierarchies, or even across multiple dimensions. 
+%
+This flexibility allows us to define targeted and granular business rules that accurately reflect specific requirements and targeted desired outcomes.
+
+\lstinputlisting[
+	float,
+	language=CalcScript,
+	caption={Create Variables and Arrays in CalcScript},
+	label={lst:variables},
+]{listings/variables.xml}
+
+The rule starts with the definition of the variables and arrays that will be used along the rule, as shown in \Cref{lst:variables}.
+%
+These two elements can be used to store and manipulate data as they provide a way to hold values temporarily, facilitating data transformations.
+%
+Variables can be initialized with an initial value, usually ``\#Missing'' (undefined value), and their values can be modified during script execution.
+%
+Both variables and arrays, when declared within a script, are valid only within the scope of that particular script: they are local to the script and cannot be accessed or used outside of it.
+
+\lstinputlisting[
+	float,
+	language=CalcScript,
+	caption={Variables initialization within the In Layer},
+	label={lst:in-layer},
+]{listings/in-layer.xml}
+
+After that, in the following script, we clear the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
+%
+By clearing the intersections before adding new data, we make sure that the data is entered in a clean and consistent state, providing accurate results during calculations and aggregations.
+%
+Once intersections have been cleared, the next step is to check the driver based on the flags that have been applied by the first business rule.
+%
+The goal here is to identify the validity of the driver and assign a flag in correspondence of the initial combination of Brand, Geography and Channel to allocate, which will be used in the next script in order to make the cancellation of the initial cost and then distribute it based on the driver.
+%
+The next two scripts, respectively ``in layer'' and `out layer'', are responsible for the cancellation of the cost in the initial intersection of Brand, Geography and Channel and its actual allocation based on the driver and its validity.
+%
+As we can see in \Cref{lst:in-layer}, the script begins with the initialization of the variables and arrays which will be used within the script.
+%
+The first three variables - vBra, vGeo and vCha - take the value of the intersections specified in the cross reference\footnote{Cross references allow users to retrieve and incorporate data from different dimensions into the calculation. They can be used to navigate across dimensions and combine data from multiple dimensions or hierarchies.} and store it temporarily.
+%
+The variables vIsNoBra, vIsNoGeo and vIsNoCha, on the other hand, store a binary value (0 or 1) by means of the function ``@ISMBR()''.
+%
+The rule will parse all the elements of the dimensions Brand, Geography and Channel and,  for each combination, the value of the variables will change accordingly, based on whether the members parsed are equal to the members ``No Brand'', ``No Geography'' and ``No Channel''.
+%
+Finally, the arrays aIsBraSpe, aIsGeoSpe and aIsChaSpe store a set of related data elements.
+%
+They are used to work on multiple values simultaneously as they store the value the intersection specified in the cross reference for all the combinations of elements.
+%
+Once variables and arrays have been defined, the script proceeds with the cancellation of the cost on the initial intersection to allocate.
+
+\lstinputlisting[
+	float,
+	language=CalcScript,
+	caption={Cancellation of the Initial Cost},
+	label={lst:in-cancel},
+]{listings/in-cancel.xml}
+
+As illustrated in \Cref{lst:in-cancel}, the rule runs on a specific period, denoted by the variable \{Curr\_Month\}, which is used as reference for the elimination process.
+%
+Here, the value is multiplied by -1, which is multiplied by the variable \#Missing and a set of other conditions.
+%
+In this way, if none of the following conditions is true, the \#Missing multiplier will invalidate the cancellation operation and the allocation process will not be executed.
+
+\lstinputlisting[
+	float,
+	language=CalcScript,
+	caption={Possible Driver for a Specific Combination},
+	label={lst:in-combos},
+]{listings/in-combos.xml}
+
+Then, the conditions which actualize the cancellation process of the ``In layer'' depends on the drivers that can be applied to the beginning combination of Brand, Geography and Channel to allocate.
+%
+Here, for each of the 26 possible combinations to allocate, the set of possible drivers is specified by using the numerical flags applied by the first business rule.
+%
+For example, \Cref{lst:in-combos} shows the valid drivers for the combination ``Specific Brand'', ``Specific Geography'' and ``No Channel''.
+%
+The first line of calculation just assess whether the combination of Brand, Geography and Channel that the rule is parsing is the one the block of calculations refers to.
+%
+So, in this case, 1 / (1 - vNoBra) is equal to 1 since the binary value vNoBra is 0, the same for Geography and for the channel, which in this case is equal to ``No Channel'', corresponds to the operation 1 / vNoCha.
+%
+When the intersection has been checked, meaning that the first line of the calculation block is equal to 1, this value is multiplied by all the possible combinations of drivers which can be applied.
+%
+The three possible drivers - specific driver, multiple driver and all driver, are identified respectively by the numbers 2, 0 and 1.
+%
+Of course, the combinations are mutually exclusive and only one among them will be true.
+%
+This block will simply return the intersection of Brand, Geography and Channel on which the cost will be eliminated before the allocation process.
+%
+Finally, in the out layer we have defined a variable for each driver and a variable for each combination to allocate.
+%
+The script simply match the combination of Brand, Geography and Channel that the rule is parsing, and allocate the cost based on the percentages specified in the value of the driver.
+
+To sum up, the rule starts by checking whether the cost is to allocate, that is when at least one dimension is either ``No Member'' or ``Member to allocate'' and, if this is the case, it checks the driver validity.
 %
 To do so, it uses the numerical flags applied by the previous rule and compares the driver combination to the combination of Brand, Geography and Channel of the starting intersection to allocate.
 %
@@ -1636,6 +1742,28 @@ Concerning the implementation process of this intercompany solution, to overcome
 %
 In this system, the revenues of other entities can be automatically calculated based on a predefined business rule that extract the relevant Entity based on the intersection of dimensions in which the COGS is registered.
 %
+More in details, the business rule for the intercompany management needs to automatically retrieve the member of the Entity dimension which actively participates to the intercompany transaction and registers the revenue.
+%
+To do so, the specific set of functions illustrated in \Cref{lst:icp} was used.
+%
+Here, the script starts with a FIX statement which specifies the dimension members that are fixed or targeted during the calculation (it has the same function of the member range).
+%
+The function ``Relative()'' selects all members of a dimension that are within a certain distance from a member of the dimension that is used as a reference.
+%
+Here, the parameter 0 refers to the generation level of the elements, meaning that the rule targets all the elements in the Entity dimension which are at level zero, which are the leaf elements of the hierarchy.
+%
+Then, the combination of the following functions simply take the name of the Entity on which the rule is parsing (\{Curr\_Entity\_Page\} and attach the string ``ICP\_'' to it.
+%
+Such operation will transform an element of the dimension Entity to an element of the dimension Intercompany, which will then be used to record the revenue intercompany in the appropriate intersection.
+
+\lstinputlisting[
+	float,
+	language=CalcScript,
+	caption={Intercompany Entity Retrieval},
+	label={lst:icp},
+]{listings/icp.xml}
+
+
 By designating one Entity as the sole provider of COGS data, the system reduces redundancy and potential errors that may arise from multiple entities independently recording the same transaction. 
 %
 This Entity becomes the source of reference for determining the cost of goods sold across the Holding Group.

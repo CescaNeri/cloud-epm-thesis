@@ -1,0 +1,14 @@
+/*(Brand, Geo, No_Chan)*/
+
+(1/(1-vNoBra)*1/(1-vNoGeo)*1/vNoCha) 
+*(1/(vBra==1)*1/(vGeo==1)*1/(vCha==0)
++1/(vBra==1)*(1/(vGeo==2)*aGeoSpe)*1/(vCha==0)
++(1/(vBra==2)*aBraSpe)*1/(vGeo==1)*1/(vCha==0)
++(1/(vBra==2)*aBraSpe)*(1/(vGeo==2)*aGeoSpe)*1/(vCha==0)
++1/(vBra==1)*1/(vGeo==1)*(1/(vCha==2)*vNoCha)
++1/(vBra==1)*(1/(vGeo==2)*aGeoSpe)*1/(vCha==1)
++(1/(vBra==2)*aBraSpe)*1/(vGeo==1)*1/(vCha==1)
++1/(vBra==1)*(1/(vGeo==2)*aGeoSpe)*(1/(vCha==2)*vNoCha)
++(1/(vBra==2)*aBraSpe)*1/(vGeo==1)*(1/(vCha==2)*vNoCha)
++(1/(vBra==2)*aBraSpe)*(1/(vGeo==2)*aGeoSpe)*1/(vCha==1)
++(1/(vBra==2)*aBraSpe)*(1/(vGeo==2)*aGeoSpe)*(1/(vCha==2)*vNoCha))

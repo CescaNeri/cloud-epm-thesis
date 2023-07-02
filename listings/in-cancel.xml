@@ -1,0 +1,3 @@
+{Curr_Month} = 
+  {Curr_Month} * -1 * (
+  #Missing +
