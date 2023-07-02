@@ -1527,13 +1527,13 @@ Regarding the second rule, figure \ref{fig:rule-alloc} illustrates the layout of
 %
 Here, we can distinguish two elements: scripts and member ranges.
 %
-A script refers to a set of instructions, written in a scripting language that is used within Calculation Manager to define complex calculations, business rules, or custom logic.
+A script refers to a set of instructions, written in a scripting language that is used to define complex calculations, business rules, or custom logic.
 %
 Oracle Cloud EPM supports the use of scripts written in the Calculation Manager Scripting Language (CalcScript\footnote{CalcScript is a proprietary scripting language developed by Oracle specifically for use within Calculation Manager. It provides a rich set of functions, operators, and syntax to define calculations and perform data transformations within the Oracle EPM database.}) or in the Groovy scripting language\footnote{Groovy is a dynamic and versatile language that runs on the Java Virtual Machine (JVM). It combines features from languages like Java, Python, and Ruby, providing a simplified and expressive syntax for scripting and application development.}. 
 %
 These scripts allow users to define custom calculations, perform data manipulations, implement conditional logic, and execute various tasks within the EPM environment.
 %
-A member range, on the other hand, refers to a way of specifying a group of related members within a dimension or hierarchy when defining calculations within the Calculation Manager. 
+A member range, on the other hand, refers to a way of specifying a group of related members within a dimension or hierarchy.
 %
 It allows users to apply business rules to a subset of members based on specific criteria or patterns.
 %
@@ -1550,9 +1550,11 @@ This flexibility allows us to define targeted and granular business rules that a
 	label={lst:variables},
 ]{listings/variables.xml}
 
-The rule starts with the definition of the variables and arrays that will be used along the rule, as shown in \Cref{lst:variables}.
+The rule starts with the definition of the variables and arrays that will be used along the rule.
 %
-These two elements can be used to store and manipulate data as they provide a way to hold values temporarily, facilitating data transformations.
+An example of such elements is shown in \Cref{lst:variables}.
+%
+Variables and arrays can be used to store and manipulate data as they provide a way to hold values temporarily, facilitating data transformations.
 %
 Variables can be initialized with an initial value, usually ``\#Missing'' (undefined value), and their values can be modified during script execution.
 %
@@ -1565,13 +1567,13 @@ Both variables and arrays, when declared within a script, are valid only within 
 	label={lst:in-layer},
 ]{listings/in-layer.xml}
 
-After that, in the following script, we clear the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
+In the next script, the main activity performed by the script is that of clearing the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
 %
 By clearing the intersections before adding new data, we make sure that the data is entered in a clean and consistent state, providing accurate results during calculations and aggregations.
 %
 Once intersections have been cleared, the next step is to check the driver based on the flags that have been applied by the first business rule.
 %
-The goal here is to identify the validity of the driver and assign a flag in correspondence of the initial combination of Brand, Geography and Channel to allocate, which will be used in the next script in order to make the cancellation of the initial cost and then distribute it based on the driver.
+The goal here is to identify the validity of the driver and assign a flag in correspondence of the initial combination of Brand, Geography and Channel to allocate, which will be used in the next scripts.
 %
 The next two scripts, respectively ``in layer'' and `out layer'', are responsible for the cancellation of the cost in the initial intersection of Brand, Geography and Channel and its actual allocation based on the driver and its validity.
 %
@@ -1598,7 +1600,7 @@ Once variables and arrays have been defined, the script proceeds with the cancel
 
 As illustrated in \Cref{lst:in-cancel}, the rule runs on a specific period, denoted by the variable \{Curr\_Month\}, which is used as reference for the elimination process.
 %
-Here, the value is multiplied by -1, which is multiplied by the variable \#Missing and a set of other conditions.
+Here, the value is multiplied by -1, which is then multiplied by the variable \#Missing and a set of other conditions.
 %
 In this way, if none of the following conditions is true, the \#Missing multiplier will invalidate the cancellation operation and the allocation process will not be executed.
 
@@ -1609,15 +1611,17 @@ In this way, if none of the following conditions is true, the \#Missing multipli
 	label={lst:in-combos},
 ]{listings/in-combos.xml}
 
-Then, the conditions which actualize the cancellation process of the ``In layer'' depends on the drivers that can be applied to the beginning combination of Brand, Geography and Channel to allocate.
+The conditions which actualize the cancellation process of the ``In layer'' depends on the drivers that can be applied to the beginning combination of Brand, Geography and Channel to allocate.
 %
-Here, for each of the 26 possible combinations to allocate, the set of possible drivers is specified by using the numerical flags applied by the first business rule.
+Here, for each one of the 26 possible combinations to allocate, the set of possible drivers is specified by using the numerical flags applied by the first business rule.
 %
 For example, \Cref{lst:in-combos} shows the valid drivers for the combination ``Specific Brand'', ``Specific Geography'' and ``No Channel''.
 %
-The first line of calculation just assess whether the combination of Brand, Geography and Channel that the rule is parsing is the one the block of calculations refers to.
+The first line of calculation just assess whether the combination of Brand, Geography and Channel that the rule is parsing is the one of the referred block of calculations.
 %
-So, in this case, 1 / (1 - vNoBra) is equal to 1 since the binary value vNoBra is 0, the same for Geography and for the channel, which in this case is equal to ``No Channel'', corresponds to the operation 1 / vNoCha.
+So, in this case, 1 / (1 - vNoBra) is equal to 1 since the binary value vNoBra is 0.
+%
+The same applies to the Geography and for the Channel dimension, which in this case is equal to ``No Channel'', the operation 1 / vNoCha is equal to 1.
 %
 When the intersection has been checked, meaning that the first line of the calculation block is equal to 1, this value is multiplied by all the possible combinations of drivers which can be applied.
 %
@@ -1626,8 +1630,8 @@ The three possible drivers - specific driver, multiple driver and all driver, ar
 Of course, the combinations are mutually exclusive and only one among them will be true.
 %
 This block will simply return the intersection of Brand, Geography and Channel on which the cost will be eliminated before the allocation process.
-%
-Finally, in the out layer we have defined a variable for each driver and a variable for each combination to allocate.
+
+Finally, in the out layer, we have defined a variable for each driver and a variable for each combination to allocate.
 %
 The script simply match the combination of Brand, Geography and Channel that the rule is parsing, and allocate the cost based on the percentages specified in the value of the driver.
 
