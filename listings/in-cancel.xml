@@ -1,3 +1,11 @@
 {Curr_Month} = 
   {Curr_Month} * -1 * (
   #Missing +
+    [1] Conditions for [Brand , Geo , No_Chan] +
+    [2] Conditions for [No_Brand , Geo , No_Chan] +
+    [3] Conditions for [Brand, Geo_ToAllocate, Chan] +
+    .
+    .
+    .
+    [26] Conditions for [No_Brand, No_Geo, No_Chan]
+  )
