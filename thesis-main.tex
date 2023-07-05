@@ -30,6 +30,10 @@ The project was carried out using Oracle Cloud EPM, a cloud-based platform devel
 %
 The study provides valuable insights and details on the implementation strategy specifically focused on harnessing the capabilities of Oracle Cloud EPM and its business rules for optimal planning outcomes.
 
+The goal of this project is to provide a detailed exploration of the role of EPM solutions in modern business, with a focus on valuable insights and implementation strategies in the optimization of performance management.
+%
+The project provides a practical example of how businesses can leverage EPM solutions to improve their financial and operational planning and analysis capabilities.
+
 The thesis starts by providing the background and significance of the project, highlighting the need for efficient planning in organizations. The scope and objectives of the study are defined, along with the project requirements. An overview of the methodology employed throughout the research is also provided.
 %
 The main focus of the thesis regards the exploration of how financial and operational processes are integrated in a single EPM solution, whilst using data coming from different sources.
@@ -37,10 +41,6 @@ The main focus of the thesis regards the exploration of how financial and operat
 It dives into the implementation of an EPM solution, with a specific focus on the role of business rules in driving efficient planning within Oracle Cloud EPM. 
 %
 The project involved working with a real-world organization to identify the planning needs and goals.
-
-The goal of this project is to provide a detailed exploration of the role of EPM solutions in modern business, with a focus on valuable insights and implementation strategies in the optimization of performance management.
-%
-The project provides a practical example of how businesses can leverage EPM solutions to improve their financial and operational planning and analysis capabilities.
 
 \end{abstract}
 
@@ -55,7 +55,7 @@ The project provides a practical example of how businesses can leverage EPM solu
 %----------------------------------------------------------------------------------------
 \tableofcontents   
 %\listoffigures     % (optional) comment if empty
-\lstlistoflistings % (optional) comment if empty
+% \lstlistoflistings % (optional) comment if empty
 %----------------------------------------------------------------------------------------
 
 \mainmatter
@@ -64,22 +64,6 @@ The project provides a practical example of how businesses can leverage EPM solu
 \chapter{\introductionname}
 \label{chap:introduction}
 %----------------------------------------------------------------------------------------
-
-This thesis is linked to my curricular internship for the final examination carried out at PricewaterhouseCoopers (PwC) from January to March 2023.
-%
-During the internship experience at PwC Italy, I worked in the advisory-transformation Line of Service, cooperating with the Enterprise Performance Management - Financial Service (EPM-FS) team.
-%
-The EPM-FS team works for the main players in the financial sector and deal with business transformation projects which are aimed at re-engineering and optimizing the company's internal processes.
-%
-Along the internship period, I worked directly with the EPM team in a project concerning the Oracle Cloud EPM platform.
-%
-This project is addressed to an Italian Holding Group which has more than 7,000 points of sale around the world. 
-%
-Due to corporate policy, the name, data and information of the Holding Group to which the project is addressed, cannot be disclosed. 
-%
-It is important to note that respecting the privacy and confidentiality of companies' data is critical in maintaining their trust and credibility.
-%
-Therefore, throughout this thesis, I will be referring to the company only in general terms and avoiding the use of any identifying information or data. \\
 
 In today's highly competitive business environment, effective performance management is essential for organizations to achieve their strategic goals and stay ahead of the competition.
 %
@@ -127,22 +111,38 @@ Additionally, cloud platforms can help reduce costs associated with maintaining 
 %
 Cloud-based EPM solutions also enable organizations to leverage the latest technologies and innovations without having to worry about managing and upgrading hardware and software. 
 %
-Cloud providers typically offer high levels of security and compliance, which can help organizations protect sensitive data and maintain regulatory compliance. 
+Cloud providers typically offer high levels of security and compliance, which can help organizations protect sensitive data and maintain regulatory compliance. \\
+
+This thesis is linked to my curricular internship for the final examination carried out at PricewaterhouseCoopers (PwC) from January to March 2023.
+%
+During the internship experience at PwC Italy, I worked in the advisory-transformation Line of Service, cooperating with the Enterprise Performance Management - Financial Service (EPM-FS) team.
+%
+The EPM-FS team works for the main players in the financial sector and deal with business transformation projects which are aimed at re-engineering and optimizing the company's internal processes.
+%
+Along the internship period, I worked directly with the EPM team in a project concerning the Oracle Cloud EPM platform.
+%
+This project is addressed to an Italian Holding Group which has more than 7,000 points of sale around the world. 
+%
+Due to corporate policy, the name, data and information of the Holding Group to which the project is addressed, cannot be disclosed. 
+%
+It is important to note that respecting the privacy and confidentiality of companies' data is critical in maintaining their trust and credibility.
+%
+Therefore, throughout this thesis, I will be referring to the company only in general terms and avoiding the use of any identifying information or data.
 
 \newpage
 
 \paragraph{Thesis Structure.}
 %
 
-Accordingly, the reminder of this thesis is structures as follows:
+The reminder of this thesis is structured as follows:
 %
 \Cref{chap:introduction} provides an overview of the background and significance of the project.
 %
 It outlines the scope and objectives of the project, highlighting the specific areas that will be addressed. 
 %
-Additionally, the project requirements are defined, and an overview of the methodology used in the study is presented. 
+\Cref{chap:case study} analyzes the case study examined, defining the project requirements and an overview of the methodology used in the study is presented. 
 %
-This chapter serves as an introduction to the thesis, setting the stage for the subsequent chapters to delve deeper into the topic of efficient planning using Oracle Cloud EPM.
+These two chapters serve as an introduction to the thesis, to set the stage for the subsequent chapters to delve deeper into the topic of efficient planning using Oracle Cloud EPM.
 %
 \Cref{chap:epm} explores the concept of Enterprise Performance Management. 
 %
@@ -166,7 +166,10 @@ Finally, \Cref{chap:conclusions} offers a summary of the entire project.
 %
 It recaps the main points discussed in each chapter, highlighting the key findings and insights. 
 
-\section{Background and significance of the study}
+%----------------------------------------------------------------------------------------
+\chapter{Significance of the Case Study}
+\label{chap:case study}
+%----------------------------------------------------------------------------------------
 
 Enterprise Performance Management is a management approach that involves using data and analytics to monitor, measure, and improve an organization's performance. 
 %
@@ -262,7 +265,7 @@ Therefore, the implementation project involves the deployment of a software solu
 %
 In particular, the planning environment is used an maintained by the Holding Group Management Control Department so, along the implementation process, we interacted directly with the people working in that area.
 
-The Holding Group was born in 2018 as the result of the aggregation of different Entities which belong to the same industry sector, as illustrated in figure \ref{fig:structure}
+The Holding Group was born in 2018 as the result of the aggregation of different Entities which belong to the same industry sector, as illustrated in \Cref{fig:structure}
 %
 The Entities which compose the Holding Group have a different story, a different culture, different business models and, as a consequence, different control models.
 %
@@ -346,7 +349,7 @@ By all means, the system should be scalable to accommodate future growth and exp
 	\label{fig:requirements}
 \end{figure}
 
-Figure \ref{fig:requirements} lists all the technical, business and strategic requirements that should be considered when choosing the right tools and technologies for the implementation of the EPM solution.
+\Cref{fig:requirements} lists all the technical, business and strategic requirements that should be considered when choosing the right tools and technologies for the implementation of the EPM solution.
 %
 It is important to identify and prioritize both business requirements and technical requirements when planning an EPM implementation project, in order to build an effective and maintainable solution.
 
@@ -557,7 +560,7 @@ Nowadays, effective systems explicitly address not only economic trends but also
 	\label{fig:cycle}
 \end{figure}
 
-Figure \ref{fig:cycle} represents the three main stages of Enterprise Performance Management, each of which plays a critical role in managing and improving the performance of a business. 
+\Cref{fig:cycle} represents the three main stages of Enterprise Performance Management, each of which plays a critical role in managing and improving the performance of a business. 
 %
 The strategy phase is the foundation of the EPM cycle, where the business establishes its objectives and formulates its strategic plans. 
 %
@@ -738,7 +741,7 @@ In order to design a solution architecture for consolidation, planning and repor
 	\label{fig:gartner}
 \end{figure}
 
-Figure \ref{fig:gartner} displays the Gartner Magic Quadrant for financial planning software published on the 14th December, 2022 \cite{gartner2022magic}.
+\Cref{fig:gartner} displays the Gartner Magic Quadrant for financial planning software published on the 14th December, 2022 \cite{gartner2022magic}.
 %
 Gartner defines Financial Planning Software as ``the key tool that enables organizations to manage their enterprise-wide financial planning, forecasting, and budgeting processes.'' \footnote{Gartner is a registered trademark and service mark and Magic Quadrant is a registered trademark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and are used herein with permission. All rights reserved.}
 
@@ -878,7 +881,7 @@ Through dimensions, it is possible to execute dynamic calculations to generate o
 %
 This enables users to create dynamic models that are more flexible and responsive to changing business needs.
 
-As we can see in figure \ref{fig:hierarchy}, the time dimension follows a tree-like structure where each level in the hierarchy represents a different level of detail. 
+As we can see in \Cref{fig:hierarchy}, the time dimension follows a tree-like structure where each level in the hierarchy represents a different level of detail. 
 %
 Hierarchies allow users to organize data into a structure that is easy to understand and navigate it, by grouping related data points together and providing a way to analyze data at different levels of detail, from high-level summaries to more detailed views of individual data points.
 %
@@ -988,7 +991,7 @@ These properties provide contextual information and can include attributes such 
 	\label{fig:dimensions}
 \end{figure}
 
-As we can see in figure \ref{fig:dimensions}, the activities of the Holding Group will be evaluated under five different dimensions of analysis: geography, channel, product, brand and Entity.
+As we can see in \Cref{fig:dimensions}, the activities of the Holding Group will be evaluated under five different dimensions of analysis: geography, channel, product, brand and Entity.
 %
 The geography dimension helps analyze financial and operational data based on different geographic regions, thus enabling the Holding Group to understand the performance of its entities across different countries, states, or regions. 
 %
@@ -1006,7 +1009,7 @@ Finally, the channel dimension allows for analysis based on different distributi
 
 Once dimensions have been defined, the next crucial step is to load and map the data within the EPM solution and, specifically, to the Financial Consolidation and Close Solution (FCCS). 
 %
-To populate the dimensions with data, the Holding Group needs to collect financial data from all the Entities as illustrated in figure \ref{fig:dataload}.
+To populate the dimensions with data, the Holding Group needs to collect financial data from all the Entities as illustrated in \Cref{fig:dataload}.
 %
 Of course, different Entities have different data collection tools and methodologies, ranging from ERP software solutions, Excel spreadsheets, BI tools or cloud solutions.
 %
@@ -1046,7 +1049,7 @@ Effective data mapping is critical for ensuring the accuracy and completeness of
 	\label{fig:mapping}
 \end{figure}
 
-Figure \ref{fig:mapping} illustrates the relationship and the flow of data among various modeling elements:
+\Cref{fig:mapping} illustrates the relationship and the flow of data among various modeling elements:
 %
 as we can see, users can model data either creating a model using the data designer integrated in the system or importing a model using XML meatadata definition files.
 %
@@ -1123,7 +1126,7 @@ At the same time, FCCS facilitates the entire close management process\footnote{
 %
 It allows organizations to define close calendars, assign responsibilities, and monitor the completion of close activities.
 %
-The integration capabilities of FCCS enable a smooth flow of data to other Oracle EPM solutions, such as Oracle Planning for planning, reporting and forecasting purposes - as shown in figure \ref{fig:planning-fccs}.
+The integration capabilities of FCCS enable a smooth flow of data to other Oracle EPM solutions, such as Oracle Planning for planning, reporting and forecasting purposes - as shown in \Cref{fig:planning-fccs}.
 %
 By seamlessly loading data from FCCS to the planning system, the Holding Group can leverage the consolidated financial data for budgeting, forecasting, and scenario planning. 
 %
@@ -1200,7 +1203,7 @@ With Oracle Planning, organizations can analyze and compare actual performance a
 %
 Finally, Oracle Planning offers interactive dashboards with real-time data visualizations and KPI monitoring that users can use to create personalized dashboards to track performance, monitor progress, and gain insights into key business metrics.
 
-\section{Data transformations and calculations}
+\section{Data transformation and calculations}
 
 In Oracle Cloud EPM, data transformation and calculation are fundamental aspects that enable organizations to derive meaningful insights from data. 
 %
@@ -1352,7 +1355,13 @@ This chapter delves into the role of business rules in Oracle Cloud EPM in shapi
 %
 While working on various sections of the EPM solution, these two implementations emerged as particularly relevant, showcasing how Oracle Cloud EPM can meet specific needs of customers.
 %
-The chapter begins by providing an overview of the importance of cost allocation and intercompany management, which are not directly related between them but are of key importance in the context of Enterprise Performance Management.
+Both processes regards the management of costs and revenues, which are of key importance to drive performance and achieve the organization's strategic objectives.
+%
+Enterprise Performance Management leverages advanced technologies to integrate revenue and cost data, providing a holistic view of organizational performance: by analyzing this data, organizations can gain insights into revenue drivers, cost structures, and their interdependencies. 
+%
+This enables them to make data-informed decisions, enhancing the financial performance and align strategic objectives with operational activities.
+
+The chapter begins by providing an overview of the importance of cost allocation and intercompany management, describing their functioning and their goal.
 %
 Then, it highlights the challenges and complexities associated with these areas and delves into my practical journey in addressing them during the implementation process.
 %
@@ -1410,7 +1419,7 @@ For example, a cost recorded on Brand A, Italy and E-commerce as combination of 
 	\label{fig:combos}
 \end{figure}
 
-Figure \ref{fig:combos} displays all the possible combinations to which the costs to allocate may belong; for example, we may have sales, general and administrative expenses (SG\&A) incurred by a specific brand (B1), in a specific geographical area without the detail of the country like EMEA (G3), through an unknown channel of distribution, No Channel (C2).
+\Cref{fig:combos} displays all the possible combinations to which the costs to allocate may belong; for example, we may have sales, general and administrative expenses (SG\&A) incurred by a specific brand (B1), in a specific geographical area without the detail of the country like EMEA (G3), through an unknown channel of distribution, No Channel (C2).
 %
 Here, the goal is to fragment the initial cost within more specific combinations of Brand, Geography and Channel based on the driver chosen.
 %
@@ -1453,7 +1462,7 @@ The system will incorporate specific rules that govern the validity of drivers b
 	\label{fig:driver}
 \end{figure}
 
-Figure \ref{fig:driver} illustrates the validity of the drivers based on the combinations of Brand, Geography and Channel.
+\Cref{fig:driver} illustrates the validity of the drivers based on the combinations of Brand, Geography and Channel.
 %
 As we can see, the different drivers allocate costs in different destinations based on the nature of the  starting intersection:
 %
@@ -1471,7 +1480,7 @@ Ultimately, ``Driver ALL''is always valid and allocates the cost on the same mem
 
 As a general rule, the cost for a specific combination of Brand, Geography and Channel can be allocated only if the driver covers the intersection entirely.
 %
-For instance, figure \ref{fig:allocation} exhibits two examples of allocations: as we can see, both cases starts from a cost to allocate that has a specific Brand (Brand A), EMEA and E-commerce as a starting combination for the dimensions Brand, Geography and Channel, which amounts to € 1,000.00.
+For instance, \Cref{fig:allocation} exhibits two examples of allocations: as we can see, both cases starts from a cost to allocate that has a specific Brand (Brand A), EMEA and E-commerce as a starting combination for the dimensions Brand, Geography and Channel, which amounts to € 1,000.00.
 %
 The drivers for both the cases are composed of a specific Brand, a multiple driver for Geography and a ``Driver All'' for the Channel dimension.
 %
@@ -1523,7 +1532,7 @@ At the same time, it calculates and stores the allocation percentage for each in
 	\label{fig:rule-alloc}
 \end{figure}
 
-Regarding the second rule, figure \ref{fig:rule-alloc} illustrates the layout of rule from the Calculation Manager, which is the designed tool that allows users to create, manage, and execute complex calculations and business rules within the EPM environment. 
+Regarding the second rule, \Cref{fig:rule-alloc} illustrates the layout of rule from the Calculation Manager, which is the designed tool that allows users to create, manage, and execute complex calculations and business rules within the EPM environment. 
 %
 Here, we can distinguish two elements: scripts and member ranges.
 %
@@ -1567,7 +1576,7 @@ Both variables and arrays, when declared within a script, are valid only within 
 	label={lst:in-layer},
 ]{listings/in-layer.xml}
 
-In the next script, the main activity performed by the script is that of clearing the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
+In the next script, the main activity performed is that of clearing the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
 %
 By clearing the intersections before adding new data, we make sure that the data is entered in a clean and consistent state, providing accurate results during calculations and aggregations.
 %
@@ -1575,11 +1584,11 @@ Once intersections have been cleared, the next step is to check the driver based
 %
 The goal here is to identify the validity of the driver and assign a flag in correspondence of the initial combination of Brand, Geography and Channel to allocate, which will be used in the next scripts.
 %
-The next two scripts, respectively ``in layer'' and `out layer'', are responsible for the cancellation of the cost in the initial intersection of Brand, Geography and Channel and its actual allocation based on the driver and its validity.
+The next two scripts, respectively ``in layer'' and ``out layer'', are responsible for the cancellation of the cost in the initial intersection of Brand, Geography and Channel and its actual allocation based on the driver and its validity.
 %
 As we can see in \Cref{lst:in-layer}, the script begins with the initialization of the variables and arrays which will be used within the script.
 %
-The first three variables - vBra, vGeo and vCha - take the value of the intersections specified in the cross reference\footnote{Cross references allow users to retrieve and incorporate data from different dimensions into the calculation. They can be used to navigate across dimensions and combine data from multiple dimensions or hierarchies.} and store it temporarily.
+The first three variables - vBra, vGeo and vCha - take and store temporarily the value of the intersections specified in the cross references,\footnote{Cross references allow users to retrieve and incorporate data from different dimensions into the calculation. They can be used to navigate across dimensions and combine data from multiple dimensions or hierarchies.} which refers to supporting intersections of dummy elements (No Member and All Member) on which the flags are positioned.
 %
 The variables vIsNoBra, vIsNoGeo and vIsNoCha, on the other hand, store a binary value (0 or 1) by means of the function ``@ISMBR()''.
 %
@@ -1587,9 +1596,9 @@ The rule will parse all the elements of the dimensions Brand, Geography and Chan
 %
 Finally, the arrays aIsBraSpe, aIsGeoSpe and aIsChaSpe store a set of related data elements.
 %
-They are used to work on multiple values simultaneously as they store the value the intersection specified in the cross reference for all the combinations of elements.
+They are used to work on multiple values simultaneously as they store the value of the intersections specified in the cross reference for all the combinations of elements.
 %
-Once variables and arrays have been defined, the script proceeds with the cancellation of the cost on the initial intersection to allocate.
+Once variables and arrays have been defined, the script proceeds with the specification of the conditions which lead to the cancellation of the cost on the initial intersection to allocate.
 
 \lstinputlisting[
 	float,
@@ -1605,9 +1614,10 @@ Here, the value is multiplied by -1, which is then multiplied by the variable \#
 In this way, if none of the following conditions is true, the \#Missing multiplier will invalidate the cancellation operation and the allocation process will not be executed.
 
 \lstinputlisting[
+    basicstyle=\footnotesize,
 	float,
 	language=CalcScript,
-	caption={Possible Driver for a Specific Combination},
+	caption={Possible Drivers for a Specific Combination},
 	label={lst:in-combos},
 ]{listings/in-combos.xml}
 
@@ -1621,17 +1631,29 @@ The first line of calculation just assess whether the combination of Brand, Geog
 %
 So, in this case, 1 / (1 - vNoBra) is equal to 1 since the binary value vNoBra is 0.
 %
-The same applies to the Geography and for the Channel dimension, which in this case is equal to ``No Channel'', the operation 1 / vNoCha is equal to 1.
+The same applies to the Geography while, for the Channel dimension, which in this case is equal to ``No Channel'', the operation 1 / vNoCha is equal to 1.
+%
+Here, we can see that the conditions for the driver validity are characterized by a set of Boolean conditions used as denominator, where a number divided by zero is equal to \#Missing
+%
+The reason for this peculiar notation regards the optimization of the performance of the rule.
+%
+The Oracle Multidimensional Database Management System evaluates business rules based on the presence or absence of data values and, using \#Missing instead of 0 can have implications for performance, especially when dealing with large datasets. 
+%
+With missing values, the rule engine can bypass unnecessary calculations and skip computations that would otherwise be required for numeric values.
+%
+At the same time, since missing values are treated as indicators rather than actual numeric data, less memory is required to store and process these values, leading to improved performance.
 %
 When the intersection has been checked, meaning that the first line of the calculation block is equal to 1, this value is multiplied by all the possible combinations of drivers which can be applied.
 %
 The three possible drivers - specific driver, multiple driver and all driver, are identified respectively by the numbers 2, 0 and 1.
 %
+When the driver is specific (flag == 2), the variable is multiplied by the array which stores the intersection of the specific element for the dimension analyzed.
+%
 Of course, the combinations are mutually exclusive and only one among them will be true.
 %
 This block will simply return the intersection of Brand, Geography and Channel on which the cost will be eliminated before the allocation process.
 
-Finally, in the out layer, we have defined a variable for each driver and a variable for each combination to allocate.
+Finally, in the ``out layer'', we define a variable for each driver and a variable for each combination to allocate.
 %
 The script simply match the combination of Brand, Geography and Channel that the rule is parsing, and allocate the cost based on the percentages specified in the value of the driver.
 
@@ -1704,7 +1726,7 @@ However, allowing unrestricted access to financial data poses a significant risk
 	\label{fig:icp}
 \end{figure}
 
-Figure \ref{fig:icp} represents the intercompany transaction logic requested by the Holding Group.
+\Cref{fig:icp} represents the intercompany transaction logic requested by the Holding Group.
 %
 The table represents the value of Revenues, Cost of Good Sold (COGS) and Gross Margin, for two entities (Entity 1 and Entity 2), highlighting the presence of the intercompany.
 %
@@ -1787,11 +1809,11 @@ Furthermore, it provides real-time visibility into intercompany transactions and
 \label{chap:conclusions}
 %----------------------------------------------------------------------------------------
 
-The concluding chapter of this thesis provides a comprehensive summary of the entire project, highlighting the key findings and insights derived from the implementation project on leveraging Oracle Cloud Enterprise Performance Management business rules for efficient planning. 
-%
-This chapter aims to offer a concise overview of the project's outcomes, followed by an exploration of best practices for implementing EPM solutions and a thoughtful discussion of the implications and concluding thoughts.
+% The concluding chapter of this thesis provides a comprehensive summary of the entire project, highlighting the key findings and insights derived from the implementation project on leveraging Oracle Cloud Enterprise Performance Management business rules for efficient planning. 
+% %
+% This chapter aims to offer a concise overview of the project's outcomes, followed by an exploration of best practices for implementing EPM solutions and a thoughtful discussion of the implications and concluding thoughts.
 
-\section{Summary of the project}
+% \section{Summary of the project}
 
 The primary objective of this project was to implement an Enterprise Performance Management solution for a Holding Group based in Italy, which aims at achieving a complete and comprehensive view of the performance of its Entities. 
 %
@@ -1840,6 +1862,69 @@ With enhanced planning efficiency and accurate financial information available, 
 In conclusion, through a holistic approach encompassing needs assessment, solution selection, data management and the implementation of business rules, this project successfully delivered the desired outcomes of enhancing planning efficiency.
 %
 Such implementation enabled the Holding Group to have a comprehensive view of Entity performance, allowing them to succeed and stay competitive in a rapidly evolving business landscape.
+
+\section{Digital transformation through EPM}
+
+Digital Transformation is disrupting businesses in every industry by breaking down barriers between people, businesses and things.
+%
+By breaking these barriers, they are able to create new products, services and find more efficient
+ways of doing business. 
+%
+These innovations are happening across organizations of all types, sharing a common theme: the ability to transform processes and business models, empower innovation and technology \cite{schwertner2017digital}.
+%
+Such process involves leveraging digital tools, technologies, and strategies to drive innovation, optimize performance, and adapt to the rapidly changing digital landscape.
+%
+Digital transformation encompasses a wide range of initiatives that organizations undertake to transform their business models, processes, and systems. 
+%
+It involves integrating digital technologies into all areas of the business, including customer engagement, operations, supply chain management, employee productivity, and data analytics.
+
+As organizations embark on their digital transformation journeys, Enterprise Performance Management serves as a strategic enabler by providing a comprehensive framework for managing and optimizing business performance. 
+%
+By integrating EPM solutions into their digital transformation strategies, organizations gain the ability to align their financial and operational goals, enhance decision-making processes, and drive performance improvements.
+%
+In particular, EPM solutions, such as Oracle Cloud EPM, enable organizations to consolidate and analyze vast amounts of data from different sources, offering a holistic view of business performance. 
+%
+This data-driven approach empowers decision-makers with valuable insights and supports evidence-based decision-making, a core principle of digital transformation. 
+%
+Enterprise Performance Management can be considered as a key driver in accelerating digital transformation efforts as it streamline and automate critical business processes like budgeting, planning, forecasting, and financial consolidation. 
+%
+By embracing automation and digitization, organizations can experience remarkable improvements in operational efficiency and effectiveness.
+
+The integration of EPM solutions with other digital tools and technologies amplifies the transformative impact. 
+%
+For instance, coupling EPM with advanced analytics and data visualization tools allows organizations to extract valuable insights from their data.
+%
+Additionally, the integration of EPM with collaborative platforms, like Oracle Cloud EPM, fosters greater agility and collaboration within the organization. 
+%
+By facilitating seamless information sharing, real-time collaboration, and workflow management, EPM solutions contribute to breaking down silos and enabling cross-functional teams to work together towards common goals. 
+%
+This enhanced collaboration streamlines processes, eliminates bottlenecks, and improves overall organizational agility.
+%
+Furthermore, the digitization of EPM processes reduces the potential for errors and enhances data accuracy. 
+%
+By automating calculations, consolidations, and reporting, organizations can eliminate manual interventions and the associated risks of human error. 
+%
+This increased accuracy and reliability of financial data enhance stakeholders' confidence and support better decision-making throughout the organization.
+
+Specifically, leveraging a cloud-based EPM solution like Oracle Cloud EPM offers additional benefits that align with digital transformation objectives. 
+%
+By adopting a cloud-based approach, organizations can harness the benefits of scalability, accessibility, cost savings, security, and rapid updates. 
+%
+Cloud-based EPM solutions provide the flexibility to scale resources based on business needs. 
+%
+As organizations grow or experience fluctuations in demand, they can easily scale up or down their EPM capabilities without the need for significant infrastructure investments or disruptions. 
+%
+Also, cloud solutions facilitate easy access to EPM capabilities from anywhere, at any time, and across multiple devices, promoting agility and fostering a culture of collaboration within the organization.
+%
+By all means,  cloud-based EPM solutions eliminate the need for on-premises infrastructure, maintenance, and software updates, resulting in significant cost savings. 
+%
+At the same time, Cloud providers prioritize security and invest heavily in robust data protection measures, compliance certifications, and disaster recovery capabilities.
+%
+In this way, organizations can ensure the confidentiality, integrity, and availability of critical financial data.
+%
+Finally, cloud providers continuously release updates and enhancements to their platforms, ensuring that organizations have access to the latest features and capabilities without the need for manual software upgrades. 
+%
+This agile approach enables organizations to stay up-to-date with technological advancements, leverage new functionalities, and adapt to changing business requirements seamlessly.
 
 \section{Insights and final thoughts}
 
