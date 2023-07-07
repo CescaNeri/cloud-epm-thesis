@@ -136,11 +136,9 @@ Therefore, throughout this thesis, I will be referring to the company only in ge
 
 The reminder of this thesis is structured as follows:
 %
-\Cref{chap:introduction} provides an overview of the background and significance of the project.
+\Cref{chap:case study} provides an overview of the background and significance of the project.
 %
-It outlines the scope and objectives of the project, highlighting the specific areas that will be addressed. 
-%
-\Cref{chap:case study} analyzes the case study examined, defining the project requirements and an overview of the methodology used in the study is presented. 
+It analyzes the case study examined, defining the project requirements and an overview of the methodology used in the study is presented. 
 %
 These two chapters serve as an introduction to the thesis, to set the stage for the subsequent chapters to delve deeper into the topic of efficient planning using Oracle Cloud EPM.
 %
@@ -1357,7 +1355,7 @@ While working on various sections of the EPM solution, these two implementations
 %
 Both processes regards the management of costs and revenues, which are of key importance to drive performance and achieve the organization's strategic objectives.
 %
-Enterprise Performance Management leverages advanced technologies to integrate revenue and cost data, providing a holistic view of organizational performance: by analyzing this data, organizations can gain insights into revenue drivers, cost structures, and their interdependencies. 
+Enterprise Performance Management leverages advanced technologies to integrate revenue and cost, providing a holistic view of organizational performance: by analyzing this data, organizations can gain insights into revenue drivers, cost structures, and their interdependencies. 
 %
 This enables them to make data-informed decisions, enhancing the financial performance and align strategic objectives with operational activities.
 
@@ -1576,7 +1574,7 @@ Both variables and arrays, when declared within a script, are valid only within 
 	label={lst:in-layer},
 ]{listings/in-layer.xml}
 
-In the next script, the main activity performed is that of clearing the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
+In the next script, the main activity performed is the clearing the allocation area in order to ensure data integrity and prevent issues like hanging or accumulating values.
 %
 By clearing the intersections before adding new data, we make sure that the data is entered in a clean and consistent state, providing accurate results during calculations and aggregations.
 %
@@ -1633,17 +1631,19 @@ So, in this case, 1 / (1 - vNoBra) is equal to 1 since the binary value vNoBra i
 %
 The same applies to the Geography while, for the Channel dimension, which in this case is equal to ``No Channel'', the operation 1 / vNoCha is equal to 1.
 %
-Here, we can see that the conditions for the driver validity are characterized by a set of Boolean conditions used as denominator, where a number divided by zero is equal to \#Missing
+Here, we can see that the conditions for the driver validity are characterized by a set of Boolean conditions used as denominator.
 %
 The reason for this peculiar notation regards the optimization of the performance of the rule.
 %
-The Oracle Multidimensional Database Management System evaluates business rules based on the presence or absence of data values and, using \#Missing instead of 0 can have implications for performance, especially when dealing with large datasets. 
+It is worth mentioning that, within Oracle applications, a number divided by zero is equal to \#Missing.
+%
+The Oracle Multidimensional Database Management System (DBMS) evaluates business rules based on the presence or absence of data values and, using \#Missing instead of 0 can have implications for performance, especially when dealing with large datasets. 
 %
 With missing values, the rule engine can bypass unnecessary calculations and skip computations that would otherwise be required for numeric values.
 %
 At the same time, since missing values are treated as indicators rather than actual numeric data, less memory is required to store and process these values, leading to improved performance.
-%
-When the intersection has been checked, meaning that the first line of the calculation block is equal to 1, this value is multiplied by all the possible combinations of drivers which can be applied.
+
+Then, once the intersection has been checked, meaning that the first line of the calculation block is equal to 1, this value is multiplied by all the possible combinations of drivers which can be applied.
 %
 The three possible drivers - specific driver, multiple driver and all driver, are identified respectively by the numbers 2, 0 and 1.
 %
@@ -1865,12 +1865,11 @@ Such implementation enabled the Holding Group to have a comprehensive view of En
 
 \section{Digital transformation through EPM}
 
-Digital Transformation is disrupting businesses in every industry by breaking down barriers between people, businesses and things.
+Digital Transformation is disrupting organizations in every industry by breaking down barriers between people, businesses and things.
 %
-By breaking these barriers, they are able to create new products, services and find more efficient
-ways of doing business. 
+By breaking these barriers, organizations are able to create new products and services as well as find more efficient ways of doing business. 
 %
-These innovations are happening across organizations of all types, sharing a common theme: the ability to transform processes and business models, empower innovation and technology \cite{schwertner2017digital}.
+These innovations are happening across organizations of all types, sharing a common theme: the ability to transform processes and business models, empowering innovation and technology \cite{schwertner2017digital}.
 %
 Such process involves leveraging digital tools, technologies, and strategies to drive innovation, optimize performance, and adapt to the rapidly changing digital landscape.
 %
@@ -1884,9 +1883,9 @@ By integrating EPM solutions into their digital transformation strategies, organ
 %
 In particular, EPM solutions, such as Oracle Cloud EPM, enable organizations to consolidate and analyze vast amounts of data from different sources, offering a holistic view of business performance. 
 %
-This data-driven approach empowers decision-makers with valuable insights and supports evidence-based decision-making, a core principle of digital transformation. 
+This data-driven approach empowers decision-makers with valuable insights and supports evidence-based decision-making, which is a core principle of digital transformation. 
 %
-Enterprise Performance Management can be considered as a key driver in accelerating digital transformation efforts as it streamline and automate critical business processes like budgeting, planning, forecasting, and financial consolidation. 
+Enterprise Performance Management can be considered as a key driver in accelerating digital transformation efforts as it streamlines and automates critical business processes like budgeting, planning, forecasting, and financial consolidation. 
 %
 By embracing automation and digitization, organizations can experience remarkable improvements in operational efficiency and effectiveness.
 
