@@ -112,15 +112,64 @@ Enterprise Performance Management encompasses various processes and methodologie
 
 In this regard, while working on various sections of the EPM solution, two **implementations** emerged as particularly relevant, showcasing how **Oracle Cloud EPM** can meet specific needs of customers: Cost Allocation and Intercompany Management.
 
-###  Slide 1 - Cost Allocation
+### Slide 1 - Cost Allocation
+
+Cost allocation refers to the process of assigning and **distributing costs** to various departments or divisions within the organization.
+
+This process follows some **policies**, specific to the Holding Group, that are personalized to align with the specific needs and characteristics of the Entities.
+
+One of the significant **challenges** faced during this implementation process regards the fact that the different Entities have different **data collection** tools, resulting in variations in the **granularity level** of the financial data.
+
+To address this issue, the process uses specific cost drivers, set by the Holding Group, which goes around three dimensions: Brand, Geography and Channel.
+
 ### Slide 2 - Cost Allocation
 
+We start by having costs on different **combinations** of Brand, Geography and Channel, with different levels of **details**.
+These elements, can be of three types:
+
+- They can be **specific**, meaning that the expense was incurred by a specific Brand, in a specific country for the Geography dimension and through a specific Channel of distribution.
+- The member can be **unknown**, meaning that the expense should be allocated in order to identify the attributable Brand, Geography and Channel.
+- It can be a **Member_ToAllocate**, meaning that the element is given but represents a lower level of detail. For example we can have a group of countries like EMEA or a group of Brands which includes some others.
+
+The goal here is to reach the maximum level of detail through **cost drivers** and to do so, we built some **business rules**, which can be considered as a set of calculations, which start by assessing the **validity** of the driver based on the combination to allocate.
+Then, if the driver is valid, the rule proceeds with the **cancellation** of the cost on the initial intersection and its subsequent **distribution** according to the value of the driver.
+
 ### Slide 3 - Intercompany
+
+The second implementation regards the process of **intercompany management**, which refers to financial transactions that occur between Entities of the same parent company.
+
+Sending goods and services among related Entities is a common practice but, it is important to note that such transactions can introduce **complexities** in financial reporting and consolidation.
+That because, when intercompany transactions are not appropriately **accounted** for and **eliminated** during the consolidation process, they can distort the financial statements and create an **artificial economic value** within the Group.
+
 ### Slide 4 - Intercompany
+
+Intercompany transactions involve a **two-way relationship** between entities: on one side, an Entity records a revenue in its local currency, while on the other side, another Entity incurs a cost in its local currency. 
+This creates a **complex intersection** of financial relationships that need to be accurately
+identified, matched, and eliminated during the consolidation process. 
+
+The complexity increases further when considering the concept of **data protection**: each
+Entity operates independently and cannot have **unrestricted** access to the financial data of other entities.
+
+To overcome this issue of **restricted access**, we designed a system where data about intercompany transactions are inputted only by one Entity and the associated Entity will be **automatically retrieved** by means of specific functions.
 
 ## Conclusions
 
 ### Slide 1
+
+Throughout the implementation process, I had the opportunity to gain valuable insights into **best practices** practices for Oracle Cloud EPM implementation.
+
+These include:
+
+- **Data accuracy**, as it directly impacts the quality and reliability of financial data;
+- **Stakeholder engagement**, to ensure that the solution aligns with the needs and expectations of users;
+- **Clear communication**, which is especially crucial when it comes to technical and functional requirements;
+- **Continuous improvement**, to drive ongoing optimization within the EPM framework.
+
 ### Slide 2
+
+These two implementations clearly illustrate the ability of **Oracle Cloud EPM** to be **customized** to meet the specific requirements of the Organization.
+
+Through this system, we were able to **automate** critical processes such as financial consolidation, budgeting, cost allocation or intercompany management, all by leveraging Oracle Cloud **business rules**.
+These rules enabled the creation of ad-hoc **calculations** and **workflows**, which allowed the Holding Group to efficiently streamline their **planning** and **reporting** processes.
 
 ## Thank you and Q&A
