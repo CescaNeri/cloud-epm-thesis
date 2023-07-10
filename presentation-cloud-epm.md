@@ -1,4 +1,4 @@
-# Leveraging Oracle Cloud EPM Business Rules for Efficient Planning: Insights and Implementation Strategy
+# 19th July - Thesis Defense
 
 *Let's start with usual pleasantries, like ...*
 
@@ -106,6 +106,11 @@ The process of data load run **continuously** in order to keep the EPM system up
 Therefore, it is important to **update** the loading process **systematically** to allow the system to run smoothly and meet changes in business operations.
 
 ## Costs and Revenues Management
+
+Enterprise Performance Management encompasses various processes and methodologies aimed at managing and improving the **financial performance** of an organization. 
+**Revenue** and **cost** management play crucial roles in EPM, ensuring effective financial planning and analysis.
+
+In this regard, while working on various sections of the EPM solution, two **implementations** emerged as particularly relevant, showcasing how **Oracle Cloud EPM** can meet specific needs of customers: Cost Allocation and Intercompany Management.
 
 ###  Slide 1 - Cost Allocation
 ### Slide 2 - Cost Allocation
